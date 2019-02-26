@@ -18,13 +18,15 @@ export const reqSendCode = ({mobile,deviceId}) =>
   ajax(MY_URL+'/getCode', {mobile,deviceId},"POST");
 
 
-// 8、手机号验证码登陆
+// 3、手机号验证码登陆
 export const reqSmsLogin = ({mobile, password}) =>
   ajax(MY_URL+'/loginByCode', {mobile, password},"POST");
 
 
-// 9、根据会话获取用户信息
-export const reqUserInfo = () => ajax(MY_URL+'/userController/reqUserInfo');
-// 10、用户登出
+// 4、根据token获取用户信息
+export const reqUserInfo = ({token}) => ajax(MY_URL+'/userInfo',{token});
+
+
+// 5、用户登出
 export const reqLogout = () => ajax(MY_URL+'/userController/logout');
 

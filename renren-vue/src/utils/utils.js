@@ -49,11 +49,27 @@ export function setDeviceId(value) {
 }
 
 /**
+ * 设置token
+ * @param value
+ */
+export function setToken(value) {
+  window.localStorage.setItem("token", value);
+}
+
+/**
  * 获取设备id
  * @returns {string}
  */
 export function getDeviceId() {
   return window.localStorage.getItem("deviceId");
+}
+
+/**
+ * 获取token
+ * @returns {string}
+ */
+export function getToken() {
+  return window.localStorage.getItem("token");
 }
 
 //des工具方法

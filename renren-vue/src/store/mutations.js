@@ -4,12 +4,12 @@ vuex 的 mutations 模块
 import Vue from 'vue'
 
 import {
-  RECEIVE_ADDRESS,
+  SAVE_USER_INFO,
 } from './mutation-types'
 
 export default {
-  [RECEIVE_ADDRESS] (state, {address}) {
-    state.address = address
+  [SAVE_USER_INFO] (state, {user}) {
+    state.user = user
   },
 
 }

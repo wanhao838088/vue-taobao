@@ -59,10 +59,10 @@
 
 <script>
   import AlertTip from '@/components/AlertTip/AlertTip'
-  import {reqSendCode,reqSmsLogin,reqPwdLogin} from '../../api'
+  import {reqSendCode,reqSmsLogin,reqPwdLogin,reqUserInfo} from '../../api'
   import {mapActions} from 'vuex'
 
-  import {getDeviceId}  from '../../utils/utils'
+  import {getDeviceId,setToken,getToken}  from '../../utils/utils'
 
   export default {
     data(){
@@ -84,7 +84,7 @@
       }
     },
     methods:{
-      ...mapActions(['receiveUserInfo']),
+      ...mapActions(['saveUserInfo']),
       /**
        * 发送短信验证码
        */
@@ -132,16 +132,23 @@
             this.alertMsg("验证码不能为空");
             return;
           }
-          let user = await reqSmsLogin({mobile:phone,password:code});
+          let object = await reqSmsLogin({mobile:phone,password:code});
 
           //错误信息显示
-          if (user.code !== 0) {
-            this.alertMsg(user.msg);
+          if (object.code !== 0) {
+            this.alertMsg(object.msg);
             return;
+          }else{
+            //保存token
+            setToken(object.token);
           }
-          //保存用户信息
-          //this.receiveUserInfo(user.data);
+          //获取用户信息
+          let token = object.token;
+          let userObj = await reqUserInfo({token});
+          console.log(userObj);
 
+          //保存用户信息到vuex
+          this.saveUserInfo(userObj);
           //页面调转
           this.$router.replace('/profile');
 
@@ -164,9 +171,19 @@
           if (object.code !== 0) {
             this.alertMsg(object.msg);
             return;
+          }else{
+            //保存token
+            setToken(object.token);
           }
-          //保存用户信息
-          //this.receiveUserInfo(user.data);
+          //获取用户信息
+          let token = object.token;
+          let userObj = await reqUserInfo({token});
+          console.log(userObj);
+
+          //保存用户信息到vuex
+          this.saveUserInfo(userObj);
+
+          //获取用户信息
           this.$router.replace('/profile');
 
         }

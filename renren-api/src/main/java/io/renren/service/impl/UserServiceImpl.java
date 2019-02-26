@@ -118,7 +118,8 @@ public class UserServiceImpl extends ServiceImpl<UserDao, UserEntity> implements
 			user = new UserEntity();
 			user.setMobile(form.getMobile());
 			user.setUsername(form.getMobile());
-			user.setPassword(SystemConstants.SHA_PWD);
+			//存放123456 不让使用密码登录
+			user.setPassword(SystemConstants.PASSWORD);
 			user.setCreateTime(new Date());
 			this.insert(user);
 		}
