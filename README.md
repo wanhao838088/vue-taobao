@@ -47,7 +47,7 @@ renren-security
 │       
 │ 
 ├─renren-api        API服务
-│ 
+│─renren-vue        使用vue构建的前台SPA应用 
 ├─renren-generator  代码生成器
 │        └─resources 
 │           ├─mapper   MyBatis文件
@@ -59,6 +59,19 @@ renren-security
 
 <br>
 
+### 一、renren-api
+        1) /api/getCode 获取手机验证码
+            同一ip同一手机号一分钟只能获取一次，短信验证码5分钟内有效。
+            未注册的用户，直接使用验证码登录，直接自动完成注册
+        2) /api/loginByCode
+            手机号验证码登录 登录成功返回token
+        3) /api/login
+            账号密码登录 登录成功返回token
+        4) /api/logout
+            退出登录
+        5) /api/register
+            用户注册
+                
  **技术选型：** 
 - 核心框架：Spring Boot 2.0
 - 安全框架：Apache Shiro 1.4
