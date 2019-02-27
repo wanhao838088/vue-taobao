@@ -51,9 +51,10 @@ public interface UserService extends IService<UserEntity> {
 	/**
 	 * 获取短信验证码
 	 * @param form
+	 * @param request
 	 * @return
 	 */
-    Map<String, Object> sendCode(CodeForm form);
+    Map<String, Object> sendCode(CodeForm form,HttpServletRequest request);
 
 	/**
 	 * 手机号验证码登录

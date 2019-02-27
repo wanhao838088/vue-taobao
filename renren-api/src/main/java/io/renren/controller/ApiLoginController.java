@@ -70,11 +70,11 @@ public class ApiLoginController {
      */
     @PostMapping("getCode")
     @ApiOperation("获取手机验证码")
-    public R getCode(@RequestBody CodeForm form){
+    public R getCode(@RequestBody CodeForm form,HttpServletRequest request){
         //表单校验
         ValidatorUtils.validateEntity(form);
         //发送验证码
-        Map<String, Object> map = userService.sendCode(form);
+        Map<String, Object> map = userService.sendCode(form,request);
 
         return R.ok(map);
     }

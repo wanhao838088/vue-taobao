@@ -78,21 +78,41 @@ public class UserServiceImpl extends ServiceImpl<UserDao, UserEntity> implements
 	}
 
 	@Override
-	public Map<String, Object> sendCode(CodeForm form) {
-		CodeForm temp = (CodeForm) redisTemplate.opsForValue().get(form.getMobile());
+	public Map<String, Object> sendCode(CodeForm form,HttpServletRequest request) {
+		//获取时间设置60秒过期  ip+手机号 同个ip的手机号 60秒获取一次
+		String ipAddr = IPUtils.getIpAddr(request);
+		String ipAndMob = ipAddr+ipAddr;
+		CodeForm org = (CodeForm) redisTemplate.opsForValue().get(ipAndMob);
+
 		Map<String, Object> map = new HashMap<>(2);
 
-		if (temp==null){
-			//可以获取验证码
-			String code = RandomStringUtils.randomNumeric(6);
+		if (org==null){
+			//看之前是否获取过了手机号
+			CodeForm temp = (CodeForm) redisTemplate.opsForValue().get(form.getMobile());
+
+			String code = null;
+			if (temp==null){
+				//生成新的验证码返回
+				code =  RandomStringUtils.randomNumeric(6);
+				temp = new CodeForm();
+				temp.setCode(code);
+				temp.setDeviceId(form.getDeviceId());
+				temp.setMobile(form.getMobile());
+				redisTemplate.opsForValue().set(form.getMobile(),temp);
+				redisTemplate.expire(form.getMobile(),60*5, TimeUnit.SECONDS);
+				//todo 调用发送方法
+			}else {
+				code = temp.getCode();
+				temp = new CodeForm();
+				temp.setCode(code);
+				temp.setDeviceId(form.getDeviceId());
+				temp.setMobile(form.getMobile());
+				//todo 调用发送方法
+			}
+			org = temp;
 			System.out.println("验证码是: "+code);
-			temp = new CodeForm();
-			temp.setCode(code);
-			temp.setDeviceId(form.getDeviceId());
-			temp.setMobile(form.getMobile());
-			redisTemplate.opsForValue().set(form.getMobile(),temp);
-			//设置60秒过期
-			redisTemplate.expire(form.getMobile(),60, TimeUnit.SECONDS);
+			redisTemplate.opsForValue().set(ipAndMob,org);
+			redisTemplate.expire(ipAndMob,60, TimeUnit.SECONDS);
 		}else{
 			//不能重复获取
 			throw new RRException("不能重复获取验证码!");
