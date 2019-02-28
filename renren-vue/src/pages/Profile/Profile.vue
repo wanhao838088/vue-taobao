@@ -1,6 +1,9 @@
 <template>
   <div class="profile">
     <HeaderTop :title="'我的'"></HeaderTop>
+    <div class="profile-container">
+
+    </div>
 
     <mt-button v-if="user.userId" type="danger" style="width: 100%;" @click.native="logout">退出登录</mt-button>
   </div>
@@ -42,5 +45,12 @@
   @import "../../common/stylus/mixins.styl"
   .profile //我的
     width 100%
-
+    .profile-container
+      height 150px;
+      display: -webkit-flex;
+      display: flex;
+      background-image: linear-gradient(90deg,#0af,#0085ff);
+      color: #fff;
+      -webkit-align-items: center;
+      align-items: center;
 </style>

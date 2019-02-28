@@ -216,12 +216,12 @@
     height 100%
     background #fff
     .loginInner
-      padding-top 60px
+      padding-top 0.9rem
       width 80%
       margin 0 auto
       .login_header
         .login_logo
-          font-size 40px
+          font-size 0.75rem
           font-weight bold
           color #02a774
           text-align center
@@ -231,13 +231,13 @@
           display flex
           >a
             color #333
-            font-size 14px
-            padding-bottom 4px
+            font-size 0.4rem
+            padding-bottom 0.3rem
             flex 1
             &.on
               color #02a774
               font-weight 700
-              border-bottom 2px solid #02a774
+              border-bottom 2rem/$font-size-base solid #02a774
       .login_content
         >form
           >div
