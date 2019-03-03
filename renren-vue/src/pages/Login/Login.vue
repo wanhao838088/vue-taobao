@@ -247,7 +247,7 @@
             input
               width 100%
               height 100%
-              padding-left 10px
+              padding-left 0.133rem  /* 10/75 */
               box-sizing border-box
               border 1px solid #ddd
               border-radius 4px
@@ -257,9 +257,9 @@
                 border 1px solid #02a774
             .login_message
               position relative
-              margin-top 16px
+              margin-top 0.213rem  /* 16/75 */
               height 48px
-              font-size 14px
+              font-size 0.187rem  /* 14/75 */
               background #fff
               .get_verification
                 position absolute
@@ -283,7 +283,7 @@
                 border 1px solid #ddd
                 border-radius 8px
                 transition background-color .3s,border-color .3s
-                padding 0 6px
+                padding 6px
                 width 30px
                 height 16px
                 line-height 16px
@@ -322,14 +322,14 @@
           .login_submit
             display block
             width 100%
-            height 42px
-            margin-top 30px
+            height .56 rem
+            margin-top .4rem
             border-radius 4px
             background #4cd96f
             color #fff
             text-align center
-            font-size 16px
-            line-height 42px
+            font-size .31rem
+            line-height .56rem
             border 0
         .about_us
           display block
