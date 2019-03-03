@@ -3,5 +3,7 @@
  */
 export default {
   address: {name:'定位中...'}, // 地址信息对象
-  user:{},
+  user:{}, //用户信息
+  goods:[], //商品列表
+
 }

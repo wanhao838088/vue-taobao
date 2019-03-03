@@ -150,7 +150,7 @@
           //保存用户信息到vuex
           this.saveUserInfo(userObj);
           //页面调转
-          this.$router.replace('/profile');
+          this.$router.replace('/main');
 
         }else {
           //密码登录
@@ -184,7 +184,7 @@
           this.saveUserInfo(userObj);
 
           //获取用户信息
-          this.$router.replace('/profile');
+          this.$router.replace('/main');
 
         }
       },
@@ -322,7 +322,7 @@
           .login_submit
             display block
             width 100%
-            height .56 rem
+            height .96rem
             margin-top .4rem
             border-radius 4px
             background #4cd96f

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Login from '@/pages/Login/Login'
 import Profile from '@/pages/Profile/Profile'
+import Main from '@/pages/Main/Main'
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/profile',
       name: 'Profile',
       component: Profile
+    },
+    {
+      path: '/main',
+      name: 'Main',
+      component: Main
     },
     {
       path: '/',
