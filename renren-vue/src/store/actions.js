@@ -21,7 +21,7 @@ export default {
     commit(SAVE_USER_INFO,{user});
   },
 
-  // 异步获取商家列表
+  // 异步获取商品列表
   async getGoods({commit, state}) {
     const result = await reqGoods();
     let goods = [];
@@ -31,6 +31,14 @@ export default {
     commit(RECEIVE_GOODS, {goods});
   },
 
+  // 异步获取商品详情
+  async getGoodsDetail({commit, state}) {
+    const result = await reqGoods();
+    let goods = [];
+    if (result.code == 0) {
+      goods = result.goodsList;
+    }
+  },
 
 }
 

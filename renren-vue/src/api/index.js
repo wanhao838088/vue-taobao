@@ -31,3 +31,5 @@ export const reqLogout = () => ajax(MY_URL + '/userController/logout');
 // 6、获取商品列表
 export const reqGoods = () => ajax(MY_URL + '/goods/list');
 
+// 7、获取商品详情
+export const reqGoodsDetail = ({id}) => ajax(MY_URL + `/goods/${id}`);

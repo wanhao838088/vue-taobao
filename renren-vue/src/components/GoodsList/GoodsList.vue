@@ -1,7 +1,7 @@
 <template>
   <div class="shop_container">
     <ul class="shop_list" v-if="goods">
-      <li class="shop_li border-1px" v-for="(item, index) in goods" :key="index" @click="$router.push('/good')">
+      <li class="shop_li border-0.013rem  /* -1/75 */" v-for="(item, index) in goods" :key="index" @click="toGoodsDetail(item.id)">
         <a style="display: flex;">
           <div class="shop_left">
             <img class="shop_img" :src="item.goodsImg">
@@ -14,8 +14,8 @@
               </h4>
             </section>
             <div class="goods_left_price">
-              <span style="flex: 1;">天猫 ￥<span>{{item.goodsPrice}}</span></span>
-              <span style="flex: 1;">秒杀价 ￥<span>{{item.miaoshaPrice}}</span></span>
+              <span style="flex: 1;text-align: left;">天猫 ￥<span>{{item.goodsPrice}}</span></span>
+              <span style="flex: 1;text-align: left;">秒杀价 ￥<span>{{item.miaoshaPrice}}</span></span>
             </div>
           </div>
         </a>
@@ -32,11 +32,24 @@
 <script>
   import {mapState} from 'vuex'
 
-
   export default {
     data(){
       return{
         imgBaseUrl: '//elm.cangdu.org/img/', //图片域名地址
+      }
+    },
+    methods:{
+
+      /**
+       * 跳转到详情页面
+       */
+      toGoodsDetail(id){
+        this.$router.push({
+          name: `Goods`,
+          params: {
+            goodsId: id,
+          }
+        })
       }
     },
     computed:{

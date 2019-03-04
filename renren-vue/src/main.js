@@ -7,6 +7,9 @@ import axios from 'axios'
 import { Button } from 'mint-ui';
 
 import store from './store/index'
+
+// 加载过滤器
+import './fiters'
 import {generateUUID,setDeviceId,getDeviceId} from './utils/utils'
 
 

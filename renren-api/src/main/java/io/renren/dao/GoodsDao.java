@@ -17,10 +17,20 @@ import java.util.List;
  */
 public interface GoodsDao extends BaseMapper<Goods> {
 
+    /**
+     * 查询商品列表
+     * @return
+     */
     @Select("select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg left join goods g on mg.goods_id = g.id")
     public List<GoodsVo> listGoodsVo();
 
-    @Select("select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg left join goods g on mg.goods_id = g.id where g.id = #{goodsId}")
+    /**
+     * 根据id 查询商品详情
+     * @param goodsId
+     * @return
+     */
+    @Select("select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_time)*1000 endTime" +
+            ",mg.miaosha_price from miaosha_goods mg left join goods g on mg.goods_id = g.id where g.id = #{goodsId}")
     public GoodsVo getGoodsVoByGoodsId(@Param("goodsId")long goodsId);
 
     @Update("update miaosha_goods set stock_count = stock_count - 1 where goods_id = #{goodsId}")

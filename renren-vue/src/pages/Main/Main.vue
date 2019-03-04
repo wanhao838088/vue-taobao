@@ -10,7 +10,7 @@
         <i class="iconfont icon-xuanxiang"></i>
         <span class="shop_header_title">商品列表</span>
       </div>
-      <ShopList></ShopList>
+      <GoodsList></GoodsList>
     </div>
 
   </div>
@@ -18,7 +18,7 @@
 
 <script>
   import HeaderTop from '../../components/HeaderTop/HeaderTop'
-  import ShopList from '../../components/ShopList/ShopList'
+  import GoodsList from '../../components/GoodsList/GoodsList'
 
   import {mapActions}  from 'vuex'
 
@@ -34,7 +34,7 @@
     },
     components: {
       HeaderTop,
-      ShopList
+      GoodsList
     }
   }
 </script>

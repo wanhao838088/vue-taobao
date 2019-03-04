@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Login from '@/pages/Login/Login'
 import Profile from '@/pages/Profile/Profile'
 import Main from '@/pages/Main/Main'
+import Goods from '@/components/Goods/Goods'
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/main',
       name: 'Main',
       component: Main
+    },
+    {
+      path: '/goods',
+      name: 'Goods',
+      component: Goods
     },
     {
       path: '/',
