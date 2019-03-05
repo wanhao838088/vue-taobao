@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
-import { Button } from 'mint-ui';
+import { Button, Select } from 'element-ui';
 
 import store from './store/index'
 
@@ -12,6 +12,8 @@ import store from './store/index'
 import './fiters'
 import {generateUUID,setDeviceId,getDeviceId} from './utils/utils'
 
+Vue.component(Button.name, Button);
+Vue.component(Select.name, Select);
 
 Vue.config.productionTip = false;
 
@@ -19,7 +21,6 @@ Vue.config.productionTip = false;
 axios.defaults.withCredentials = true;
 
 //全局使用button
-Vue.component(Button.name, Button);
 
 //生成一个随机数作为设备id
 let deviceId = getDeviceId();

@@ -29,7 +29,7 @@ public interface GoodsDao extends BaseMapper<Goods> {
      * @param goodsId
      * @return
      */
-    @Select("select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_time)*1000 endTime" +
+    @Select("select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime" +
             ",mg.miaosha_price from miaosha_goods mg left join goods g on mg.goods_id = g.id where g.id = #{goodsId}")
     public GoodsVo getGoodsVoByGoodsId(@Param("goodsId")long goodsId);
 

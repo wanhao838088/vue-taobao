@@ -8,11 +8,21 @@
       <p>原价: {{detail.goodsPrice}}</p>
       <p>秒杀价: {{detail.miaoshaPrice}}</p>
       <p>库存数量: {{detail.stockCount}}</p>
+      <p>秒杀开始时间: {{detail.startTime | date-format}}</p>
+
     </div>
-    <div>
-      秒杀开始时间: {{detail.startTime | date-format}}
+    <div v-if="miaoshaStatus==1">
+      秒杀进行中
     </div>
-    <mt-button type="danger" style="width: 100%" >立即秒杀</mt-button>
+    <div v-else-if="miaoshaStatus==0">
+      秒杀倒计时: <span ref="remainSeconds">{{remainSeconds}}秒</span>
+    </div>
+    <div v-else>
+      秒杀已结束
+    </div>
+    <el-button type="primary" :disabled="miaoshaStatus!=1" style="width: 100%;margin-top: .2rem;" >
+      立即秒杀
+    </el-button>
 
   </div>
 </template>
@@ -27,7 +37,9 @@
   export default {
     data(){
       return{
-        detail:{}//商品详情
+        detail:{},//商品详情
+        miaoshaStatus:0,
+        remainSeconds:0,
       }
     },
     mounted(){
@@ -36,13 +48,41 @@
 
     methods:{
 
+      /**
+       * 获取商品详情
+       * @returns {Promise<void>}
+       */
       async getDetail(){
         let id = this.$route.params.goodsId;
         //获取商品详情
         let result = await reqGoodsDetail({id});
         if (result.code == 0) {
           this.detail = result.goodsDetail;
+          this.miaoshaStatus = result.miaoshaStatus;
+          this.remainSeconds = result.remainSeconds;
+          this._initSeconds();
           console.log(result);
+        }
+      },
+
+      /**
+       * 初始化倒计时
+       * @private
+       */
+      _initSeconds(){
+        let remainSeconds = this.remainSeconds;
+
+        if(remainSeconds>0){
+          //开启倒计时
+          this.timeId = setTimeout(()=>{
+            this.remainSeconds-=0.01;
+            this.remainSeconds = this.remainSeconds.toFixed(2);
+            this._initSeconds();
+          },10)
+        }else if(remainSeconds<=0){
+          clearTimeout(this.timeId);
+          //开始秒杀
+          this.miaoshaStatus =1;
         }
       }
     },

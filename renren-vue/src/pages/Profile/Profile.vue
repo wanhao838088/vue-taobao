@@ -5,13 +5,13 @@
 
     </div>
 
-    <mt-button v-if="user.userId" type="danger" style="width: 100%;" @click.native="logout">退出登录</mt-button>
+    <el-button v-if="user.userId" type="danger" style="width: 100%;" @click.native="logout">退出登录</el-button>
   </div>
 </template>
 
 <script>
   import {mapState,mapActions} from 'vuex'
-  import {MessageBox} from 'mint-ui'
+  import {MessageBox} from 'element-ui'
   import HeaderTop from '../../components/HeaderTop/HeaderTop'
 
   export default {
