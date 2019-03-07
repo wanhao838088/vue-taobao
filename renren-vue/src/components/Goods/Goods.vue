@@ -20,7 +20,7 @@
     <div v-else>
       秒杀已结束
     </div>
-    <el-button type="primary" :disabled="miaoshaStatus!=1" style="width: 100%;margin-top: .2rem;" >
+    <el-button type="primary" @click="doSecKill" :disabled="miaoshaStatus!=1" style="width: 100%;margin-top: .2rem;" >
       立即秒杀
     </el-button>
 
@@ -30,9 +30,12 @@
 <script>
 
   import {mapActions}  from 'vuex'
-  import {reqGoodsDetail}  from '../../api'
+  import {reqGoodsDetail,reqSecKill}  from '../../api'
 
+  import {getToken}  from '../../utils/utils'
   import HeaderTop from '../../components/HeaderTop/HeaderTop'
+  import { MessageBox } from 'element-ui'
+  import { Message } from 'element-ui'
 
   export default {
     data(){
@@ -49,11 +52,42 @@
     methods:{
 
       /**
+       * 商品秒杀
+       */
+      async doSecKill(){
+        let token = getToken();
+        let goodsId = this.$route.query.goodsId;
+
+        if (token) {
+          let result = await reqSecKill({goodsId});
+          console.log(result);
+          if (result.code == 500) {
+            //提示报错
+            Message.error({
+              showClose: true,
+              message: '服务器内部错误',
+              type: 'error'
+            });
+          }
+        }else {
+          MessageBox.alert('请先登录!','提示', {
+            confirmButtonText: '确定',
+            callback: action => {
+              console.log(action);
+              if (action=='confirm') {
+                //跳转到登录
+                this.$router.push("/login");
+              }
+            }
+          })
+        }
+      },
+      /**
        * 获取商品详情
        * @returns {Promise<void>}
        */
       async getDetail(){
-        let id = this.$route.params.goodsId;
+        let id = this.$route.query.goodsId;
         //获取商品详情
         let result = await reqGoodsDetail({id});
         if (result.code == 0) {
@@ -87,7 +121,7 @@
       }
     },
     components:{
-      HeaderTop
+      HeaderTop,
     }
 
   }

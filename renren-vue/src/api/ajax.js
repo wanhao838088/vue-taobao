@@ -3,15 +3,17 @@
  */
 import axios  from 'axios'
 
+import {getToken} from '../utils/utils'
+
 /**
  * 不带请求头请求
  * @param url
  * @param data
  * @param type
- * @param headers 请求头
+ * @param isToken 是否带请求头
  * @returns {Promise<any>}
  */
-export default function ajax(url='',data={},type='GET',headers={}){
+export default function ajax(url='',data={},type='GET',isToken){
 
   return new Promise(function (resolve, reject) {
 
@@ -29,10 +31,29 @@ export default function ajax(url='',data={},type='GET',headers={}){
         url = url + '?' + dataStr
       }
       // 发送 get 请求
-      promise = axios.get(url,headers)
+      if (isToken) {
+        let token = getToken();
+        promise = axios.get(url,{
+          headers : {
+            "token":token
+          }
+        })
+      }else {
+        promise = axios.get(url)
+      }
     } else {
       // 发送 post 请求
-      promise = axios.post(url, data,headers)
+      if (isToken) {
+        let token = getToken();
+
+        promise = axios.post(url, data,{
+          headers : {
+            "token":token
+          }
+        })
+      }else {
+        promise = axios.post(url, data)
+      }
     }
 
     promise.then(response => {

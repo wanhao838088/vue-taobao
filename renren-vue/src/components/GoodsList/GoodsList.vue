@@ -45,8 +45,8 @@
        */
       toGoodsDetail(id){
         this.$router.push({
-          name: `Goods`,
-          params: {
+          path: `/goods`,
+          query: {
             goodsId: id,
           }
         })
