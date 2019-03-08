@@ -57,13 +57,13 @@ public class SecKillController {
         Integer stockCount = goodsVo.getStockCount();
         if (stockCount<=0){
             //库存不足
-            return R.error("库存不足!");
+            return R.error(300,"库存不足!");
         }
         //2 这个用户是否已经秒杀了这个商品
         MiaoshaOrder miaoshaOrder = miaoshaOrderService.getOrderByGoodsIdAndUserId(form.getGoodsId(), user.getUserId());
         if (miaoshaOrder!=null){
             //已经秒杀过了
-            return R.error("限购一件，请下次再来!");
+            return R.error(300,"限购一件，请下次再来!");
         }
         //3 下订单
         OrderInfo orderInfo = orderInfoService.createOrder(goodsVo, user);

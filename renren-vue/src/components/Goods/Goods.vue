@@ -68,6 +68,12 @@
               message: '服务器内部错误',
               type: 'error'
             });
+          }else if(result.code==300){
+            Message.error({
+              showClose: true,
+              message: result.msg,
+              type: 'warning'
+            });
           }
         }else {
           MessageBox.alert('请先登录!','提示', {
