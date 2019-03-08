@@ -1,11 +1,14 @@
 import {
-  reqGoods
+  reqGoods,
+  reqBannerAndNav
 }
 from '../api'
 
 import {
   SAVE_USER_INFO,
-  RECEIVE_GOODS
+  RECEIVE_GOODS,
+  SAVE_BANNERS,
+  SAVE_NAVS
 }
 from './mutation-types'
 
@@ -32,11 +35,13 @@ export default {
   },
 
   // 异步获取商品详情
-  async getGoodsDetail({commit, state}) {
-    const result = await reqGoods();
-    let goods = [];
+  async getBannerAndNav({commit, state},callBack) {
+    const result = await reqBannerAndNav();
     if (result.code == 0) {
-      goods = result.goodsList;
+      commit(SAVE_BANNERS,{banners:result.banners});
+      commit(SAVE_NAVS,{navs:result.navs});
+      //回调
+      callBack && callBack.call();
     }
   },
 

@@ -5,7 +5,9 @@ import Vue from 'vue'
 
 import {
   SAVE_USER_INFO,
-  RECEIVE_GOODS
+  RECEIVE_GOODS,
+  SAVE_BANNERS,
+  SAVE_NAVS
 } from './mutation-types'
 
 export default {
@@ -28,5 +30,20 @@ export default {
   [RECEIVE_GOODS] (state, {goods}) {
     state.goods = goods;
   },
-
+  /**
+   * navs
+   * @param state
+   * @param navs
+   */
+  [SAVE_NAVS] (state, {navs}) {
+    state.navs = navs;
+  },
+  /**
+   * banners
+   * @param state
+   * @param banners
+   */
+  [SAVE_BANNERS] (state, {banners}) {
+    state.banners = banners;
+  },
 }

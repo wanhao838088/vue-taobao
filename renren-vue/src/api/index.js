@@ -36,3 +36,7 @@ export const reqGoodsDetail = ({id}) => ajax(MY_URL + `/goods/${id}`);
 // 8、秒杀一件商品
 export const reqSecKill = ({goodsId}) =>
   ajax(MY_URL + `/secKill/killGoods`,{goodsId:goodsId},"POST",true);
+
+// 9、请求banner和nav
+export const reqBannerAndNav = () =>
+  ajax(MY_URL + `/msite/bannerAndNav`);
