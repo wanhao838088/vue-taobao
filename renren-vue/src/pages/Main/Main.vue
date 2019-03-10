@@ -6,7 +6,7 @@
 
     <!--首页banner-->
     <nav class="msite_banner">
-      <div v-if="banners.length>0" class="swiper-container" style="margin-top: -0.45rem;">
+      <div v-if="banners.length>0" class="swiper-container" style="margin-top: -16px;">
         <!--类型分类-->
         <div class="swiper-wrapper">
           <!--  一共有2片区域  -->
@@ -180,13 +180,12 @@
           .msite-nav-item-text
             display: inline-block;
             overflow: hidden;
-            font-size: 10.56px;
+            font-size: 0.28rem;
             height: auto;
             margin-top: 4.8px;
             text-align: center;
             color: rgb(102, 102, 102);
-            width: 58.56px;
             text-overflow: ellipsis;
             white-space: nowrap;
-            line-height: 13.56px;
+            line-height: 0.38rem;
 </style>
