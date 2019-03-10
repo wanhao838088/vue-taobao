@@ -2,6 +2,9 @@ package io.renren.service;
 
 import com.baomidou.mybatisplus.service.IService;
 import io.renren.entity.MiaoshaOrder;
+import io.renren.entity.OrderInfo;
+import io.renren.entity.UserEntity;
+import io.renren.vo.GoodsVo;
 
 /**
  * 商品
@@ -16,4 +19,20 @@ public interface MiaoshaOrderService extends IService<MiaoshaOrder> {
 	 * @return 秒杀订单
 	 */
 	public MiaoshaOrder getOrderByGoodsIdAndUserId(Long goodsId,Long userId);
+
+	/**
+	 * 执行秒杀商品
+	 * @param goodsVo 商品
+	 * @param user 用户
+	 * @return
+	 */
+    OrderInfo secKill(GoodsVo goodsVo, UserEntity user);
+
+	/**
+	 * 查询秒杀结果
+	 * @param userId
+	 * @param goodsId
+	 * @return
+	 */
+	public long getMiaoshaResult(Long userId, long goodsId);
 }

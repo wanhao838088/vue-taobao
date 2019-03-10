@@ -27,11 +27,10 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsDao, Goods> implements Go
 		return baseMapper.getGoodsVoByGoodsId(goodsId);
 	}
 
+
 	@Override
-	public void reduceStock(GoodsVo goods) {
-		MiaoshaGoods g = new MiaoshaGoods();
-		g.setGoodsId(goods.getId());
-		baseMapper.reduceStock(g);
+	public int decCount(Long id) {
+		return baseMapper.decCount(id);
 	}
 
 }

@@ -42,10 +42,10 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoDao, OrderInfo> i
         orderInfo.setUserId(user.getUserId());
 
         //记录秒杀订单
-        long orderId = baseMapper.insert(orderInfo);
+        baseMapper.insert(orderInfo);
         MiaoshaOrder miaoshaOrder = new MiaoshaOrder();
         miaoshaOrder.setGoodsId(goods.getId());
-        miaoshaOrder.setOrderId(orderId);
+        miaoshaOrder.setOrderId(orderInfo.getId());
         miaoshaOrder.setUserId(user.getUserId());
         miaoshaOrderService.insert(miaoshaOrder);
         return orderInfo;

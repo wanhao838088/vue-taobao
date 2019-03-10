@@ -17,7 +17,7 @@ public class RedisTemplatesUtil {
     @Autowired
     private RedisTemplate<String,Object> redisTemplate;
 
-    Gson gson = new Gson();
+    public static Gson gson = new Gson();
 
     /**
      * 保存list
@@ -35,5 +35,25 @@ public class RedisTemplatesUtil {
      */
     public String getListString(String key){
         return (String) redisTemplate.opsForValue().get(key);
+    }
+
+    /**
+     * 转json
+     * @param object
+     * @return
+     */
+    public static String toJson(Object object){
+        return gson.toJson(object);
+    }
+
+    /**
+     * 减少一个
+     * @param goodsId
+     * @return
+     */
+    public long decrement(String goodsId) {
+        Long count = (Long) redisTemplate.opsForValue().get(goodsId);
+        redisTemplate.opsForValue().set(goodsId,--count);
+        return count;
     }
 }

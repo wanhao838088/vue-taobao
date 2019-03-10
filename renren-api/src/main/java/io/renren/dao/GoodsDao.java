@@ -2,7 +2,6 @@ package io.renren.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import io.renren.entity.Goods;
-import io.renren.entity.MiaoshaGoods;
 import io.renren.vo.GoodsVo;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -33,8 +32,12 @@ public interface GoodsDao extends BaseMapper<Goods> {
             ",mg.miaosha_price from miaosha_goods mg left join goods g on mg.goods_id = g.id where g.id = #{goodsId}")
     public GoodsVo getGoodsVoByGoodsId(@Param("goodsId")long goodsId);
 
-    @Update("update miaosha_goods set stock_count = stock_count - 1 where goods_id = #{goodsId}")
-    public int reduceStock(MiaoshaGoods g);
 
-
+    /**
+     * 减少秒杀商品的库存
+     * @param id 商品id
+     * @return
+     */
+    @Update("update miaosha_goods set stock_count = stock_count - 1 where goods_id = #{goodsId} and stock_count>0")
+    int decCount(Long id);
 }

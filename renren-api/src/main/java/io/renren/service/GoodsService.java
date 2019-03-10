@@ -25,10 +25,11 @@ public interface GoodsService extends IService<Goods> {
 	 */
 	public GoodsVo getGoodsVoByGoodsId(long goodsId);
 
-	/**
-	 * 商品库存
-	 * @param goods
-	 */
-	public void reduceStock(GoodsVo goods);
 
+	/**
+	 * 减少秒杀商品的库存
+	 * @param id
+	 * @return
+	 */
+    public int decCount(Long id);
 }
