@@ -1,7 +1,7 @@
 <template>
   <div class="shop_container">
     <ul class="shop_list" v-if="goods">
-      <li class="shop_li border-0.013rem  /* -1/75 */" v-for="(item, index) in goods" :key="index" @click="toGoodsDetail(item.id)">
+      <li class="shop_li" v-for="(item, index) in goods" :key="index" @click="toGoodsDetail(item.id)">
         <a style="display: flex;">
           <div class="shop_left">
             <img class="shop_img" :src="item.goodsImg">
@@ -64,6 +64,7 @@
     margin-bottom 50px
     .shop_list
       .shop_li
+        height 2.4rem
         bottom-border-1px(#f1f1f1)
         width 100%
         > a
@@ -92,7 +93,7 @@
               width 100%
               .shop_title
                 float left
-                width 200px
+                width 100%
                 color #333
                 font-size .4rem
                 line-height .4rem

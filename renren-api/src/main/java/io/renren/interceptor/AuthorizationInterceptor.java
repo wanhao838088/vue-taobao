@@ -19,6 +19,7 @@ package io.renren.interceptor;
 
 import io.renren.annotation.Login;
 import io.renren.common.exception.RRException;
+import io.renren.constants.SystemConstants;
 import io.renren.entity.TokenEntity;
 import io.renren.service.TokenService;
 import org.apache.commons.lang.StringUtils;
@@ -71,7 +72,7 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
         //查询token信息
         TokenEntity tokenEntity = tokenService.queryByToken(token);
         if(tokenEntity == null || tokenEntity.getExpireTime().getTime() < System.currentTimeMillis()){
-            throw new RRException("token失效，请重新登录");
+            throw new RRException("token失效，请重新登录", SystemConstants.LOGIN_OUT_DATE);
         }
 
         //设置userId到request里，后续根据userId，获取用户信息

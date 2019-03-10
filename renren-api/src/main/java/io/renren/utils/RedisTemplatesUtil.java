@@ -56,4 +56,15 @@ public class RedisTemplatesUtil {
         redisTemplate.opsForValue().set(goodsId,--count);
         return count;
     }
+
+    /**
+     * 增加一个
+     * @param goodsId
+     * @return
+     */
+    public long increment(String goodsId) {
+        Long count = (Long) redisTemplate.opsForValue().get(goodsId);
+        redisTemplate.opsForValue().set(goodsId,++count);
+        return count;
+    }
 }

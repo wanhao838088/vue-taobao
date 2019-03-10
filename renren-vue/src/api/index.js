@@ -40,3 +40,7 @@ export const reqSecKill = ({goodsId}) =>
 // 9、请求banner和nav
 export const reqBannerAndNav = () =>
   ajax(MY_URL + `/msite/bannerAndNav`);
+
+// 10、获取秒杀结果
+export const reqSecKillResult = ({goodsId}) =>
+  ajax(MY_URL + `/secKill/result`,{goodsId},"GET",true);

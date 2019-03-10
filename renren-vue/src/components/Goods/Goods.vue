@@ -30,7 +30,7 @@
 <script>
 
   import {mapActions}  from 'vuex'
-  import {reqGoodsDetail,reqSecKill}  from '../../api'
+  import {reqGoodsDetail,reqSecKill,reqSecKillResult}  from '../../api'
 
   import {getToken}  from '../../utils/utils'
   import HeaderTop from '../../components/HeaderTop/HeaderTop'
@@ -52,6 +52,31 @@
     methods:{
 
       /**
+       * 轮询获取结果
+       */
+      async getSecKillResult(goodsId){
+        let result = await reqSecKillResult({goodsId});
+        if (result.code == 0) {
+          //判断状态
+          if(result.msg<0){
+            Message.error({
+              showClose: true,
+              message: '秒杀失败',
+              type: 'error'
+            });
+          }else if(result.msg==0){
+            //继续轮询
+            setTimeout(()=>{
+              this.getSecKillResult(this.$route.query.goodsId);
+            },100);
+          }else {
+            //秒杀成功了
+            this.$router.push("/orderDetail");
+          }
+        }
+      },
+
+        /**
        * 商品秒杀
        */
       async doSecKill(){
@@ -61,19 +86,30 @@
         if (token) {
           let result = await reqSecKill({goodsId});
           console.log(result);
-          if (result.code == 500) {
-            //提示报错
-            Message.error({
-              showClose: true,
-              message: '服务器内部错误',
-              type: 'error'
-            });
-          }else if(result.code==300){
-            Message.error({
-              showClose: true,
-              message: result.msg,
-              type: 'warning'
-            });
+
+          switch (result.code) {
+            case 0:
+              //轮询是否下单成功
+              this.getSecKillResult(goodsId);
+              break;
+            case 500:
+              Message.error({
+                showClose: true,
+                message: '服务器内部错误',
+                type: 'error'
+              });
+              break;
+            case 300:
+              Message.error({
+                showClose: true,
+                message: result.msg,
+                type: 'warning'
+              });
+              break;
+            case 10086:
+              //token 过期跳转到登录
+              this.$router.push("/login");
+              break;
           }
         }else {
           MessageBox.alert('请先登录!','提示', {

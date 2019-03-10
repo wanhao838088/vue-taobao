@@ -80,7 +80,8 @@ public class SecKillController implements InitializingBean {
         //2 这个用户是否已经秒杀了这个商品
         MiaoshaOrder miaoshaOrder = miaoshaOrderService.getOrderByGoodsIdAndUserId(form.getGoodsId(), user.getUserId());
         if (miaoshaOrder!=null){
-            //已经秒杀过了
+            //已经秒杀过了 再把库存加上
+            redisTemplatesUtil.increment(""+goodsId);
             return R.error(300,"限购一件，请下次再来!");
         }
         //入队
@@ -102,9 +103,6 @@ public class SecKillController implements InitializingBean {
     @Login
     public R miaoshaResult(@LoginUser UserEntity user,
                                       @RequestParam("goodsId")long goodsId) {
-        if(user == null) {
-            return R.error("秒杀失败");
-        }
         long result = miaoshaOrderService.getMiaoshaResult(user.getUserId(), goodsId);
         return R.ok(result+"");
     }

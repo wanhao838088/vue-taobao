@@ -50,7 +50,7 @@ public class MiaoshaOrderServiceImpl extends ServiceImpl<MiaoshaOrderDao, Miaosh
 
     @Override
     public long getMiaoshaResult(Long userId, long goodsId) {
-        MiaoshaOrder order = miaoshaOrderService.getOrderByGoodsIdAndUserId(userId, goodsId);
+        MiaoshaOrder order = miaoshaOrderService.getOrderByGoodsIdAndUserId(goodsId, userId);
         if(order != null) {
             //秒杀成功
             return order.getOrderId();

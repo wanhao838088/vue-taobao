@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 public class GoodsVo extends Goods {
 	private Double miaoshaPrice;
-	private Integer stockCount;
+	private Long stockCount;
 	private Date startDate;
 	private Date endDate;
 	private Long startTime;
