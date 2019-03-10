@@ -4,9 +4,9 @@
     <HeaderTop :title="'首页'">
     </HeaderTop>
 
-    <!--首页导航-->
-    <nav class="msite_nav">
-      <div v-if="banners.length>0" class="swiper-container">
+    <!--首页banner-->
+    <nav class="msite_banner">
+      <div v-if="banners.length>0" class="swiper-container" style="margin-top: -0.45rem;">
         <!--类型分类-->
         <div class="swiper-wrapper">
           <!--  一共有2片区域  -->
@@ -19,12 +19,33 @@
       </div>
       <img src="./images/msite_back.svg" v-else>
     </nav>
+    <!--首页nav-->
+    <div class="tpl-wrapper">
+      <nav class="msite_nav" view-name="DFrameLayout">
+        <!--一个item 分为图片 和文字 -->
+        <div class="msite-nav-item" view-name="DLinearLayout" v-for="(nv,index) in navTop" :key="index">
+          <div view-name="HGifView">
+            <img class="msite-nav-item-img" :src="nv.imgUrl" alt="">
+          </div>
+          <div class="msite-nav-item-text" view-name="DTextView">
+            {{nv.navName}}
+          </div>
+        </div>
+      </nav>
+      <nav class="msite_nav"  view-name="DFrameLayout">
+        <!--一个item 分为图片 和文字 -->
+        <div class="msite-nav-item" style="margin-top: 0.1rem" view-name="DLinearLayout" v-for="(nv,index) in navBottom" :key="index">
+          <div view-name="HGifView">
+            <img class="msite-nav-item-img" :src="nv.imgUrl" alt="">
+          </div>
+          <div class="msite-nav-item-text" view-name="DTextView">
+            {{nv.navName}}
+          </div>
+        </div>
+      </nav>
+    </div>
 
     <div class="msite_shop_list">
-      <div class="shop_header">
-        <i class="iconfont icon-xuanxiang"></i>
-        <span class="shop_header_title">商品列表</span>
-      </div>
       <GoodsList></GoodsList>
     </div>
 
@@ -38,7 +59,7 @@
   import HeaderTop from '../../components/HeaderTop/HeaderTop'
   import GoodsList from '../../components/GoodsList/GoodsList'
 
-  import {mapActions,mapState}  from 'vuex'
+  import {mapActions,mapState,mapGetters}  from 'vuex'
 
   export default {
     methods:{
@@ -54,6 +75,7 @@
           new Swiper ('.swiper-container', {
             direction: 'horizontal', // 垂直切换选项
             loop: true, // 循环模式选项
+            autoplay:true,
             // 如果需要分页器
             pagination: {
               el: '.swiper-pagination',
@@ -67,7 +89,8 @@
       GoodsList
     },
     computed:{
-      ...mapState(['banners','navs'])
+      ...mapState(['banners','navs']),
+      ...mapGetters(['navTop','navBottom'])
     }
   }
 </script>
@@ -78,7 +101,7 @@
 
   .msite //首页
     width 100%
-    .msite_nav
+    .msite_banner
       bottom-border-1px(#e4e4e4)
       margin-top 45px
       height $bannerHeight rem
@@ -132,4 +155,38 @@
           font-size 14px
           line-height 20px
 
+    .tpl-wrapper
+      margin-top: -10px;
+      overflow: hidden;
+      .msite_nav
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        place-self: flex-start;
+        position: relative;
+        height 2.5 rem
+        background #fff
+        .msite-nav-item
+          display: flex;
+          flex: 1;
+          overflow: hidden;
+          margin-left: 9.6px;
+          margin-top: 0.35rem;
+          -webkit-box-orient: vertical;
+          flex-direction: column;
+          .msite-nav-item-img
+            width 1.8rem;
+            height 1.5rem;
+          .msite-nav-item-text
+            display: inline-block;
+            overflow: hidden;
+            font-size: 10.56px;
+            height: auto;
+            margin-top: 4.8px;
+            text-align: center;
+            color: rgb(102, 102, 102);
+            width: 58.56px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 13.56px;
 </style>
