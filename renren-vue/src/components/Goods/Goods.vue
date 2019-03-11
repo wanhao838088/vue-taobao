@@ -49,12 +49,7 @@
         <PageSplit></PageSplit>
 
         <!--评价部分-->
-        <div class="tpl-wrapper">
-          <div class="comments_container">
-
-          </div>
-
-        </div>
+        <GoodsComments :goodsDetail="detail"></GoodsComments>
 
         <!--<p>库存数量: {{detail.stockCount}}</p>-->
         <!--<p>秒杀开始时间: {{detail.startTime | date-format}}</p>-->
@@ -96,6 +91,7 @@
   import PageSplit from '../PageSplit/PageSplit'
   import GoodsBar from '../GoodsBar/GoodsBar'
   import GoodsPrice from '../GoodsPrice/GoodsPrice'
+  import GoodsComments from '../GoodsComments/GoodsComments'
 
   export default {
     data(){
@@ -242,7 +238,8 @@
       MenuRow,
       PageSplit,
       GoodsBar,
-      GoodsPrice
+      GoodsPrice,
+      GoodsComments
     }
 
   }
