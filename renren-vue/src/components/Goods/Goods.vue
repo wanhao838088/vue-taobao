@@ -1,29 +1,40 @@
 <template>
   <div>
-    <!--首页头部-->
-    <HeaderTop :title="'商品详情'"></HeaderTop>
-    <div>
-      <img :src="detail.goodsImg" alt="">
-      <p>{{detail.goodsTitle}}</p>
-      <p>原价: {{detail.goodsPrice}}</p>
-      <p>秒杀价: {{detail.miaoshaPrice}}</p>
-      <p>库存数量: {{detail.stockCount}}</p>
-      <p>秒杀开始时间: {{detail.startTime | date-format}}</p>
+    <div class="main-layout">
+      <div class="navi-bar">
+        <div style="position: relative;width: 100%">
+          <button class="btn-back"><i class="iconfont icon-fanhui1"></i></button>
+          <button class="btn-cart"><i class="iconfont icon-gouwuche-01"></i></button>
+        </div>
+      </div>
+
+      <div class="pic-gallery-wrapper">
+        <img class="goods-img" :src="detail.goodsImg" alt="">
+        <p>{{detail.goodsTitle}}</p>
+        <p>原价: {{detail.goodsPrice}}</p>
+        <p>秒杀价: {{detail.miaoshaPrice}}</p>
+        <p>库存数量: {{detail.stockCount}}</p>
+        <p>秒杀开始时间: {{detail.startTime | date-format}}</p>
+        <div v-if="miaoshaStatus==1">
+          秒杀进行中
+        </div>
+        <div v-else-if="miaoshaStatus==0">
+          秒杀倒计时: <span ref="remainSeconds">{{remainSeconds}}秒</span>
+        </div>
+        <div v-else>
+          秒杀已结束
+        </div>
+        <el-button type="primary" @click="doSecKill" :disabled="miaoshaStatus!=1" style="width: 100%;margin-top: .2rem;" >
+          立即秒杀
+        </el-button>
+      </div>
+      <div class="main-bottom">
+
+      </div>
+
+
 
     </div>
-    <div v-if="miaoshaStatus==1">
-      秒杀进行中
-    </div>
-    <div v-else-if="miaoshaStatus==0">
-      秒杀倒计时: <span ref="remainSeconds">{{remainSeconds}}秒</span>
-    </div>
-    <div v-else>
-      秒杀已结束
-    </div>
-    <el-button type="primary" @click="doSecKill" :disabled="miaoshaStatus!=1" style="width: 100%;margin-top: .2rem;" >
-      立即秒杀
-    </el-button>
-
   </div>
 </template>
 
@@ -171,29 +182,54 @@
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import "../../common/stylus/mixins.styl"
-  .tab
-    height 40px
-    line-height 40px
-    background #fff
-    bottom-border-1px(rgba(7, 17, 27, 0.1))
-    .tab-item
-      float left
-      width: 33.33333%
-      text-align center
-      font-size 14px
-      color rgb(77, 85, 93)
-      a
-        display block
-        position relative
-        &.router-link-active
-          color #02a774
-          &::after
-            content ''
-            position absolute
-            left 50%
-            bottom 1px
-            width 35px
-            height 2px
-            transform translateX(-50%)
-            background #02a774
+  .main-layout
+    width 100%
+    overflow hidden
+    background-color: #FFF;
+    .navi-bar
+      width: 100%;
+      position: absolute;
+      top: 0.2rem;
+      left: 0;
+      z-index: 110;
+      padding: 0 0.1rem;
+      .btn-back
+        position: absolute;
+        width: 0.8rem;
+        height: 0.8rem;
+        border: 0;
+        left: 10px;
+        top 1px;
+        border-radius: 100%;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        .iconfont
+          font-size: 0.8rem;
+      .btn-cart
+        position: absolute;
+        width: 0.8rem;
+        height: 0.8rem;
+        right 30px;
+        top 1px;
+        border: 0;
+        border-radius: 100%;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        .iconfont
+          font-size: 0.8rem;
+    .pic-gallery-wrapper
+      width 100%
+      position absolute;
+      top 0;
+      .goods-img
+        width 100%
+        height 9.5rem;
+    .main-bottom
+      position: absolute;
+      bottom: 1px;
+      height 1rem;
+      width 100%;
+      background-color red;
 </style>
