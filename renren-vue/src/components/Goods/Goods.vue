@@ -10,9 +10,66 @@
 
       <div class="pic-gallery-wrapper">
         <img class="goods-img" :src="detail.goodsImg" alt="">
-        <p>{{detail.goodsTitle}}</p>
-        <p>原价: {{detail.goodsPrice}}</p>
-        <p>秒杀价: {{detail.miaoshaPrice}}</p>
+
+        <div class="d-price">
+          <div class="present-price">
+            <div class="main-price-wrapper">
+              <p class="o-t-price"><span class="num">{{detail.miaoshaPrice}}</span></p>
+              <p class="txt"><span>巨优惠</span></p>
+            </div>
+          </div>
+          <!--原价-->
+          <div class="original-price">
+            <div style="float: left;margin-right: 0.24rem;">
+              价格:￥<del>{{detail.goodsPrice}}</del>
+            </div>
+          </div>
+        </div>
+        <div class="detail_title_normal">
+          <span class="detail_title">
+              {{detail.goodsTitle}}
+          </span>
+        </div>
+
+        <div class="tpl-wrapper">
+          <div class="detail_subinfo" view-name="DFrameLayout">
+            <div class="detail_subinfo_item" view-name="DTextView">
+              <span class="detail_subinfo_item_text">
+                快递: 免运费
+              </span>
+            </div>
+            <div class="detail_subinfo_item" view-name="DTextView">
+              <span class="detail_subinfo_item_text">
+                月销: 656笔
+              </span>
+            </div>
+            <div class="detail_subinfo_item" view-name="DTextView">
+              <span class="detail_subinfo_item_text">
+                山东济南
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!--分割线-->
+        <div data-tpl-id="detail_divider_2" class="tpl-wrapper">
+          <div view-name="DFrameLayout" class="detail_divider">
+          </div>
+        </div>
+        <div class="tpl-wrapper">
+          <div class="guarantee_row">
+            <div class="guarantee_txt_left">
+              服务
+            </div>
+            <div class="guarantee_txt_mid ellipsis">
+              七天无理由· 运费险 · 公益宝贝 阿斯顿发十多个
+            </div>
+            <div class="guarantee_txt_right">
+              <i class="iconfont icon-arrow-right-copy-copy-copy"></i>
+            </div>
+          </div>
+        </div>
+
         <p>库存数量: {{detail.stockCount}}</p>
         <p>秒杀开始时间: {{detail.startTime | date-format}}</p>
         <div v-if="miaoshaStatus==1">
@@ -28,9 +85,9 @@
           立即秒杀
         </el-button>
       </div>
-      <div class="main-bottom">
+      <!--<div class="main-bottom">-->
 
-      </div>
+      <!--</div>-->
 
 
 
@@ -185,7 +242,7 @@
   .main-layout
     width 100%
     overflow hidden
-    background-color: #FFF;
+    background-color: #f2f2f2;
     .navi-bar
       width: 100%;
       position: absolute;
@@ -223,9 +280,105 @@
       width 100%
       position absolute;
       top 0;
+      .guarantee_row
+        display: flex;
+        overflow: hidden;
+        height: 0.8rem;
+        font-size 0.4rem;
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        .guarantee_txt_left
+          flex: 1;
+          overflow: hidden;
+          text-align left;
+          color: rgb(153, 153, 153);
+        .guarantee_txt_right
+          flex: 1;
+          text-align right;
+          margin-right 0.1rem;
+          color: rgb(204, 204, 204);
+        .guarantee_txt_mid
+          text-align left;
+          width 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          flex: 3;
+      .detail_divider
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        height: 10.8px;
+        background-color: #f8f8f8;
+        position: relative;
+      .detail_subinfo
+        display: flex;
+        overflow: hidden;
+        height: 1rem;
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        .detail_subinfo_item
+          flex: 1;
+          text-align: left;
+          margin-top: 0.3rem;
+          .detail_subinfo_item_text
+            text-overflow: ellipsis;
+            overflow: hidden;
+            color: rgb(153, 153, 153);
+            font-size: 0.35rem;
+            line-height: 0.5rem;
+            white-space: nowrap;
+      .detail_title_normal
+        width 100%;
+        .detail_title
+          width 100%
+          text-align: left;
+          background-color: rgba(255, 255, 255, 0);
+          color: rgb(51, 51, 51);
+          font-weight: bold;
+          font-size 0.4rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          word-wrap: break-word;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
       .goods-img
         width 100%
         height 9.5rem;
+      .d-price
+        line-height: 1;
+        width 100%
+        padding: 0 0.12rem;
+        .original-price
+          padding-top: 0.15rem;
+          font-size: 0.1rem;
+          color: #999;
+        .present-price
+          padding-top: 0.18rem;
+          width 100%
+          .main-price-wrapper
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            .txt
+              display: flex;
+              align-items: center;
+              height: 0.14rem;
+              background-color: #FFF1EB;
+              border-radius: 0.2rem;
+              padding: 0.1rem;
+              margin-left 0.3rem;
+              color: #ff5000;
+              margin-right: 0.1rem;
+            .o-t-price
+              color: #ff5000;
+              font-size: .7rem;
+              &:before
+                content: '\FFE5';
+                display: inline-block;
+                font-size: 0.15rem;
+                margin-left: -0.035rem;
     .main-bottom
       position: absolute;
       bottom: 1px;
