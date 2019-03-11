@@ -1,12 +1,7 @@
 <template>
   <div>
     <div class="main-layout">
-      <div class="navi-bar">
-        <div style="position: relative;width: 100%">
-          <button class="btn-back"><i class="iconfont icon-fanhui1"></i></button>
-          <button class="btn-cart"><i class="iconfont icon-gouwuche-01"></i></button>
-        </div>
-      </div>
+      <GoodsBar></GoodsBar>
 
       <div class="pic-gallery-wrapper">
         <img class="goods-img" :src="detail.goodsImg" alt="">
@@ -54,19 +49,30 @@
         <!--分割线-->
         <PageSplit></PageSplit>
         <MenuRow :serviceData="serviceData"></MenuRow>
+
+        <PageSplit></PageSplit>
+        <MenuRow :serviceData="specData"></MenuRow>
+
+        <PageSplit></PageSplit>
+        <MenuRow :serviceData="paramData"></MenuRow>
+
         <PageSplit></PageSplit>
 
-        <p>库存数量: {{detail.stockCount}}</p>
-        <p>秒杀开始时间: {{detail.startTime | date-format}}</p>
-        <div v-if="miaoshaStatus==1">
-          秒杀进行中
-        </div>
-        <div v-else-if="miaoshaStatus==0">
-          秒杀倒计时: <span ref="remainSeconds">{{remainSeconds}}秒</span>
-        </div>
-        <div v-else>
-          秒杀已结束
-        </div>
+        <!--评价部分-->
+
+        <!--<p>库存数量: {{detail.stockCount}}</p>-->
+        <!--<p>秒杀开始时间: {{detail.startTime | date-format}}</p>-->
+        <!--<div v-if="miaoshaStatus==1">-->
+          <!--秒杀进行中-->
+        <!--</div>-->
+        <!--<div v-else-if="miaoshaStatus==0">-->
+          <!--秒杀倒计时: <span ref="remainSeconds">{{remainSeconds}}秒</span>-->
+        <!--</div>-->
+        <!--<div v-else>-->
+          <!--秒杀已结束-->
+        <!--</div>-->
+
+
         <el-button type="primary" @click="doSecKill" :disabled="miaoshaStatus!=1" style="width: 100%;margin-top: .2rem;" >
           立即秒杀
         </el-button>
@@ -92,6 +98,7 @@
   import { Message } from 'element-ui'
   import MenuRow from '../MenuRow/MenuRow'
   import PageSplit from '../PageSplit/PageSplit'
+  import GoodsBar from '../GoodsBar/GoodsBar'
 
   export default {
     data(){
@@ -99,9 +106,20 @@
         detail:{},//商品详情
         miaoshaStatus:0,
         remainSeconds:0,
+        //服务
         serviceData:{
           name:'服务',
           content:'7天无理由 · 运费险 · 公益宝贝 · 48小时内发货'
+        },
+        //规格信息
+        specData:{
+          name:'规格',
+          content:'已选：32寸高清屏【智能网络版】 黑色 '
+        },
+        //参数信息
+        paramData:{
+          name:'参数',
+          content:'品牌 型号... '
         }
       }
     },
@@ -225,7 +243,8 @@
     components:{
       HeaderTop,
       MenuRow,
-      PageSplit
+      PageSplit,
+      GoodsBar
     }
 
   }
@@ -237,39 +256,6 @@
     width 100%
     overflow hidden
     background-color: #f2f2f2;
-    .navi-bar
-      width: 100%;
-      position: absolute;
-      top: 0.2rem;
-      left: 0;
-      z-index: 110;
-      padding: 0 0.1rem;
-      .btn-back
-        position: absolute;
-        width: 0.8rem;
-        height: 0.8rem;
-        border: 0;
-        left: 10px;
-        top 1px;
-        border-radius: 100%;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.4);
-        color: #fff;
-        .iconfont
-          font-size: 0.8rem;
-      .btn-cart
-        position: absolute;
-        width: 0.8rem;
-        height: 0.8rem;
-        right 30px;
-        top 1px;
-        border: 0;
-        border-radius: 100%;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.4);
-        color: #fff;
-        .iconfont
-          font-size: 0.8rem;
     .pic-gallery-wrapper
       width 100%
       position absolute;
