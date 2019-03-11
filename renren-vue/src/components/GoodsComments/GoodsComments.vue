@@ -27,20 +27,20 @@
   .comments_container
     overflow: hidden;
     width 100%;
-    height: 2rem;
+    height: 0.8rem;
     background-color: rgb(255, 255, 255);
     position: relative;
     .comments_left
       overflow: hidden;
       position: absolute;
       font-size: 0.4rem;
-      line-height 0.7rem;
+      line-height 0.9rem;
       margin-left: 0.2rem;
       color: rgb(51, 51, 51);
     .comments_right
       margin-right: 0.5rem;
       font-size: 0.4rem;
-      line-height 0.7rem;
+      line-height 0.9rem;
       position: absolute;
       right 0.2rem;
       color: rgb(255, 80, 0);
@@ -48,5 +48,5 @@
       position: absolute;
       right 0.1rem;
       color: rgb(255, 80, 0);
-      line-height 0.7rem;
+      line-height 0.9rem;
 </style>

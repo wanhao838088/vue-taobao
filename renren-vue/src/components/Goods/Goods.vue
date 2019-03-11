@@ -51,6 +51,19 @@
         <!--评价部分-->
         <GoodsComments :goodsDetail="detail"></GoodsComments>
 
+        <!--商品详情-->
+        <div class="detail-desc">
+          <div class="divide-bar">
+            <span class="line"></span>
+
+            <div class="icon-info">
+              <i class="iconfont icon-tupian"></i>
+              <span class="icon-text">详情</span>
+            </div>
+            <span class="line"></span>
+          </div>
+        </div>
+
         <!--<p>库存数量: {{detail.stockCount}}</p>-->
         <!--<p>秒杀开始时间: {{detail.startTime | date-format}}</p>-->
         <!--<div v-if="miaoshaStatus==1">-->
@@ -255,6 +268,35 @@
       width 100%
       position absolute;
       top 0;
+      .detail-desc
+        width: 100%;
+        background-color: #fff;
+        min-height: 5rem;
+        padding-top: 0.12rem;
+        .divide-bar
+          background-color: #f2f2f2;
+          color: #999;
+          display: flex;
+          height 0.8rem;
+          justify-content: center;
+          align-items: center;
+          padding: 0.08rem 0;
+          font-size: 0;
+          .line
+            display: inline-block;
+            width: 1.4rem;
+            border-top: 0.03rem solid #999;
+          .icon-info
+            position: relative;
+            top: -0.01rem;
+            margin: 0 0.08rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .icon-text
+              font-size: 0.3rem;
+              margin-left: 0.1rem;
       .detail_subinfo
         display: flex;
         overflow: hidden;
