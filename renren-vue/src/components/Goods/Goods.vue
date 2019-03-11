@@ -6,20 +6,8 @@
       <div class="pic-gallery-wrapper">
         <img class="goods-img" :src="detail.goodsImg" alt="">
 
-        <div class="d-price">
-          <div class="present-price">
-            <div class="main-price-wrapper">
-              <p class="o-t-price"><span class="num">{{detail.miaoshaPrice}}</span></p>
-              <p class="txt"><span>巨优惠</span></p>
-            </div>
-          </div>
-          <!--原价-->
-          <div class="original-price">
-            <div style="float: left;margin-right: 0.24rem;">
-              价格:￥<del>{{detail.goodsPrice}}</del>
-            </div>
-          </div>
-        </div>
+        <GoodsPrice :goodsDetail="detail"></GoodsPrice>
+
         <div class="detail_title_normal">
           <span class="detail_title">
               {{detail.goodsTitle}}
@@ -46,13 +34,15 @@
           </div>
         </div>
 
-        <!--分割线-->
+        <!--服务菜单-->
         <PageSplit></PageSplit>
         <MenuRow :serviceData="serviceData"></MenuRow>
 
+        <!--规格菜单-->
         <PageSplit></PageSplit>
         <MenuRow :serviceData="specData"></MenuRow>
 
+        <!--参数菜单-->
         <PageSplit></PageSplit>
         <MenuRow :serviceData="paramData"></MenuRow>
 
@@ -99,6 +89,7 @@
   import MenuRow from '../MenuRow/MenuRow'
   import PageSplit from '../PageSplit/PageSplit'
   import GoodsBar from '../GoodsBar/GoodsBar'
+  import GoodsPrice from '../GoodsPrice/GoodsPrice'
 
   export default {
     data(){
@@ -244,7 +235,8 @@
       HeaderTop,
       MenuRow,
       PageSplit,
-      GoodsBar
+      GoodsBar,
+      GoodsPrice
     }
 
   }
