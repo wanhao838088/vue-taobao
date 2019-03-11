@@ -52,23 +52,9 @@
         </div>
 
         <!--分割线-->
-        <div data-tpl-id="detail_divider_2" class="tpl-wrapper">
-          <div view-name="DFrameLayout" class="detail_divider">
-          </div>
-        </div>
-        <div class="tpl-wrapper">
-          <div class="guarantee_row">
-            <div class="guarantee_txt_left">
-              服务
-            </div>
-            <div class="guarantee_txt_mid ellipsis">
-              七天无理由· 运费险 · 公益宝贝 阿斯顿发十多个
-            </div>
-            <div class="guarantee_txt_right">
-              <i class="iconfont icon-arrow-right-copy-copy-copy"></i>
-            </div>
-          </div>
-        </div>
+        <PageSplit></PageSplit>
+        <MenuRow :serviceData="serviceData"></MenuRow>
+        <PageSplit></PageSplit>
 
         <p>库存数量: {{detail.stockCount}}</p>
         <p>秒杀开始时间: {{detail.startTime | date-format}}</p>
@@ -104,6 +90,8 @@
   import HeaderTop from '../../components/HeaderTop/HeaderTop'
   import { MessageBox } from 'element-ui'
   import { Message } from 'element-ui'
+  import MenuRow from '../MenuRow/MenuRow'
+  import PageSplit from '../PageSplit/PageSplit'
 
   export default {
     data(){
@@ -111,6 +99,10 @@
         detail:{},//商品详情
         miaoshaStatus:0,
         remainSeconds:0,
+        serviceData:{
+          name:'服务',
+          content:'7天无理由 · 运费险 · 公益宝贝 · 48小时内发货'
+        }
       }
     },
     mounted(){
@@ -232,6 +224,8 @@
     },
     components:{
       HeaderTop,
+      MenuRow,
+      PageSplit
     }
 
   }
@@ -304,13 +298,6 @@
           text-overflow: ellipsis;
           white-space: nowrap;
           flex: 3;
-      .detail_divider
-        display: flex;
-        overflow: hidden;
-        width: 100%;
-        height: 10.8px;
-        background-color: #f8f8f8;
-        position: relative;
       .detail_subinfo
         display: flex;
         overflow: hidden;
@@ -324,6 +311,7 @@
           .detail_subinfo_item_text
             text-overflow: ellipsis;
             overflow: hidden;
+            margin-left 0.2rem;
             color: rgb(153, 153, 153);
             font-size: 0.35rem;
             line-height: 0.5rem;
@@ -337,6 +325,7 @@
           color: rgb(51, 51, 51);
           font-weight: bold;
           font-size 0.4rem;
+          margin-left 0.2rem
           text-overflow: ellipsis;
           overflow: hidden;
           word-wrap: break-word;
