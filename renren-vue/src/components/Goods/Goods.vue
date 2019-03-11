@@ -49,6 +49,12 @@
         <PageSplit></PageSplit>
 
         <!--评价部分-->
+        <div class="tpl-wrapper">
+          <div class="comments_container">
+
+          </div>
+
+        </div>
 
         <!--<p>库存数量: {{detail.stockCount}}</p>-->
         <!--<p>秒杀开始时间: {{detail.startTime | date-format}}</p>-->
@@ -252,30 +258,6 @@
       width 100%
       position absolute;
       top 0;
-      .guarantee_row
-        display: flex;
-        overflow: hidden;
-        height: 0.8rem;
-        font-size 0.4rem;
-        background-color: rgb(255, 255, 255);
-        position: relative;
-        .guarantee_txt_left
-          flex: 1;
-          overflow: hidden;
-          text-align left;
-          color: rgb(153, 153, 153);
-        .guarantee_txt_right
-          flex: 1;
-          text-align right;
-          margin-right 0.1rem;
-          color: rgb(204, 204, 204);
-        .guarantee_txt_mid
-          text-align left;
-          width 100%;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          flex: 3;
       .detail_subinfo
         display: flex;
         overflow: hidden;
@@ -313,39 +295,6 @@
       .goods-img
         width 100%
         height 9.5rem;
-      .d-price
-        line-height: 1;
-        width 100%
-        padding: 0 0.12rem;
-        .original-price
-          padding-top: 0.15rem;
-          font-size: 0.1rem;
-          color: #999;
-        .present-price
-          padding-top: 0.18rem;
-          width 100%
-          .main-price-wrapper
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            .txt
-              display: flex;
-              align-items: center;
-              height: 0.14rem;
-              background-color: #FFF1EB;
-              border-radius: 0.2rem;
-              padding: 0.1rem;
-              margin-left 0.3rem;
-              color: #ff5000;
-              margin-right: 0.1rem;
-            .o-t-price
-              color: #ff5000;
-              font-size: .7rem;
-              &:before
-                content: '\FFE5';
-                display: inline-block;
-                font-size: 0.15rem;
-                margin-left: -0.035rem;
     .main-bottom
       position: absolute;
       bottom: 1px;
