@@ -2,6 +2,10 @@ package io.renren.controller;
 
 import com.google.common.collect.Maps;
 import io.renren.common.utils.R;
+import io.renren.entity.GoodsDetailImg;
+import io.renren.entity.GoodsImg;
+import io.renren.service.GoodsDetailImgService;
+import io.renren.service.GoodsImgService;
 import io.renren.service.GoodsService;
 import io.renren.vo.GoodsVo;
 import io.swagger.annotations.Api;
@@ -25,8 +29,18 @@ import java.util.Map;
 public class GoodsController {
 
     @Autowired
-    GoodsService goodsService;
+    private GoodsService goodsService;
 
+    @Autowired
+    private GoodsImgService goodsImgService;
+
+    @Autowired
+    private GoodsDetailImgService detailImgService;
+
+    /**
+     * 商品列表页面
+     * @return
+     */
     @GetMapping("list")
     public R list() {
         //查询商品列表
@@ -34,39 +48,30 @@ public class GoodsController {
         return R.ok().put("goodsList",goodsList);
     }
 
+    /**
+     * 商品详情页面
+     * @param id
+     * @return
+     */
     @GetMapping("{id}")
     public R goodsDetail(@PathVariable("id") Long id) {
         //查询商品详情
         GoodsVo goodsVo = goodsService.getGoodsVoByGoodsId(id);
-        long startAt = goodsVo.getStartTime();
-        long endAt = goodsVo.getEndTime();
-        long now = System.currentTimeMillis();
+        //商品图
+        List<GoodsImg> goodsImgs = goodsImgService.getByGoodsId(id);
 
+        //商品详情图
+        List<GoodsDetailImg> goodsDetailImgs = detailImgService.getByGoodsId(id);
         Map<String,Object> map = Maps.newHashMap();
+
+        //是否是秒杀类商品
+        goodsService.isSecKillGoods(goodsVo,map);
+
+        map.put("goodsImgs",goodsImgs);
+        map.put("goodsDetailImgs",goodsDetailImgs);
 
         //商品详情
         map.put("goodsDetail",goodsVo);
-        //秒杀状态
-        int miaoshaStatus = 0;
-
-        //秒杀时间
-        int remainSeconds = 0;
-
-        if(now < startAt ) {
-            //秒杀还没开始，倒计时
-            miaoshaStatus = 0;
-            remainSeconds = (int)((startAt - now )/1000);
-        }else  if(now > endAt){
-            //秒杀已经结束
-            miaoshaStatus = 2;
-            remainSeconds = -1;
-        }else {
-            //秒杀进行中
-            miaoshaStatus = 1;
-            remainSeconds = 0;
-        }
-        map.put("miaoshaStatus",miaoshaStatus);
-        map.put("remainSeconds",remainSeconds);
 
         return R.ok(map);
     }

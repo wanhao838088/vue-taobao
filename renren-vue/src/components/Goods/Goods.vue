@@ -4,7 +4,20 @@
       <GoodsBar></GoodsBar>
 
       <div class="pic-gallery-wrapper">
-        <img class="goods-img" :src="detail.goodsImg" alt="">
+        <!--轮播图-->
+        <div class="tpl-wrapper">
+          <div v-if="goodsImgs.length>0" class="swiper-container">
+            <!--类型分类-->
+            <div class="swiper-wrapper">
+              <!--  一共有2片区域  -->
+              <div class="swiper-slide" v-for="(cs,index) in goodsImgs" :key="index">
+                <img class="banner-img" :src="cs.imgUrl" alt="">
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
 
         <GoodsPrice :goodsDetail="detail"></GoodsPrice>
 
@@ -91,7 +104,8 @@
 
 <script>
 
-  import {mapActions}  from 'vuex'
+  import "swiper/dist/css/swiper.min.css"
+  import Swiper from 'swiper'
   import {reqGoodsDetail,reqSecKill,reqSecKillResult}  from '../../api'
 
   import {getToken}  from '../../utils/utils'
@@ -111,6 +125,8 @@
         detail:{},//商品详情
         miaoshaStatus:0,
         remainSeconds:0,
+        goodsImgs:[],//商品顶部轮播图
+        goodsDetailImgs:[],//商品详情图
         //服务
         serviceData:{
           name:'服务',
@@ -219,9 +235,31 @@
           this.detail = result.goodsDetail;
           this.miaoshaStatus = result.miaoshaStatus;
           this.remainSeconds = result.remainSeconds;
+          //商品顶部图片
+          this.goodsImgs = result.goodsImgs;
+          //详情图
+          this.goodsDetailImgs = result.goodsDetailImgs;
+
           this._initSeconds();
+          this._initTopImgs();
           console.log(result);
         }
+      },
+      /**
+       * 初始化顶部轮播图
+       */
+      _initTopImgs(){
+        this.$nextTick(()=>{
+          new Swiper ('.swiper-container', {
+            direction: 'horizontal', // 垂直切换选项
+            loop: true, // 循环模式选项
+            autoplay:true,
+            // 如果需要分页器
+            pagination: {
+              el: '.swiper-pagination',
+            }
+          })
+        })
       },
 
       /**
@@ -268,6 +306,8 @@
       width 100%
       position absolute;
       top 0;
+      .banner-img
+        width 100%
       .detail-desc
         width: 100%;
         background-color: #fff;
