@@ -117,6 +117,8 @@
         commentsCount:0,//评论总数
         goodsImgs:[],//商品顶部轮播图
         goodsDetailImgs:[],//商品详情图
+        serviceEntities:[], //商品服务
+        goodsProps:[], //商品属性
         //服务
         serviceData:{
           name:'服务',

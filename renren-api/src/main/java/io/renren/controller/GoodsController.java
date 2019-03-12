@@ -4,10 +4,9 @@ import com.google.common.collect.Maps;
 import io.renren.common.utils.R;
 import io.renren.entity.GoodsDetailImg;
 import io.renren.entity.GoodsImg;
-import io.renren.service.GoodsCommentService;
-import io.renren.service.GoodsDetailImgService;
-import io.renren.service.GoodsImgService;
-import io.renren.service.GoodsService;
+import io.renren.entity.GoodsProps;
+import io.renren.entity.GoodsServiceEntity;
+import io.renren.service.*;
 import io.renren.vo.GoodsVo;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +44,18 @@ public class GoodsController {
     private GoodsCommentService commentService;
 
     /**
+     * 属性
+     */
+    @Autowired
+    private GoodsPropsService propsService;
+
+    /**
+     * 服务
+     */
+    @Autowired
+    private GoodsServiceEntityService serviceEntityService;
+
+    /**
      * 商品列表页面
      * @return
      */
@@ -69,6 +80,11 @@ public class GoodsController {
 
         //商品详情图
         List<GoodsDetailImg> goodsDetailImgs = detailImgService.getByGoodsId(id);
+        //商品属性
+        List<GoodsProps> goodsProps = propsService.getByGoodsId(id);
+
+        //服务
+        List<GoodsServiceEntity> serviceEntities = serviceEntityService.getByGoodsId(id);
         Map<String,Object> map = Maps.newHashMap();
 
         //是否是秒杀类商品
@@ -76,8 +92,11 @@ public class GoodsController {
 
         //评论总数
         Integer count = commentService.getCount();
+
         map.put("commentsCount",count);
         map.put("goodsImgs",goodsImgs);
+        map.put("serviceEntities",serviceEntities);
+        map.put("goodsProps",goodsProps);
         map.put("goodsDetailImgs",goodsDetailImgs);
 
         //商品详情

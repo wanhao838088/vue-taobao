@@ -2,6 +2,7 @@ package io.renren.entity;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,14 +17,16 @@ import java.io.Serializable;
 public class GoodsImg implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
-     * 用户ID
+     * ID
      */
     @TableId
+    @JsonIgnore
     private Long id;
 
     /**
      * 商品id
      */
+    @JsonIgnore
     private Long goodsId;
 
     /**
@@ -33,6 +36,7 @@ public class GoodsImg implements Serializable {
     /**
      * 排序
      */
+    @JsonIgnore
     private Integer orderNum;
 
 }
