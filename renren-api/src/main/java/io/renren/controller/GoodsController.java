@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import io.renren.common.utils.R;
 import io.renren.entity.GoodsDetailImg;
 import io.renren.entity.GoodsImg;
+import io.renren.service.GoodsCommentService;
 import io.renren.service.GoodsDetailImgService;
 import io.renren.service.GoodsImgService;
 import io.renren.service.GoodsService;
@@ -38,6 +39,12 @@ public class GoodsController {
     private GoodsDetailImgService detailImgService;
 
     /**
+     * 评论
+     */
+    @Autowired
+    private GoodsCommentService commentService;
+
+    /**
      * 商品列表页面
      * @return
      */
@@ -67,6 +74,9 @@ public class GoodsController {
         //是否是秒杀类商品
         goodsService.isSecKillGoods(goodsVo,map);
 
+        //评论总数
+        Integer count = commentService.getCount();
+        map.put("commentsCount",count);
         map.put("goodsImgs",goodsImgs);
         map.put("goodsDetailImgs",goodsDetailImgs);
 

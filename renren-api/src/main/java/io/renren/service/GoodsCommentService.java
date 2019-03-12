@@ -10,4 +10,9 @@ import io.renren.entity.GoodsComment;
 public interface GoodsCommentService extends IService<GoodsComment> {
 
 
+    /**
+     * 查询评论总数
+     * @return
+     */
+    public Integer getCount();
 }

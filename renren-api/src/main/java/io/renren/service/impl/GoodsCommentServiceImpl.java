@@ -13,4 +13,8 @@ import org.springframework.stereotype.Service;
 public class GoodsCommentServiceImpl extends ServiceImpl<GoodsCommentDao, GoodsComment> implements GoodsCommentService {
 
 
+    @Override
+    public Integer getCount() {
+        return baseMapper.selectCount(null);
+    }
 }

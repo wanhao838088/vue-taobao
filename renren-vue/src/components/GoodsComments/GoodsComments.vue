@@ -2,7 +2,7 @@
   <div class="tpl-wrapper">
     <div class="comments_container">
       <div class="comments_left">
-        宝贝评价(666)
+        宝贝评价({{commentsCount}})
       </div>
       <div class="comments_right">
         查看全部
@@ -18,7 +18,7 @@
   export default {
     name: "GoodsComments",
     props:{
-      goodsDetail:Object
+      commentsCount:Number
     }
   }
 </script>

@@ -372,3 +372,1003 @@
 2019-03-12 11:52:45,515 [DEBUG] [http-nio-8081-exec-13] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? 
 2019-03-12 11:52:45,517 [DEBUG] [http-nio-8081-exec-13] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
 2019-03-12 11:52:45,527 [DEBUG] [http-nio-8081-exec-13] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 37
+2019-03-12 12:01:06,725 [INFO] [main] io.renren.ApiApplication [StartupInfoLogger.java : 50] Starting ApiApplication on SC-201811251034 with PID 2196 (C:\code\java\springboot\renren-security\renren-api\target\classes started by Administrator in C:\code\java\springboot\renren-security)
+2019-03-12 12:01:06,741 [DEBUG] [main] io.renren.ApiApplication [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2019-03-12 12:01:06,744 [INFO] [main] io.renren.ApiApplication [SpringApplication.java : 684] The following profiles are active: dev
+2019-03-12 12:01:06,965 [INFO] [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java : 590] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1849db1a: startup date [Tue Mar 12 12:01:06 CST 2019]; root of context hierarchy
+2019-03-12 12:01:13,119 [INFO] [main] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 172] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-12 12:01:14,858 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 326] Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$739d2fbe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-12 12:01:15,188 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 326] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ad317190] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-12 12:01:16,908 [INFO] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 91] Tomcat initialized with port(s): 8081 (http)
+2019-03-12 12:01:17,001 [INFO] [main] org.apache.catalina.core.StandardService [DirectJDKLog.java : 180] Starting service [Tomcat]
+2019-03-12 12:01:17,002 [INFO] [main] org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 180] Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-03-12 12:01:17,023 [INFO] [localhost-startStop-1] org.apache.catalina.core.AprLifecycleListener [DirectJDKLog.java : 180] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-11.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.1\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Redis\;C:\java\apache-maven-3.5.0\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-03-12 12:01:17,396 [INFO] [localhost-startStop-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/renren-api] [DirectJDKLog.java : 180] Initializing Spring embedded WebApplicationContext
+2019-03-12 12:01:17,397 [INFO] [localhost-startStop-1] org.springframework.web.context.ContextLoader [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 10432 ms
+2019-03-12 12:01:17,741 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-12 12:01:17,743 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-12 12:01:17,744 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-12 12:01:17,745 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-12 12:01:17,746 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'xssFilter' to urls: [/*]
+2019-03-12 12:01:17,748 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-12 12:01:17,748 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'configureCorsFilter' to: [/*]
+2019-03-12 12:01:17,749 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 187] Servlet dispatcherServlet mapped to [/]
+2019-03-12 12:01:17,754 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 187] Servlet statViewServlet mapped to [/druid/*]
+2019-03-12 12:01:18,179 [INFO] [main] c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
+2019-03-12 12:01:19,551 [INFO] [main] com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 930] {dataSource-1} inited
+2019-03-12 12:01:23,768 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-12 12:01:23,865 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 12:01:23,935 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-12 12:01:24,155 [INFO] [main] io.lettuce.core.EpollProvider [Slf4JLogger.java : 101] Starting without optional epoll library
+2019-03-12 12:01:24,157 [INFO] [main] io.lettuce.core.KqueueProvider [Slf4JLogger.java : 101] Starting without optional kqueue library
+2019-03-12 12:01:26,571 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/getCode],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.getCode(io.renren.form.CodeForm,javax.servlet.http.HttpServletRequest)
+2019-03-12 12:01:26,573 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/logout],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.logout(long)
+2019-03-12 12:01:26,575 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/loginByCode],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.loginByCode(io.renren.form.LoginForm,javax.servlet.http.HttpServletRequest)
+2019-03-12 12:01:26,575 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/login],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.login(io.renren.form.LoginForm)
+2019-03-12 12:01:26,578 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/register],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiRegisterController.register(io.renren.form.RegisterForm)
+2019-03-12 12:01:26,586 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/userId],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.userInfo(java.lang.Integer)
+2019-03-12 12:01:26,589 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/userInfo],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.userInfo(io.renren.entity.UserEntity)
+2019-03-12 12:01:26,591 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/notToken],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.notToken()
+2019-03-12 12:01:26,596 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/goods/list],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.GoodsController.list()
+2019-03-12 12:01:26,597 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/goods/{id}],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.GoodsController.goodsDetail(java.lang.Long)
+2019-03-12 12:01:26,599 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/msite/bannerAndNav],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.MSiteController.bannerList()
+2019-03-12 12:01:26,603 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/secKill/killGoods],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.SecKillController.secKill(io.renren.form.SecKillForm,io.renren.entity.UserEntity)
+2019-03-12 12:01:26,605 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/secKill/result],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.SecKillController.miaoshaResult(io.renren.entity.UserEntity,long)
+2019-03-12 12:01:26,623 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-03-12 12:01:26,625 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-03-12 12:01:26,627 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-03-12 12:01:26,635 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-12 12:01:26,638 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-12 12:01:26,995 [INFO] [main] s.d.spring.web.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-03-12 12:01:27,346 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 12:01:27,826 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java : 588] Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1849db1a: startup date [Tue Mar 12 12:01:06 CST 2019]; root of context hierarchy
+2019-03-12 12:01:27,985 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 12:01:27,986 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 12:01:28,061 [INFO] [main] o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [ExceptionHandlerExceptionResolver.java : 288] Detected @ExceptionHandler methods in RRExceptionHandler
+2019-03-12 12:01:29,339 [INFO] [main] org.springframework.ui.freemarker.SpringTemplateLoader [SpringTemplateLoader.java : 62] SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1849db1a: startup date [Tue Mar 12 12:01:06 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
+2019-03-12 12:01:29,343 [INFO] [main] o.s.web.servlet.view.freemarker.FreeMarkerConfigurer [FreeMarkerConfigurer.java : 131] ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-03-12 12:01:30,164 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 433] Registering beans for JMX exposure on startup
+2019-03-12 12:01:30,172 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'statFilter' has been autodetected for JMX exposure
+2019-03-12 12:01:30,173 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-12 12:01:30,233 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'rabbitConnectionFactory' has been autodetected for JMX exposure
+2019-03-12 12:01:30,247 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 668] Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2019-03-12 12:01:30,255 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 675] Located managed bean 'rabbitConnectionFactory': registering with JMX server as MBean [org.springframework.amqp.rabbit.connection:name=rabbitConnectionFactory,type=CachingConnectionFactory]
+2019-03-12 12:01:30,363 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 668] Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2019-03-12 12:01:30,521 [INFO] [main] o.springframework.context.support.DefaultLifecycleProcessor [DefaultLifecycleProcessor.java : 356] Starting beans in phase 2147483647
+2019-03-12 12:01:30,522 [INFO] [main] s.d.spring.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 147] Context refreshed
+2019-03-12 12:01:30,775 [INFO] [main] s.d.spring.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 150] Found 1 custom documentation plugin(s)
+2019-03-12 12:01:31,026 [INFO] [main] s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2019-03-12 12:01:31,806 [INFO] [main] s.d.s.web.readers.operation.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: userInfoUsingGET_1
+2019-03-12 12:01:31,905 [INFO] [SimpleAsyncTaskExecutor-1] o.s.amqp.rabbit.connection.CachingConnectionFactory [AbstractConnectionFactory.java : 455] Attempting to connect to: [localhost:5672]
+2019-03-12 12:01:32,099 [INFO] [SimpleAsyncTaskExecutor-1] o.s.amqp.rabbit.connection.CachingConnectionFactory [AbstractConnectionFactory.java : 471] Created new connection: rabbitConnectionFactory#796642ae:0/SimpleConnection@15b01424 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 53728]
+2019-03-12 12:01:32,639 [INFO] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 206] Tomcat started on port(s): 8081 (http) with context path '/renren-api'
+2019-03-12 12:01:32,656 [INFO] [main] io.renren.ApiApplication [StartupInfoLogger.java : 59] Started ApiApplication in 28.287 seconds (JVM running for 30.857)
+2019-03-12 14:11:28,954 [INFO] [main] io.renren.ApiApplication [StartupInfoLogger.java : 50] Starting ApiApplication on SC-201811251034 with PID 6736 (C:\code\java\springboot\renren-security\renren-api\target\classes started by Administrator in C:\code\java\springboot\renren-security)
+2019-03-12 14:11:28,964 [DEBUG] [main] io.renren.ApiApplication [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2019-03-12 14:11:28,967 [INFO] [main] io.renren.ApiApplication [SpringApplication.java : 684] The following profiles are active: dev
+2019-03-12 14:11:29,256 [INFO] [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java : 590] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4b7e96a: startup date [Tue Mar 12 14:11:29 CST 2019]; root of context hierarchy
+2019-03-12 14:11:35,355 [INFO] [main] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 172] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-12 14:11:36,423 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 326] Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$ee33297a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-12 14:11:36,696 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 326] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$27c76b4c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-12 14:11:38,270 [INFO] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 91] Tomcat initialized with port(s): 8081 (http)
+2019-03-12 14:11:38,340 [INFO] [main] org.apache.catalina.core.StandardService [DirectJDKLog.java : 180] Starting service [Tomcat]
+2019-03-12 14:11:38,342 [INFO] [main] org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 180] Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-03-12 14:11:38,368 [INFO] [localhost-startStop-1] org.apache.catalina.core.AprLifecycleListener [DirectJDKLog.java : 180] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-11.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.1\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Redis\;C:\java\apache-maven-3.5.0\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-03-12 14:11:38,659 [INFO] [localhost-startStop-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/renren-api] [DirectJDKLog.java : 180] Initializing Spring embedded WebApplicationContext
+2019-03-12 14:11:38,660 [INFO] [localhost-startStop-1] org.springframework.web.context.ContextLoader [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 9404 ms
+2019-03-12 14:11:39,042 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-12 14:11:39,045 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-12 14:11:39,046 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-12 14:11:39,047 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-12 14:11:39,048 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'xssFilter' to urls: [/*]
+2019-03-12 14:11:39,049 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-12 14:11:39,049 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'configureCorsFilter' to: [/*]
+2019-03-12 14:11:39,050 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 187] Servlet dispatcherServlet mapped to [/]
+2019-03-12 14:11:39,055 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 187] Servlet statViewServlet mapped to [/druid/*]
+2019-03-12 14:11:39,724 [INFO] [main] c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
+2019-03-12 14:11:41,061 [INFO] [main] com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 930] {dataSource-1} inited
+2019-03-12 14:11:44,390 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-12 14:11:44,475 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:11:44,555 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-12 14:11:44,813 [INFO] [main] io.lettuce.core.EpollProvider [Slf4JLogger.java : 101] Starting without optional epoll library
+2019-03-12 14:11:44,817 [INFO] [main] io.lettuce.core.KqueueProvider [Slf4JLogger.java : 101] Starting without optional kqueue library
+2019-03-12 14:11:47,739 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/login],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.login(io.renren.form.LoginForm)
+2019-03-12 14:11:47,742 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/loginByCode],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.loginByCode(io.renren.form.LoginForm,javax.servlet.http.HttpServletRequest)
+2019-03-12 14:11:47,744 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/getCode],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.getCode(io.renren.form.CodeForm,javax.servlet.http.HttpServletRequest)
+2019-03-12 14:11:47,745 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/logout],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.logout(long)
+2019-03-12 14:11:47,752 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/register],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiRegisterController.register(io.renren.form.RegisterForm)
+2019-03-12 14:11:47,767 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/userId],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.userInfo(java.lang.Integer)
+2019-03-12 14:11:47,769 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/userInfo],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.userInfo(io.renren.entity.UserEntity)
+2019-03-12 14:11:47,777 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/notToken],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.notToken()
+2019-03-12 14:11:47,785 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/goods/list],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.GoodsController.list()
+2019-03-12 14:11:47,786 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/goods/{id}],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.GoodsController.goodsDetail(java.lang.Long)
+2019-03-12 14:11:47,794 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/msite/bannerAndNav],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.MSiteController.bannerList()
+2019-03-12 14:11:47,815 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/secKill/killGoods],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.SecKillController.secKill(io.renren.form.SecKillForm,io.renren.entity.UserEntity)
+2019-03-12 14:11:47,817 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/secKill/result],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.SecKillController.miaoshaResult(io.renren.entity.UserEntity,long)
+2019-03-12 14:11:47,833 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-03-12 14:11:47,838 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-03-12 14:11:47,841 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-03-12 14:11:48,127 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-12 14:11:48,129 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-12 14:11:48,532 [INFO] [main] s.d.spring.web.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-03-12 14:11:48,970 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 14:11:49,529 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java : 588] Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4b7e96a: startup date [Tue Mar 12 14:11:29 CST 2019]; root of context hierarchy
+2019-03-12 14:11:49,675 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 14:11:49,675 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 14:11:49,776 [INFO] [main] o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [ExceptionHandlerExceptionResolver.java : 288] Detected @ExceptionHandler methods in RRExceptionHandler
+2019-03-12 14:11:51,225 [INFO] [main] org.springframework.ui.freemarker.SpringTemplateLoader [SpringTemplateLoader.java : 62] SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4b7e96a: startup date [Tue Mar 12 14:11:29 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
+2019-03-12 14:11:51,231 [INFO] [main] o.s.web.servlet.view.freemarker.FreeMarkerConfigurer [FreeMarkerConfigurer.java : 131] ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-03-12 14:11:51,751 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 433] Registering beans for JMX exposure on startup
+2019-03-12 14:11:51,759 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'statFilter' has been autodetected for JMX exposure
+2019-03-12 14:11:51,760 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-12 14:11:51,781 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'rabbitConnectionFactory' has been autodetected for JMX exposure
+2019-03-12 14:11:51,790 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 668] Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2019-03-12 14:11:51,794 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 675] Located managed bean 'rabbitConnectionFactory': registering with JMX server as MBean [org.springframework.amqp.rabbit.connection:name=rabbitConnectionFactory,type=CachingConnectionFactory]
+2019-03-12 14:11:51,873 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 668] Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2019-03-12 14:11:51,942 [INFO] [main] o.springframework.context.support.DefaultLifecycleProcessor [DefaultLifecycleProcessor.java : 356] Starting beans in phase 2147483647
+2019-03-12 14:11:51,944 [INFO] [main] s.d.spring.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 147] Context refreshed
+2019-03-12 14:11:52,024 [INFO] [main] s.d.spring.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 150] Found 1 custom documentation plugin(s)
+2019-03-12 14:11:52,226 [INFO] [main] s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2019-03-12 14:11:52,765 [INFO] [main] s.d.s.web.readers.operation.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: userInfoUsingGET_1
+2019-03-12 14:11:52,819 [INFO] [SimpleAsyncTaskExecutor-2] o.s.amqp.rabbit.connection.CachingConnectionFactory [AbstractConnectionFactory.java : 455] Attempting to connect to: [localhost:5672]
+2019-03-12 14:11:52,939 [INFO] [SimpleAsyncTaskExecutor-2] o.s.amqp.rabbit.connection.CachingConnectionFactory [AbstractConnectionFactory.java : 471] Created new connection: rabbitConnectionFactory#17dbca0a:0/SimpleConnection@3f01b0fb [delegate=amqp://guest@127.0.0.1:5672/, localPort= 63086]
+2019-03-12 14:11:54,088 [INFO] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 206] Tomcat started on port(s): 8081 (http) with context path '/renren-api'
+2019-03-12 14:11:54,106 [INFO] [main] io.renren.ApiApplication [StartupInfoLogger.java : 59] Started ApiApplication in 27.23 seconds (JVM running for 29.642)
+2019-03-12 14:12:02,743 [INFO] [http-nio-8081-exec-30] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/renren-api] [DirectJDKLog.java : 180] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-12 14:12:02,744 [INFO] [http-nio-8081-exec-30] org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 494] FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-12 14:12:02,813 [INFO] [http-nio-8081-exec-30] org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 509] FrameworkServlet 'dispatcherServlet': initialization completed in 67 ms
+2019-03-12 14:12:02,923 [DEBUG] [http-nio-8081-exec-29] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-12 14:12:02,926 [DEBUG] [http-nio-8081-exec-29] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:12:02,950 [DEBUG] [http-nio-8081-exec-29] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-12 14:12:03,067 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.TbBannerDao.selectList [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT id AS id,img_url AS imgUrl,link_url AS linkUrl,order_num AS orderNum FROM tb_banner 
+2019-03-12 14:12:03,071 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.TbBannerDao.selectList [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:12:03,085 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.TbBannerDao.selectList [BaseJdbcLogger.java : 159] <==      Total: 7
+2019-03-12 14:12:05,640 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-12 14:12:05,648 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:12:05,653 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:12:05,697 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc 
+2019-03-12 14:12:05,699 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:12:05,709 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-12 14:12:05,736 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by sort_num asc 
+2019-03-12 14:12:05,737 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:12:05,757 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 37
+2019-03-12 14:12:05,784 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-12 14:12:05,786 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:12:05,796 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:13:13,088 [DEBUG] [http-nio-8081-exec-26] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-12 14:13:13,089 [DEBUG] [http-nio-8081-exec-26] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:13:13,096 [DEBUG] [http-nio-8081-exec-26] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-12 14:13:14,290 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-12 14:13:14,292 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:13:14,296 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:13:14,299 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc 
+2019-03-12 14:13:14,300 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:13:14,304 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-12 14:13:14,309 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by sort_num asc 
+2019-03-12 14:13:14,310 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:13:14,330 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 37
+2019-03-12 14:13:14,332 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-12 14:13:14,333 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:13:14,336 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:17:07,085 [INFO] [main] io.renren.ApiApplication [StartupInfoLogger.java : 50] Starting ApiApplication on SC-201811251034 with PID 9748 (C:\code\java\springboot\renren-security\renren-api\target\classes started by Administrator in C:\code\java\springboot\renren-security)
+2019-03-12 14:17:07,094 [DEBUG] [main] io.renren.ApiApplication [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2019-03-12 14:17:07,097 [INFO] [main] io.renren.ApiApplication [SpringApplication.java : 684] The following profiles are active: dev
+2019-03-12 14:17:07,269 [INFO] [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java : 590] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@297ea53a: startup date [Tue Mar 12 14:17:07 CST 2019]; root of context hierarchy
+2019-03-12 14:17:14,036 [INFO] [main] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 172] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-12 14:17:15,849 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 326] Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$819ac7de] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-12 14:17:16,140 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 326] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bb2f09b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-12 14:17:17,881 [INFO] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 91] Tomcat initialized with port(s): 8081 (http)
+2019-03-12 14:17:17,957 [INFO] [main] org.apache.catalina.core.StandardService [DirectJDKLog.java : 180] Starting service [Tomcat]
+2019-03-12 14:17:17,959 [INFO] [main] org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 180] Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-03-12 14:17:17,985 [INFO] [localhost-startStop-1] org.apache.catalina.core.AprLifecycleListener [DirectJDKLog.java : 180] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-11.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.1\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Redis\;C:\java\apache-maven-3.5.0\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-03-12 14:17:18,324 [INFO] [localhost-startStop-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/renren-api] [DirectJDKLog.java : 180] Initializing Spring embedded WebApplicationContext
+2019-03-12 14:17:18,327 [INFO] [localhost-startStop-1] org.springframework.web.context.ContextLoader [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 11058 ms
+2019-03-12 14:17:18,682 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-12 14:17:18,684 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-12 14:17:18,685 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-12 14:17:18,687 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-12 14:17:18,688 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'xssFilter' to urls: [/*]
+2019-03-12 14:17:18,689 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-12 14:17:18,690 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'configureCorsFilter' to: [/*]
+2019-03-12 14:17:18,691 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 187] Servlet dispatcherServlet mapped to [/]
+2019-03-12 14:17:18,696 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 187] Servlet statViewServlet mapped to [/druid/*]
+2019-03-12 14:17:19,322 [INFO] [main] c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
+2019-03-12 14:17:20,672 [INFO] [main] com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 930] {dataSource-1} inited
+2019-03-12 14:17:25,136 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-12 14:17:25,344 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:17:25,487 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-12 14:17:25,934 [INFO] [main] io.lettuce.core.EpollProvider [Slf4JLogger.java : 101] Starting without optional epoll library
+2019-03-12 14:17:25,952 [INFO] [main] io.lettuce.core.KqueueProvider [Slf4JLogger.java : 101] Starting without optional kqueue library
+2019-03-12 14:17:28,285 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/loginByCode],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.loginByCode(io.renren.form.LoginForm,javax.servlet.http.HttpServletRequest)
+2019-03-12 14:17:28,290 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/getCode],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.getCode(io.renren.form.CodeForm,javax.servlet.http.HttpServletRequest)
+2019-03-12 14:17:28,291 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/logout],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.logout(long)
+2019-03-12 14:17:28,293 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/login],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.login(io.renren.form.LoginForm)
+2019-03-12 14:17:28,298 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/register],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiRegisterController.register(io.renren.form.RegisterForm)
+2019-03-12 14:17:28,307 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/userId],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.userInfo(java.lang.Integer)
+2019-03-12 14:17:28,308 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/userInfo],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.userInfo(io.renren.entity.UserEntity)
+2019-03-12 14:17:28,329 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/notToken],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.notToken()
+2019-03-12 14:17:28,335 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/goods/list],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.GoodsController.list()
+2019-03-12 14:17:28,337 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/goods/{id}],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.GoodsController.goodsDetail(java.lang.Long)
+2019-03-12 14:17:28,342 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/msite/bannerAndNav],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.MSiteController.bannerList()
+2019-03-12 14:17:28,346 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/secKill/killGoods],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.SecKillController.secKill(io.renren.form.SecKillForm,io.renren.entity.UserEntity)
+2019-03-12 14:17:28,350 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/secKill/result],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.SecKillController.miaoshaResult(io.renren.entity.UserEntity,long)
+2019-03-12 14:17:28,391 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-03-12 14:17:28,393 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-03-12 14:17:28,395 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-03-12 14:17:28,404 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-12 14:17:28,407 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-12 14:17:28,776 [INFO] [main] s.d.spring.web.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-03-12 14:17:29,137 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 14:17:29,638 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java : 588] Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@297ea53a: startup date [Tue Mar 12 14:17:07 CST 2019]; root of context hierarchy
+2019-03-12 14:17:29,802 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 14:17:29,802 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 14:17:29,851 [INFO] [main] o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [ExceptionHandlerExceptionResolver.java : 288] Detected @ExceptionHandler methods in RRExceptionHandler
+2019-03-12 14:17:31,047 [INFO] [main] org.springframework.ui.freemarker.SpringTemplateLoader [SpringTemplateLoader.java : 62] SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@297ea53a: startup date [Tue Mar 12 14:17:07 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
+2019-03-12 14:17:31,050 [INFO] [main] o.s.web.servlet.view.freemarker.FreeMarkerConfigurer [FreeMarkerConfigurer.java : 131] ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-03-12 14:17:31,589 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 433] Registering beans for JMX exposure on startup
+2019-03-12 14:17:31,601 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'statFilter' has been autodetected for JMX exposure
+2019-03-12 14:17:31,603 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-12 14:17:31,649 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'rabbitConnectionFactory' has been autodetected for JMX exposure
+2019-03-12 14:17:31,664 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 668] Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2019-03-12 14:17:31,674 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 675] Located managed bean 'rabbitConnectionFactory': registering with JMX server as MBean [org.springframework.amqp.rabbit.connection:name=rabbitConnectionFactory,type=CachingConnectionFactory]
+2019-03-12 14:17:31,772 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 668] Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2019-03-12 14:17:31,897 [INFO] [main] o.springframework.context.support.DefaultLifecycleProcessor [DefaultLifecycleProcessor.java : 356] Starting beans in phase 2147483647
+2019-03-12 14:17:31,908 [INFO] [main] s.d.spring.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 147] Context refreshed
+2019-03-12 14:17:31,991 [INFO] [main] s.d.spring.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 150] Found 1 custom documentation plugin(s)
+2019-03-12 14:17:32,170 [INFO] [main] s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2019-03-12 14:17:32,888 [INFO] [main] s.d.s.web.readers.operation.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: userInfoUsingGET_1
+2019-03-12 14:17:33,028 [INFO] [SimpleAsyncTaskExecutor-1] o.s.amqp.rabbit.connection.CachingConnectionFactory [AbstractConnectionFactory.java : 455] Attempting to connect to: [localhost:5672]
+2019-03-12 14:17:33,322 [INFO] [SimpleAsyncTaskExecutor-1] o.s.amqp.rabbit.connection.CachingConnectionFactory [AbstractConnectionFactory.java : 471] Created new connection: rabbitConnectionFactory#74844216:0/SimpleConnection@1bbeb1f4 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 63535]
+2019-03-12 14:17:34,402 [INFO] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 206] Tomcat started on port(s): 8081 (http) with context path '/renren-api'
+2019-03-12 14:17:34,416 [INFO] [main] io.renren.ApiApplication [StartupInfoLogger.java : 59] Started ApiApplication in 29.963 seconds (JVM running for 32.192)
+2019-03-12 14:17:43,249 [INFO] [http-nio-8081-exec-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/renren-api] [DirectJDKLog.java : 180] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-12 14:17:43,250 [INFO] [http-nio-8081-exec-1] org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 494] FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-12 14:17:43,352 [INFO] [http-nio-8081-exec-1] org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 509] FrameworkServlet 'dispatcherServlet': initialization completed in 101 ms
+2019-03-12 14:17:43,705 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-12 14:17:43,709 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:17:43,715 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:17:43,797 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc 
+2019-03-12 14:17:43,799 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:17:43,812 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-12 14:17:43,842 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by sort_num asc 
+2019-03-12 14:17:43,844 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:17:43,864 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 37
+2019-03-12 14:17:44,047 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-12 14:17:44,093 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:17:44,110 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:22:34,056 [DEBUG] [http-nio-8081-exec-2] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-12 14:22:34,058 [DEBUG] [http-nio-8081-exec-2] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:22:34,063 [DEBUG] [http-nio-8081-exec-2] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:22:34,066 [DEBUG] [http-nio-8081-exec-2] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc 
+2019-03-12 14:22:34,069 [DEBUG] [http-nio-8081-exec-2] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:22:34,123 [INFO] [http-nio-8081-exec-2] o.springframework.beans.factory.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-03-12 14:22:34,223 [ERROR] [http-nio-8081-exec-2] io.renren.exception.RRExceptionHandler [RRExceptionHandler.java : 58] 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy88.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy102.getByGoodsId(Unknown Source)
+	at io.renren.service.impl.GoodsImgServiceImpl.getByGoodsId(GoodsImgServiceImpl.java:23)
+	at io.renren.service.impl.GoodsImgServiceImpl$$FastClassBySpringCGLIB$$e2d4f919.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at io.renren.service.impl.GoodsImgServiceImpl$$EnhancerBySpringCGLIB$$c14cda63.getByGoodsId(<generated>)
+	at io.renren.controller.GoodsController.goodsDetail(GoodsController.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at io.renren.common.xss.XssFilter.doFilter(XssFilter.java:39)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:939)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3878)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3814)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2478)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2625)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2551)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1192)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy111.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:136)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 81 common frames omitted
+2019-03-12 14:22:34,233 [WARN] [http-nio-8081-exec-2] o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 140] Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause']
+2019-03-12 14:24:08,947 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-12 14:24:08,949 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:24:08,954 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:24:08,957 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc 
+2019-03-12 14:24:08,959 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:24:08,975 [ERROR] [http-nio-8081-exec-5] io.renren.exception.RRExceptionHandler [RRExceptionHandler.java : 58] 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy88.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy102.getByGoodsId(Unknown Source)
+	at io.renren.service.impl.GoodsImgServiceImpl.getByGoodsId(GoodsImgServiceImpl.java:23)
+	at io.renren.service.impl.GoodsImgServiceImpl$$FastClassBySpringCGLIB$$e2d4f919.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at io.renren.service.impl.GoodsImgServiceImpl$$EnhancerBySpringCGLIB$$c14cda63.getByGoodsId(<generated>)
+	at io.renren.controller.GoodsController.goodsDetail(GoodsController.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at io.renren.common.xss.XssFilter.doFilter(XssFilter.java:39)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:939)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3878)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3814)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2478)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2625)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2551)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1192)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy111.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:136)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 81 common frames omitted
+2019-03-12 14:24:08,985 [WARN] [http-nio-8081-exec-5] o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 140] Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause']
+2019-03-12 14:24:45,385 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-12 14:24:45,387 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:24:45,391 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:24:45,394 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc 
+2019-03-12 14:24:45,396 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:24:45,403 [ERROR] [http-nio-8081-exec-7] io.renren.exception.RRExceptionHandler [RRExceptionHandler.java : 58] 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy88.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy102.getByGoodsId(Unknown Source)
+	at io.renren.service.impl.GoodsImgServiceImpl.getByGoodsId(GoodsImgServiceImpl.java:23)
+	at io.renren.service.impl.GoodsImgServiceImpl$$FastClassBySpringCGLIB$$e2d4f919.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at io.renren.service.impl.GoodsImgServiceImpl$$EnhancerBySpringCGLIB$$c14cda63.getByGoodsId(<generated>)
+	at io.renren.controller.GoodsController.goodsDetail(GoodsController.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at io.renren.common.xss.XssFilter.doFilter(XssFilter.java:39)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:939)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3878)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3814)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2478)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2625)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2551)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1192)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy111.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:136)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 81 common frames omitted
+2019-03-12 14:24:45,413 [WARN] [http-nio-8081-exec-7] o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 140] Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause']
+2019-03-12 14:25:07,597 [DEBUG] [http-nio-8081-exec-6] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-12 14:25:07,598 [DEBUG] [http-nio-8081-exec-6] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:25:07,612 [DEBUG] [http-nio-8081-exec-6] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-12 14:25:09,535 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-12 14:25:09,537 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:25:09,541 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:25:09,544 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc 
+2019-03-12 14:25:09,546 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:25:09,554 [ERROR] [http-nio-8081-exec-9] io.renren.exception.RRExceptionHandler [RRExceptionHandler.java : 58] 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy88.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy102.getByGoodsId(Unknown Source)
+	at io.renren.service.impl.GoodsImgServiceImpl.getByGoodsId(GoodsImgServiceImpl.java:23)
+	at io.renren.service.impl.GoodsImgServiceImpl$$FastClassBySpringCGLIB$$e2d4f919.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at io.renren.service.impl.GoodsImgServiceImpl$$EnhancerBySpringCGLIB$$c14cda63.getByGoodsId(<generated>)
+	at io.renren.controller.GoodsController.goodsDetail(GoodsController.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at io.renren.common.xss.XssFilter.doFilter(XssFilter.java:39)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:939)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3878)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3814)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2478)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2625)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2551)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1192)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy111.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:136)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 81 common frames omitted
+2019-03-12 14:25:09,564 [WARN] [http-nio-8081-exec-9] o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 140] Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+### The error may exist in io/renren/dao/GoodsImgDao.java (best guess)
+### The error may involve io.renren.dao.GoodsImgDao.getByGoodsId-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM goods_img WHERE goods_id=? order by sort_num asc
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sort_num' in 'order clause']
+2019-03-12 14:27:37,689 [INFO] [main] io.renren.ApiApplication [StartupInfoLogger.java : 50] Starting ApiApplication on SC-201811251034 with PID 4368 (C:\code\java\springboot\renren-security\renren-api\target\classes started by Administrator in C:\code\java\springboot\renren-security)
+2019-03-12 14:27:37,699 [DEBUG] [main] io.renren.ApiApplication [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2019-03-12 14:27:37,703 [INFO] [main] io.renren.ApiApplication [SpringApplication.java : 684] The following profiles are active: dev
+2019-03-12 14:27:38,128 [INFO] [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java : 590] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e63ec0b: startup date [Tue Mar 12 14:27:38 CST 2019]; root of context hierarchy
+2019-03-12 14:27:42,705 [INFO] [main] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 172] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-12 14:27:43,943 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 326] Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$5a04a723] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-12 14:27:44,224 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 326] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9398e8f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-12 14:27:45,992 [INFO] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 91] Tomcat initialized with port(s): 8081 (http)
+2019-03-12 14:27:46,068 [INFO] [main] org.apache.catalina.core.StandardService [DirectJDKLog.java : 180] Starting service [Tomcat]
+2019-03-12 14:27:46,069 [INFO] [main] org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 180] Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-03-12 14:27:46,097 [INFO] [localhost-startStop-1] org.apache.catalina.core.AprLifecycleListener [DirectJDKLog.java : 180] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-11.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.1\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Redis\;C:\java\apache-maven-3.5.0\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-03-12 14:27:46,593 [INFO] [localhost-startStop-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/renren-api] [DirectJDKLog.java : 180] Initializing Spring embedded WebApplicationContext
+2019-03-12 14:27:46,594 [INFO] [localhost-startStop-1] org.springframework.web.context.ContextLoader [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 8466 ms
+2019-03-12 14:27:47,230 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-12 14:27:47,232 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-12 14:27:47,233 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-12 14:27:47,234 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-12 14:27:47,235 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'xssFilter' to urls: [/*]
+2019-03-12 14:27:47,236 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-12 14:27:47,236 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'configureCorsFilter' to: [/*]
+2019-03-12 14:27:47,246 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 187] Servlet dispatcherServlet mapped to [/]
+2019-03-12 14:27:47,250 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 187] Servlet statViewServlet mapped to [/druid/*]
+2019-03-12 14:27:47,905 [INFO] [main] c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
+2019-03-12 14:27:48,924 [INFO] [main] com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 930] {dataSource-1} inited
+2019-03-12 14:27:52,532 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-12 14:27:52,614 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:27:52,683 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-12 14:27:53,042 [INFO] [main] io.lettuce.core.EpollProvider [Slf4JLogger.java : 101] Starting without optional epoll library
+2019-03-12 14:27:53,053 [INFO] [main] io.lettuce.core.KqueueProvider [Slf4JLogger.java : 101] Starting without optional kqueue library
+2019-03-12 14:27:55,402 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/logout],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.logout(long)
+2019-03-12 14:27:55,405 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/getCode],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.getCode(io.renren.form.CodeForm,javax.servlet.http.HttpServletRequest)
+2019-03-12 14:27:55,406 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/login],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.login(io.renren.form.LoginForm)
+2019-03-12 14:27:55,408 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/loginByCode],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.loginByCode(io.renren.form.LoginForm,javax.servlet.http.HttpServletRequest)
+2019-03-12 14:27:55,411 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/register],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiRegisterController.register(io.renren.form.RegisterForm)
+2019-03-12 14:27:55,424 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/userId],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.userInfo(java.lang.Integer)
+2019-03-12 14:27:55,426 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/userInfo],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.userInfo(io.renren.entity.UserEntity)
+2019-03-12 14:27:55,428 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/notToken],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.notToken()
+2019-03-12 14:27:55,432 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/goods/list],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.GoodsController.list()
+2019-03-12 14:27:55,433 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/goods/{id}],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.GoodsController.goodsDetail(java.lang.Long)
+2019-03-12 14:27:55,436 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/msite/bannerAndNav],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.MSiteController.bannerList()
+2019-03-12 14:27:55,439 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/secKill/killGoods],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.SecKillController.secKill(io.renren.form.SecKillForm,io.renren.entity.UserEntity)
+2019-03-12 14:27:55,440 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/secKill/result],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.SecKillController.miaoshaResult(io.renren.entity.UserEntity,long)
+2019-03-12 14:27:55,455 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-03-12 14:27:55,458 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-03-12 14:27:55,460 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-03-12 14:27:55,466 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-12 14:27:55,468 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-12 14:27:55,843 [INFO] [main] s.d.spring.web.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-03-12 14:27:56,228 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 14:27:56,695 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java : 588] Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e63ec0b: startup date [Tue Mar 12 14:27:38 CST 2019]; root of context hierarchy
+2019-03-12 14:27:56,854 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 14:27:56,855 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-12 14:27:56,896 [INFO] [main] o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [ExceptionHandlerExceptionResolver.java : 288] Detected @ExceptionHandler methods in RRExceptionHandler
+2019-03-12 14:27:57,912 [INFO] [main] org.springframework.ui.freemarker.SpringTemplateLoader [SpringTemplateLoader.java : 62] SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e63ec0b: startup date [Tue Mar 12 14:27:38 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
+2019-03-12 14:27:57,914 [INFO] [main] o.s.web.servlet.view.freemarker.FreeMarkerConfigurer [FreeMarkerConfigurer.java : 131] ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-03-12 14:27:58,313 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 433] Registering beans for JMX exposure on startup
+2019-03-12 14:27:58,319 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'statFilter' has been autodetected for JMX exposure
+2019-03-12 14:27:58,320 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-12 14:27:58,340 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'rabbitConnectionFactory' has been autodetected for JMX exposure
+2019-03-12 14:27:58,349 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 668] Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2019-03-12 14:27:58,353 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 675] Located managed bean 'rabbitConnectionFactory': registering with JMX server as MBean [org.springframework.amqp.rabbit.connection:name=rabbitConnectionFactory,type=CachingConnectionFactory]
+2019-03-12 14:27:58,427 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 668] Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2019-03-12 14:27:58,508 [INFO] [main] o.springframework.context.support.DefaultLifecycleProcessor [DefaultLifecycleProcessor.java : 356] Starting beans in phase 2147483647
+2019-03-12 14:27:58,509 [INFO] [main] s.d.spring.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 147] Context refreshed
+2019-03-12 14:27:58,561 [INFO] [main] s.d.spring.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 150] Found 1 custom documentation plugin(s)
+2019-03-12 14:27:58,658 [INFO] [main] s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2019-03-12 14:27:59,388 [INFO] [main] s.d.s.web.readers.operation.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: userInfoUsingGET_1
+2019-03-12 14:27:59,479 [INFO] [SimpleAsyncTaskExecutor-1] o.s.amqp.rabbit.connection.CachingConnectionFactory [AbstractConnectionFactory.java : 455] Attempting to connect to: [localhost:5672]
+2019-03-12 14:27:59,678 [INFO] [SimpleAsyncTaskExecutor-1] o.s.amqp.rabbit.connection.CachingConnectionFactory [AbstractConnectionFactory.java : 471] Created new connection: rabbitConnectionFactory#10b3ea72:0/SimpleConnection@2cd9c2ab [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64373]
+2019-03-12 14:28:00,358 [INFO] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 206] Tomcat started on port(s): 8081 (http) with context path '/renren-api'
+2019-03-12 14:28:00,382 [INFO] [main] io.renren.ApiApplication [StartupInfoLogger.java : 59] Started ApiApplication in 25.992 seconds (JVM running for 27.877)
+2019-03-12 14:28:05,225 [INFO] [http-nio-8081-exec-29] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/renren-api] [DirectJDKLog.java : 180] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-12 14:28:05,226 [INFO] [http-nio-8081-exec-29] org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 494] FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-12 14:28:05,302 [INFO] [http-nio-8081-exec-29] org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 509] FrameworkServlet 'dispatcherServlet': initialization completed in 75 ms
+2019-03-12 14:28:05,467 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-12 14:28:05,469 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:28:05,497 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-12 14:28:06,222 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-12 14:28:06,226 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:28:06,232 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:28:06,281 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-12 14:28:06,284 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:28:06,294 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-12 14:28:06,325 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-12 14:28:06,327 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:28:06,364 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 37
+2019-03-12 14:28:06,537 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-12 14:28:06,543 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:28:06,556 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:37:26,178 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-12 14:37:26,180 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:37:26,188 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-12 14:37:28,444 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-12 14:37:28,445 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:37:28,484 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:37:28,487 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-12 14:37:28,488 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:37:28,492 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-12 14:37:28,496 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-12 14:37:28,498 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:37:28,508 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 37
+2019-03-12 14:37:28,510 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-12 14:37:28,511 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:37:28,513 [DEBUG] [http-nio-8081-exec-23] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:38:12,156 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-12 14:38:12,158 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:38:12,162 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-12 14:38:12,165 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-12 14:38:12,167 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:38:12,171 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-12 14:38:12,174 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-12 14:38:12,176 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-12 14:38:12,228 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 37
+2019-03-12 14:38:12,231 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-12 14:38:12,232 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-12 14:38:12,236 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1

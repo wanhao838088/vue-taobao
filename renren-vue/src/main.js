@@ -5,15 +5,21 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import { Button, Select } from 'element-ui';
-
+import VueLazyload from 'vue-lazyload'
 import store from './store/index'
 
 // 加载过滤器
 import './fiters'
 import {generateUUID,setDeviceId,getDeviceId} from './utils/utils'
+import loading from './common/imgs/loading.gif'
 
 Vue.component(Button.name, Button);
 Vue.component(Select.name, Select);
+
+Vue.use(VueLazyload, {
+  // 内部自定义一个指令lazy
+  loading
+});
 
 Vue.config.productionTip = false;
 

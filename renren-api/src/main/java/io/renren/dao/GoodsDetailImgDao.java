@@ -19,6 +19,6 @@ public interface GoodsDetailImgDao extends BaseMapper<GoodsDetailImg> {
      * @param goodsId 商品id
      * @return
      */
-    @Select("SELECT * FROM goods_detail_img WHERE goods_id=#{goodsId} order by sort_num asc")
+    @Select("SELECT * FROM goods_detail_img WHERE goods_id=#{goodsId} order by order_num asc")
     List<GoodsDetailImg> getByGoodsId(@Param("goodsId") Long goodsId);
 }

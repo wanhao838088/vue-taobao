@@ -2,7 +2,7 @@
   <div class="d-price">
     <div class="present-price">
       <div class="main-price-wrapper">
-        <p class="o-t-price"><span class="num">{{goodsDetail.miaoshaPrice}}</span></p>
+        <p class="o-t-price"><span class="num">{{goodsDetail.goodsPrice}}</span></p>
         <p class="txt"><span>巨优惠</span></p>
       </div>
     </div>
@@ -10,7 +10,7 @@
     <div class="original-price">
       <div style="float: left;margin-right: 0.24rem;">
         价格:￥
-        <del>{{goodsDetail.goodsPrice}}</del>
+        <del>{{goodsDetail.orgPrice}}</del>
       </div>
     </div>
   </div>

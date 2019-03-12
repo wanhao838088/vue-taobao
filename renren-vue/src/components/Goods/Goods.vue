@@ -7,9 +7,7 @@
         <!--轮播图-->
         <div class="tpl-wrapper">
           <div v-if="goodsImgs.length>0" class="swiper-container">
-            <!--类型分类-->
             <div class="swiper-wrapper">
-              <!--  一共有2片区域  -->
               <div class="swiper-slide" v-for="(cs,index) in goodsImgs" :key="index">
                 <img class="banner-img" :src="cs.imgUrl" alt="">
               </div>
@@ -62,7 +60,7 @@
         <PageSplit></PageSplit>
 
         <!--评价部分-->
-        <GoodsComments :goodsDetail="detail"></GoodsComments>
+        <GoodsComments :commentsCount="commentsCount"></GoodsComments>
 
         <!--商品详情-->
         <div class="detail-desc">
@@ -75,6 +73,11 @@
             </div>
             <span class="line"></span>
           </div>
+          <!--详情图片-->
+          <img class="desc-img" v-lazy="gd.imgUrl"
+               alt="" v-for="(gd,index) in goodsDetailImgs"
+               :key="index"/>
+
         </div>
 
         <!--<p>库存数量: {{detail.stockCount}}</p>-->
@@ -125,6 +128,7 @@
         detail:{},//商品详情
         miaoshaStatus:0,
         remainSeconds:0,
+        commentsCount:0,//评论总数
         goodsImgs:[],//商品顶部轮播图
         goodsDetailImgs:[],//商品详情图
         //服务
@@ -239,6 +243,8 @@
           this.goodsImgs = result.goodsImgs;
           //详情图
           this.goodsDetailImgs = result.goodsDetailImgs;
+          //评论
+          this.commentsCount = result.commentsCount;
 
           this._initSeconds();
           this._initTopImgs();
@@ -313,6 +319,11 @@
         background-color: #fff;
         min-height: 5rem;
         padding-top: 0.12rem;
+        .desc-img
+          display: block;
+          max-width: 100%;
+          margin: 0 auto;
+          min-height: 0.5rem;
         .divide-bar
           background-color: #f2f2f2;
           color: #999;
