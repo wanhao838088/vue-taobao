@@ -63,22 +63,7 @@
         <GoodsComments :commentsCount="commentsCount"></GoodsComments>
 
         <!--商品详情-->
-        <div class="detail-desc">
-          <div class="divide-bar">
-            <span class="line"></span>
-
-            <div class="icon-info">
-              <i class="iconfont icon-tupian"></i>
-              <span class="icon-text">详情</span>
-            </div>
-            <span class="line"></span>
-          </div>
-          <!--详情图片-->
-          <img class="desc-img" v-lazy="gd.imgUrl"
-               alt="" v-for="(gd,index) in goodsDetailImgs"
-               :key="index"/>
-
-        </div>
+        <GoodsDetailDesc :goodsDetailImgs="goodsDetailImgs"></GoodsDetailDesc>
 
         <!--<p>库存数量: {{detail.stockCount}}</p>-->
         <!--<p>秒杀开始时间: {{detail.startTime | date-format}}</p>-->
@@ -109,18 +94,19 @@
 
   import "swiper/dist/css/swiper.min.css"
   import Swiper from 'swiper'
+  import { MessageBox } from 'element-ui'
+  import { Message } from 'element-ui'
+
   import {reqGoodsDetail,reqSecKill,reqSecKillResult}  from '../../api'
 
   import {getToken}  from '../../utils/utils'
-  import HeaderTop from '../../components/HeaderTop/HeaderTop'
-  import { MessageBox } from 'element-ui'
-  import { Message } from 'element-ui'
   import MenuRow from '../MenuRow/MenuRow'
   import PageSplit from '../PageSplit/PageSplit'
   import GoodsBar from '../GoodsBar/GoodsBar'
   import GoodsPrice from '../GoodsPrice/GoodsPrice'
   import GoodsComments from '../GoodsComments/GoodsComments'
   import GoodsBottomBar from '../GoodsBottomBar/GoodsBottomBar'
+  import GoodsDetailDesc from '../GoodsDetailDesc/GoodsDetailDesc'
 
   export default {
     data(){
@@ -290,13 +276,13 @@
       }
     },
     components:{
-      HeaderTop,
       MenuRow,
       PageSplit,
       GoodsBar,
       GoodsPrice,
       GoodsComments,
-      GoodsBottomBar
+      GoodsBottomBar,
+      GoodsDetailDesc
     }
 
   }
@@ -314,40 +300,6 @@
       top 0;
       .banner-img
         width 100%
-      .detail-desc
-        width: 100%;
-        background-color: #fff;
-        min-height: 5rem;
-        padding-top: 0.12rem;
-        .desc-img
-          display: block;
-          max-width: 100%;
-          margin: 0 auto;
-          min-height: 0.5rem;
-        .divide-bar
-          background-color: #f2f2f2;
-          color: #999;
-          display: flex;
-          height 0.8rem;
-          justify-content: center;
-          align-items: center;
-          padding: 0.08rem 0;
-          font-size: 0;
-          .line
-            display: inline-block;
-            width: 1.4rem;
-            border-top: 0.03rem solid #999;
-          .icon-info
-            position: relative;
-            top: -0.01rem;
-            margin: 0 0.08rem;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            .icon-text
-              font-size: 0.3rem;
-              margin-left: 0.1rem;
       .detail_subinfo
         display: flex;
         overflow: hidden;
