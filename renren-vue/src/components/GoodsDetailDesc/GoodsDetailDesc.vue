@@ -60,5 +60,5 @@
         justify-content: center;
         .icon-text
           font-size: 0.3rem;
-          margin-left: 0.1rem;
+          padding-left: 0.1rem;
 </style>

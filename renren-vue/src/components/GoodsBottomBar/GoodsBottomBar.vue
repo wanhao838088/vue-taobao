@@ -1,24 +1,24 @@
 <template>
   <div class="bottom-bar">
-    <div class="btn-shop">
+    <div style="flex: 1;">
       <i class="iconfont icon-dianpu" style="color: #ff5000;"></i>
       <span class="btn-text">店铺</span>
     </div>
-    <div class="btn-wangwang">
+    <div style="flex: 1;">
       <i class="iconfont icon-kefu"></i>
       <span class="btn-text">客服</span>
     </div>
 
-    <div class="btn-fav">
+    <div style="flex: 1;">
       <i class="iconfont icon-shoucang"></i>
       <span class="btn-text">收藏</span>
     </div>
     <div class="bottom-bar-btn cart ">
-      <span class="btn-title">加入购物车</span><!-- empty -->
+      <span class="btn-title">加入购物车</span>
     </div>
 
-    <div class="bottom-bar-btn buy ">
-      <span class="btn-title">立即购买</span><!-- empty -->
+    <div class="bottom-bar-btn buy" style="margin-right: 0.11rem;">
+      <span class="btn-title">立即购买</span>
     </div>
   </div>
 </template>

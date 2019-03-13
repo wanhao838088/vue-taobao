@@ -12,7 +12,6 @@
                 <img class="banner-img" :src="cs.imgUrl" alt="">
               </div>
             </div>
-            <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
           </div>
         </div>
@@ -47,7 +46,7 @@
 
         <!--服务菜单-->
         <PageSplit></PageSplit>
-        <MenuRow @click.native="toggleGoodsService" :serviceData="serviceData"></MenuRow>
+        <MenuRow @click.native="goodsServiceShow=!goodsServiceShow" :serviceData="serviceData"></MenuRow>
 
         <!--规格菜单-->
         <PageSplit></PageSplit>
@@ -77,21 +76,9 @@
         </transition>
 
 
-          <!--<p>库存数量: {{detail.stockCount}}</p>-->
-        <!--<p>秒杀开始时间: {{detail.startTime | date-format}}</p>-->
-        <!--<div v-if="miaoshaStatus==1">-->
-          <!--秒杀进行中-->
-        <!--</div>-->
-        <!--<div v-else-if="miaoshaStatus==0">-->
-          <!--秒杀倒计时: <span ref="remainSeconds">{{remainSeconds}}秒</span>-->
-        <!--</div>-->
-        <!--<div v-else>-->
-          <!--秒杀已结束-->
-        <!--</div>-->
-
-
         <!--遮罩-->
-        <div class="list-mask" v-show="goodsServiceShow|goodsPropsShow" ></div>
+        <!--<div class="list-mask" @click.native="closeDialog" v-show="goodsServiceShow|goodsPropsShow"></div>-->
+
         <el-button type="primary" @click="doSecKill" :disabled="miaoshaStatus!=1" style="width: 100%;margin-top: .2rem;" >
           立即秒杀
         </el-button>
@@ -154,18 +141,13 @@
     },
 
     methods:{
-      toggleGoodsService(){
-        this.goodsServiceShow = !this.goodsServiceShow;
-      },
-      enter(el){
-        el.style.translateY = 500;
-        el.style.opacity = 1;
-      },
-      beforeEnter(el, done) {
-        console.log(el);
-        el.style.opacity = 0;
-        el.style.transform = 1;
-        console.log('进入了...')
+      /**
+       * 关闭弹框
+       */
+      closeDialog(){
+        debugger
+        this.goodsServiceShow = false;
+        this.goodsPropsShow = false;
       },
       /**
        * 轮询获取结果
@@ -352,6 +334,7 @@
     .pic-gallery-wrapper
       width 100%
       position absolute;
+      overflow: hidden;
       top 0;
       .list-mask
         position fixed
@@ -364,7 +347,7 @@
         opacity 1
         background rgba(7, 17, 27, 0.6)
       .move-enter-active, .move-leave-active
-        transition: all 0.7s;
+        transition: all 0.5s;
       .move-enter, .move-leave-to
         opacity: 0;
         transform translateY(100%)
@@ -383,7 +366,7 @@
           .detail_subinfo_item_text
             text-overflow: ellipsis;
             overflow: hidden;
-            margin-left 0.2rem;
+            padding-left 0.2rem;
             color: rgb(153, 153, 153);
             font-size: 0.35rem;
             line-height: 0.5rem;
@@ -397,7 +380,7 @@
           color: rgb(51, 51, 51);
           font-weight: bold;
           font-size 0.4rem;
-          margin-left 0.2rem
+          padding-left 0.2rem
           text-overflow: ellipsis;
           overflow: hidden;
           word-wrap: break-word;

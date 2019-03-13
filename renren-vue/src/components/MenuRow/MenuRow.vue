@@ -36,12 +36,12 @@
       overflow: hidden;
       line-height 0.7rem;
       text-align left;
-      margin-left: 0.2rem;
+      padding-left: 0.2rem;
       color: rgb(153, 153, 153);
     .guarantee_txt_right
       flex: 1;
       text-align right;
-      margin-right 0.1rem;
+      padding-right 0.1rem;
       line-height 0.7rem;
       color: rgb(204, 204, 204);
     .guarantee_txt_mid

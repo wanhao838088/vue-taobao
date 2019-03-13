@@ -51,9 +51,9 @@
           background-color: #FFF1EB;
           border-radius: 0.2rem;
           padding: 0.1rem;
-          margin-left 0.3rem;
+          padding-left 0.3rem;
           color: #ff5000;
-          margin-right: 0.1rem;
+          padding-right: 0.1rem;
         .o-t-price
           color: #ff5000;
           font-size: .7rem;
@@ -61,5 +61,5 @@
             content: '\FFE5';
             display: inline-block;
             font-size: 0.15rem;
-            margin-left: -0.035rem;
+            padding-left: -0.035rem;
 </style>

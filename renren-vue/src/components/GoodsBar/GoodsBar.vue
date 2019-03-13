@@ -20,16 +20,15 @@
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .navi-bar
-    width: 100%;
     position: absolute;
+    width: 100%;
     top: 0.2rem;
     left: 0;
     z-index: 110;
-    padding: 0 0.1rem;
     .btn-back
       position: absolute;
-      width: 0.8rem;
-      height: 0.8rem;
+      width: 0.9rem;
+      height: 0.9rem;
       border: 0;
       left: 10px;
       top 1px;
@@ -41,8 +40,8 @@
         font-size: 0.8rem;
     .btn-cart
       position: absolute;
-      width: 0.8rem;
-      height: 0.8rem;
+      width: 0.9rem;
+      height: 0.9rem;
       right 30px;
       top 1px;
       border: 0;

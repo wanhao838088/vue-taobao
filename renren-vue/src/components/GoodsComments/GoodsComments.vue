@@ -35,10 +35,10 @@
       position: absolute;
       font-size: 0.4rem;
       line-height 0.9rem;
-      margin-left: 0.2rem;
+      padding-left: 0.2rem;
       color: rgb(51, 51, 51);
     .comments_right
-      margin-right: 0.5rem;
+      padding-right: 0.5rem;
       font-size: 0.4rem;
       line-height 0.9rem;
       position: absolute;
