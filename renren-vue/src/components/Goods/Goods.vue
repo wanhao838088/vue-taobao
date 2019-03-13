@@ -65,6 +65,11 @@
         <!--商品详情-->
         <GoodsDetailDesc :goodsDetailImgs="goodsDetailImgs"></GoodsDetailDesc>
 
+
+        <!--商品服务说明部分-->
+        <GoodsService :serviceEntities="serviceEntities"></GoodsService>
+
+
         <!--<p>库存数量: {{detail.stockCount}}</p>-->
         <!--<p>秒杀开始时间: {{detail.startTime | date-format}}</p>-->
         <!--<div v-if="miaoshaStatus==1">-->
@@ -107,6 +112,7 @@
   import GoodsComments from '../GoodsComments/GoodsComments'
   import GoodsBottomBar from '../GoodsBottomBar/GoodsBottomBar'
   import GoodsDetailDesc from '../GoodsDetailDesc/GoodsDetailDesc'
+  import GoodsService from '../GoodsService/GoodsService'
 
   export default {
     data(){
@@ -119,11 +125,6 @@
         goodsDetailImgs:[],//商品详情图
         serviceEntities:[], //商品服务
         goodsProps:[], //商品属性
-        //服务
-        serviceData:{
-          name:'服务',
-          content:'7天无理由 · 运费险 · 公益宝贝 · 48小时内发货'
-        },
         //规格信息
         specData:{
           name:'规格',
@@ -233,6 +234,10 @@
           this.goodsDetailImgs = result.goodsDetailImgs;
           //评论
           this.commentsCount = result.commentsCount;
+          //服务entity
+          this.serviceEntities = result.serviceEntities;
+          //属性
+          this.goodsProps = result.goodsProps;
 
           this._initSeconds();
           this._initTopImgs();
@@ -277,6 +282,28 @@
         }
       }
     },
+    computed:{
+
+      /**
+       * 根据返回的服务计算页面显示内容
+       */
+      serviceData(){
+        let serviceEntities = this.serviceEntities;
+        let content = '';
+        serviceEntities.forEach((obj,index)=>{
+          if (index < serviceEntities.length-1) {
+            content+=obj.serviceKey+' · ';
+          }else if (index == serviceEntities.length - 1) {
+            //最后一个没有  点
+            content+=obj.serviceKey;
+          }
+        });
+        return {
+          name:'服务',
+          content
+        };
+      }
+    },
     components:{
       MenuRow,
       PageSplit,
@@ -284,7 +311,8 @@
       GoodsPrice,
       GoodsComments,
       GoodsBottomBar,
-      GoodsDetailDesc
+      GoodsDetailDesc,
+      GoodsService
     }
 
   }
