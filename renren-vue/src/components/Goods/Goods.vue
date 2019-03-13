@@ -76,9 +76,6 @@
         </transition>
 
 
-        <!--遮罩-->
-        <!--<div class="list-mask" @click.native="closeDialog" v-show="goodsServiceShow|goodsPropsShow"></div>-->
-
         <el-button type="primary" @click="doSecKill" :disabled="miaoshaStatus!=1" style="width: 100%;margin-top: .2rem;" >
           立即秒杀
         </el-button>

@@ -7,14 +7,11 @@
     <!--首页banner-->
     <nav class="msite_banner">
       <div v-if="banners.length>0" class="swiper-container" style="margin-top: -16px;">
-        <!--类型分类-->
         <div class="swiper-wrapper">
-          <!--  一共有2片区域  -->
           <div class="swiper-slide" v-for="(cs,index) in banners" :key="index">
             <img class="banner-img" :src="cs.imgUrl" alt="">
           </div>
         </div>
-        <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
       </div>
       <img src="./images/msite_back.svg" v-else>
@@ -22,7 +19,6 @@
     <!--首页nav-->
     <div class="tpl-wrapper">
       <nav class="msite_nav" view-name="DFrameLayout">
-        <!--一个item 分为图片 和文字 -->
         <div class="msite-nav-item" view-name="DLinearLayout" v-for="(nv,index) in navTop" :key="index">
           <div view-name="HGifView">
             <img class="msite-nav-item-img" :src="nv.imgUrl" alt="">
@@ -33,7 +29,6 @@
         </div>
       </nav>
       <nav class="msite_nav"  view-name="DFrameLayout">
-        <!--一个item 分为图片 和文字 -->
         <div class="msite-nav-item" style="margin-top: 0.1rem" view-name="DLinearLayout" v-for="(nv,index) in navBottom" :key="index">
           <div view-name="HGifView">
             <img class="msite-nav-item-img" :src="nv.imgUrl" alt="">
@@ -73,10 +68,9 @@
       this.getBannerAndNav(()=>{
         this.$nextTick(()=>{
           new Swiper ('.swiper-container', {
-            direction: 'horizontal', // 垂直切换选项
-            loop: true, // 循环模式选项
+            direction: 'horizontal',
+            loop: true,
             autoplay:true,
-            // 如果需要分页器
             pagination: {
               el: '.swiper-pagination',
             }

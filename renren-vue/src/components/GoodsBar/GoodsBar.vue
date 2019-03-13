@@ -1,7 +1,7 @@
 <template>
   <div class="navi-bar">
     <div style="position: relative;width: 100%">
-      <button class="btn-back"><i class="iconfont icon-fanhui1"></i></button>
+      <button @click="goBack" class="btn-back"><i class="iconfont icon-fanhui1"></i></button>
       <button class="btn-cart"><i class="iconfont icon-gouwuche-01"></i></button>
     </div>
   </div>
@@ -14,7 +14,15 @@
    * 组件
    */
   export default {
-    name: "GoodsBar"
+    name: "GoodsBar",
+    methods:{
+      /**
+       * 返回按钮
+       */
+      goBack(){
+        this.$router.back(-1);
+      }
+    }
   }
 </script>
 
