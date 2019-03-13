@@ -1,7 +1,8 @@
 <template>
   <div class="bottom-bar">
     <div class="btn-shop">
-      <i class="iconfont icon-dianpu"></i><span class="btn-text">店铺</span>
+      <i class="iconfont icon-dianpu" style="color: #ff5000;"></i>
+      <span class="btn-text">店铺</span>
     </div>
     <div class="btn-wangwang">
       <i class="iconfont icon-kefu"></i>
@@ -59,7 +60,7 @@
       color: #999;
       padding: 0 0.1rem;
     .iconfont
-      font-size 0.66rem;
+      font-size 0.6rem;
     .bottom-bar-btn
       width: 2.97rem;
       font-weight: bold;

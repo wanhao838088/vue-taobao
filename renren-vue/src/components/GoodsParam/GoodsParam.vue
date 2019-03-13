@@ -1,20 +1,19 @@
 <template>
   <div class="dialog-container">
     <div class="dialog dialog-popup">
-      <div class="dialog-title">基础服务</div>
+      <div class="dialog-title">产品参数</div>
       <div class="dialog-content">
         <div class="dialog-base-info">
           <ul class="base-info-list">
-            <li v-for="(se,index) in serviceEntities" :key="index">
-              <img class="info-icon" src="//gw.alicdn.com/tfs/TB1O4sFQpXXXXb3apXXXXXXXXXX-200-200.png">
-              <div class="info-title">{{se.serviceKey}}</div>
-              <div class="info-desc">{{se.serviceContent}}</div>
+            <li v-for="(se,index) in goodsProps" :key="index">
+              <div class="param-name">{{se.propKey}}</div>
+              <div class="param-value">{{se.propContent}}</div>
             </li>
           </ul>
         </div>
       </div>
       <div class="dialog-button-group">
-        <button class="btn-close" @click="closeService">完成</button>
+        <button class="btn-close" @click="closeProps">完成</button>
       </div>
     </div>
   </div>
@@ -23,14 +22,14 @@
 <script>
   export default {
     name: "GoodsService",
-    methods: {
-      closeService() {
+    methods:{
+      closeProps() {
         //通知父组件 关闭窗口
-        this.$emit('closeService');
+        this.$emit('closeProps');
       }
     },
-    props: {
-      serviceEntities: Array
+    props:{
+      goodsProps:Array
     }
   }
 </script>
@@ -77,10 +76,16 @@
         .dialog-base-info
           width: 100%;
           padding-left: 0.08rem;
+          .param-name
+            width: 20%;
+            color: #999;
+          .param-value
+            width: 80%;
+            padding-left: 0.15rem;
+            word-break: break-word;
           .base-info-list li
             display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
+            text-align left
             align-items: center;
             padding: 0.3rem 0;
             .info-icon

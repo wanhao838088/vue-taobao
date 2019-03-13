@@ -47,7 +47,7 @@
 
         <!--服务菜单-->
         <PageSplit></PageSplit>
-        <MenuRow :serviceData="serviceData"></MenuRow>
+        <MenuRow @click.native="toggleGoodsService" :serviceData="serviceData"></MenuRow>
 
         <!--规格菜单-->
         <PageSplit></PageSplit>
@@ -55,7 +55,7 @@
 
         <!--参数菜单-->
         <PageSplit></PageSplit>
-        <MenuRow :serviceData="paramData"></MenuRow>
+        <MenuRow @click.native="goodsPropsShow=!goodsPropsShow"  :serviceData="paramData"></MenuRow>
 
         <PageSplit></PageSplit>
 
@@ -67,10 +67,17 @@
 
 
         <!--商品服务说明部分-->
-        <GoodsService :serviceEntities="serviceEntities"></GoodsService>
+        <transition name="move">
+          <GoodsService v-show="goodsServiceShow" @closeService="goodsServiceShow=false" :serviceEntities="serviceEntities"></GoodsService>
+        </transition>
+
+        <!--商品参数说明-->
+        <transition name="move">
+          <GoodsParam v-show="goodsPropsShow" @closeProps="goodsPropsShow=false" :goodsProps="goodsProps"></GoodsParam>
+        </transition>
 
 
-        <!--<p>库存数量: {{detail.stockCount}}</p>-->
+          <!--<p>库存数量: {{detail.stockCount}}</p>-->
         <!--<p>秒杀开始时间: {{detail.startTime | date-format}}</p>-->
         <!--<div v-if="miaoshaStatus==1">-->
           <!--秒杀进行中-->
@@ -83,6 +90,8 @@
         <!--</div>-->
 
 
+        <!--遮罩-->
+        <div class="list-mask" v-show="goodsServiceShow|goodsPropsShow" ></div>
         <el-button type="primary" @click="doSecKill" :disabled="miaoshaStatus!=1" style="width: 100%;margin-top: .2rem;" >
           立即秒杀
         </el-button>
@@ -113,6 +122,7 @@
   import GoodsBottomBar from '../GoodsBottomBar/GoodsBottomBar'
   import GoodsDetailDesc from '../GoodsDetailDesc/GoodsDetailDesc'
   import GoodsService from '../GoodsService/GoodsService'
+  import GoodsParam from '../GoodsParam/GoodsParam'
 
   export default {
     data(){
@@ -120,6 +130,8 @@
         detail:{},//商品详情
         miaoshaStatus:0,
         remainSeconds:0,
+        goodsServiceShow:false,
+        goodsPropsShow:false,
         commentsCount:0,//评论总数
         goodsImgs:[],//商品顶部轮播图
         goodsDetailImgs:[],//商品详情图
@@ -142,7 +154,19 @@
     },
 
     methods:{
-
+      toggleGoodsService(){
+        this.goodsServiceShow = !this.goodsServiceShow;
+      },
+      enter(el){
+        el.style.translateY = 500;
+        el.style.opacity = 1;
+      },
+      beforeEnter(el, done) {
+        console.log(el);
+        el.style.opacity = 0;
+        el.style.transform = 1;
+        console.log('进入了...')
+      },
       /**
        * 轮询获取结果
        */
@@ -312,7 +336,8 @@
       GoodsComments,
       GoodsBottomBar,
       GoodsDetailDesc,
-      GoodsService
+      GoodsService,
+      GoodsParam
     }
 
   }
@@ -328,6 +353,21 @@
       width 100%
       position absolute;
       top 0;
+      .list-mask
+        position fixed
+        top 0
+        left 0
+        width 100%
+        height 100%
+        z-index 40
+        backdrop-filter blur(10px)
+        opacity 1
+        background rgba(7, 17, 27, 0.6)
+      .move-enter-active, .move-leave-active
+        transition: all 0.7s;
+      .move-enter, .move-leave-to
+        opacity: 0;
+        transform translateY(100%)
       .banner-img
         width 100%
       .detail_subinfo
