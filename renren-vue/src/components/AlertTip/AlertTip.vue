@@ -1,12 +1,10 @@
 <template>
   <div class="alert_container">
     <section class="tip_text_container">
-      <div class="tip_icon">
-        <span></span>
-        <span></span>
-      </div>
       <p class="tip_text">{{alertText}}</p>
-      <div class="confrim" @click="closeTip">确认</div>
+      <div class="km-dialog-buttons">
+        <div class="confrim" @click="closeTip">确认</div>
+      </div>
     </section>
   </div>
 </template>
@@ -50,10 +48,10 @@
     .tip_text_container
       position: absolute;
       top: 50%;
-      left: 50%;
+      left: 45.5%;
       margin-top: -90px
       margin-left: -110px
-      width: 60%
+      width: 70%
       animation: tipMove .4s;
       background-color: rgba(255, 255, 255, 1);
       border: 1px;
@@ -63,44 +61,25 @@
       align-items: center;
       flex-direction: column;
       border-radius: 5px
-      .tip_icon
-        width: 55px
-        height: 55px
-        border: 2px solid #f8cb86;
-        border-radius: 50%;
-        font-size 20px
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        span:nth-of-type(1)
-          width: 2px
-          height: 30px
-          background-color: #f8cb86;
-        span:nth-of-type(2)
-          width: 2px
-          height: 2px
-          border: 1px;
-          border-radius: 50%;
-          margin-top: 2px
-          background-color #f8cb86
+      .km-dialog-buttons
+        margin-top: .3rem;
+        display: table;
+        width: 100%;
+        color: #f40;
+        border-top: 1px solid #ddd;
       .tip_text
-        font-size 14px
+        font-size 0.4rem
         color #333
-        line-height 20px
+        line-height 0.4rem
         text-align center
-        margin-top 10px
+        margin-top 0.1rem
         padding 0 5px
       .confrim
-        font-size 18px
-        font-weight bold
-        margin-top 10px
-        background-color #4cd964
+        display: table;
+        font-size 0.43rem
         width 100%
+        padding: .25rem 0 .25rem 0;
         text-align center
         line-height 35px
-        border 1px
-        color #fff
-        border-bottom-left-radius 5px
-        border-bottom-right-radius 5px
+        color #f40
 </style>

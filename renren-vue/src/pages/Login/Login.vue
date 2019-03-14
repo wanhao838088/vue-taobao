@@ -15,7 +15,7 @@
           </div>
           <!--删除按钮-->
           <div class="am-list-action">
-            <i v-show="isShowDelPhone" @click="clearPhone" class="am-icon-clear iconfont  icon-shanchuguanbicha"></i>
+            <i v-show="isShowDelPhone" @click.native="clearPhone" @click="clearPhone" class="am-icon-clear iconfont  icon-shanchuguanbicha"></i>
           </div>
         </div>
 
@@ -231,14 +231,15 @@
         border-bottom: 1px solid #ff5000;
         .am-list-action
           position: absolute;
-          width: .53333333rem;
-          height: .26666667rem;
+          width: .83333333rem;
+          height: .86666667rem;
           right: .18666667rem;
-          bottom: .4rem;
+          bottom: -0.1rem;
           .am-icon-clear
             position: absolute;
             top: .04rem;
             width: 0.7rem;
+            z-index 999
             height: 0.7rem;
             background-color transparent
             right: 0;
