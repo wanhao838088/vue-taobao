@@ -10,7 +10,7 @@
     <div class="am-list">
       <form @submit.prevent="login" ref="tbForm">
 
-        <TbInput v-model="phone" type="text" placeholder="手机号/邮箱/会员名" ></TbInput>
+        <TbInput v-model="phone" type="text" placeholder="请输入手机号码" ></TbInput>
         <TbInput v-model="password" type="password" placeholder="请输入密码" ></TbInput>
 
       </form>
@@ -19,8 +19,7 @@
     <!--其它方式登录-->
     <div class="other-link">
       <div class="am-field am-footer">
-        <a @click="$router.push('/mobileLogin')" href="javascript:;" class="f-left" style="text-align: left;">短信验证码登录</a>
-        <a href="javascript:;" class="f-right" style="text-align: right;">免费注册</a>
+        <a href="javascript:;" class="f-left" style="text-align: left;">免费注册</a>
       </div>
     </div>
 
@@ -32,7 +31,6 @@
     <AlertTip v-show="isShowAlert" :alertText="alertText" @closeTip="closeTip"></AlertTip>
 
   </div>
-
 </template>
 
 <script>
@@ -44,6 +42,8 @@
   import {getDeviceId,setToken,getToken}  from '../../utils/utils'
 
   export default {
+    name: "MobileLogin",
+
     data(){
       return{
         phone: '', // 手机号
@@ -171,7 +171,7 @@
           flex 1
           text-decoration: none;
       .am-footer
-          margin-top: .58666667rem;
+        margin-top: .58666667rem;
     .am-list
       width: 8.5rem;
       position: relative;

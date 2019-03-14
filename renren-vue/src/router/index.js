@@ -5,6 +5,7 @@ import Login from '@/pages/Login/Login'
 import Profile from '@/pages/Profile/Profile'
 import Main from '@/pages/Main/Main'
 import Goods from '@/components/Goods/Goods'
+import MobileLogin from '@/pages/MobileLogin/MobileLogin'
 
 Vue.use(Router);
 
@@ -19,6 +20,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/mobileLogin',
+      name: 'MobileLogin',
+      component: MobileLogin
     },
     {
       path: '/profile',
