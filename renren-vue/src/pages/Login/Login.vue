@@ -13,16 +13,6 @@
         <TbInput v-model="phone" type="text" placeholder="手机号/邮箱/会员名" ></TbInput>
         <TbInput v-model="password" type="password" placeholder="请输入密码" ></TbInput>
 
-        <!--<div class="am-list-item">-->
-          <!--<div class="am-list-control">-->
-            <!--<input @keyup="changePassWord" @focus="changePassWord" @blur="isShowDelPassWord=false" v-model="password" type="password" class="am-input-required am-input-required-password" name="TPL_password" placeholder="请输入密码" value="" id="password">-->
-          <!--</div>-->
-          <!--&lt;!&ndash;删除按钮&ndash;&gt;-->
-          <!--<div class="am-list-action am-list-action-password">-->
-            <!--<i v-show="isShowDelPassWord" class="am-icon-clear  iconfont  icon-shanchuguanbicha"></i>-->
-          <!--</div>-->
-          <!--<div class="pwd-show iconfont" id="show-pwd"></div>-->
-        <!--</div>-->
       </form>
     </div>
 

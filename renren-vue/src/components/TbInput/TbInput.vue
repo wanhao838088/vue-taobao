@@ -3,7 +3,7 @@
     <div class="am-list-control">
       <input @keyup="changeValue" @focus="changeValue"
              @input="$emit('input', $event.target.value)"
-             @blur="isShowValue=false"
+             @blur="isShowDel=false"
              :type="type"
              :value="value"
              ref="tbinput"
@@ -13,7 +13,7 @@
     </div>
     <!--删除按钮-->
     <div class="am-list-action">
-      <i v-show="isShowDel" @click.native="clearValue" @click="clearValue"
+      <i v-show="isShowDel" @click="clearValue"
          class="am-icon-clear iconfont  icon-shanchuguanbicha"></i>
     </div>
   </div>
