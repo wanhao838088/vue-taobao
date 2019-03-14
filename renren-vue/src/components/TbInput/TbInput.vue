@@ -3,7 +3,7 @@
     <div class="am-list-control">
       <input @keyup="changeValue" @focus="changeValue"
              @input="$emit('input', $event.target.value)"
-             @blur="isShowDel=false"
+             @blur="blurInput"
              :type="type"
              :value="value"
              ref="tbinput"
@@ -34,10 +34,21 @@
     name: "TbInput",
     props:['value','placeholder','type'],
     methods:{
+
+      /**
+       * 失去焦点 隐藏删除按钮
+       */
+      blurInput(){
+        //延迟执行
+        setTimeout(()=>{
+          this.isShowDel = false;
+        },100);
+      },
       /**
        * 清楚输入框内容
        */
       clearValue(){
+        console.log('删除');
         //清空内容
         this.$emit('input', '');
         //隐藏删除按钮
