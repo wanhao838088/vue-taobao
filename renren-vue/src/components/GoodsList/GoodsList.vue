@@ -4,16 +4,12 @@
       <li class="shop_li" v-for="(item, index) in goods" :key="index" @click="toGoodsDetail(item.id)">
         <div class="list-item">
           <div class="p">
-            <a href="" title="">
-              <img class="p-pic" :src="item.goodsImg" style="visibility: visible;">
-              <span class="flag c-icon-p4p"></span>
-            </a>
+            <img class="p-pic" :src="item.goodsImg" style="visibility: visible;">
+            <span class="flag c-icon-p4p"></span>
           </div>
 
           <div class="d">
-            <a href="http://mclick.simba.taobao.com/cc_im?p=%B5%E7%CA%D3%BB%FA&amp;s=1617384869&amp;k=609&amp;e=iBxVE%2B6DCWR0VlZ%2BSYE3Wk4JTtfdSQ8qEm%2FmDz8ow%2FKmumtUpBAUqfPX57kpTQ%2BDe%2Bqz%2BpMC0XuqlrqCjH2RzmTK4tJJ%2BctMN9FYeqvPrEMeuiHBFbs60Ky56rOUMT%2FKE7Zs2rhqOcwhc1aLbgkWX8hoQPpk0g1at2wlBMkdMtbKCzxZwnk8ZIwfK1UFZ2CZKSry2uyC4b2%2FyLc8rqXDeEoNT19jBY70HKq0Ry7esYTSlSgi83UQVaePVLEv7DMKzELi2Onu8gPQz1PlNeKuEB2hXB%2BtAdIF3KyiNLYuYCGfd4cpiPbvqFj2d2n4jl3JstsEz4C0GIUF%2BqHGMp3BYRPRWyDt24QLUANcJKkHAhjH6WZsxSGTjK%2FQufA0xZr08xLmMgLchjY%2FKZvpAkO7NSJKfeANAhE7owUGM36VZtdkPK8g7nRvuMHAc1wuYS6UN8TFl4DXTyNsyum%2FfpOe5KcEcYWCJfxCao2y1tBKaRGKC1h1zY20azFJbLFrxJVIDHoLPgj5JkzzEuYyAtyGNm083n9RmI87frCfGM42wgmqnxXzRgHfBLNucK4dXsH2MEXwVYk6vAU3YjtFDmIZuBxTyZaPmieV" title="">
-              <h3 class="d-title">{{item.goodsTitle}}</h3>
-            </a>
+            <h3 class="d-title">{{item.goodsTitle}}</h3>
             <p class="d-price">
               <em class="h">
                 <span class="price-icon">¥</span>
@@ -52,11 +48,6 @@
   import {mapState} from 'vuex'
 
   export default {
-    data(){
-      return{
-
-      }
-    },
     methods:{
 
       /**
@@ -99,7 +90,6 @@
             margin-left: 8px;
             overflow: hidden;
             .c-icon-p4p
-              background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFW…XgUNcQJakG5wASTqchVEgrkYIjfdFI57CwOhUM4Tf+FWAAtC1CL45Fd5EAAAAASUVORK5CYII=') no-repeat;
               background-size: contain;
             .flag
               position: absolute;
@@ -168,154 +158,7 @@
           div
             float: right;
             font-size: 12px;
-            padding: 0px 3px;
+            padding: 0 3px;
           .item-icons-jinbi
             background-color: #ff9700;
-        > a
-          clearFix()
-          display block
-          box-sizing border-box
-          padding 15px 8px
-          width 100%
-          .shop_left
-            box-sizing border-box
-            height 75px
-            padding-right 10px
-            flex 35
-            .shop_img
-              display block
-              width 100%
-              height 100%
-          .shop_right
-            flex 65
-            .goods_left_price
-              margin-top .3rem
-              color orangered
-              display flex
-            .shop_detail_header
-              clearFix()
-              width 100%
-              .shop_title
-                float left
-                width 100%
-                color #333
-                font-size .4rem
-                line-height .4rem
-                text-align left
-                font-weight 700
-                .icon-service-tianmao
-                  background-position: -213px -199px;
-                  width: 16px;
-                  height: 16px;
-                  display: inline-block;
-                  display: inline;
-                  zoom: 1;
-                  font-size: 0;
-                  background: url(//img.alicdn.com/tps/i3/TB1bh5IMpXXXXacaXXXrG06ZpXX-316-272.png);
-                  background-repeat: no-repeat;
-              .shop_detail_ul
-                float right
-                margin-top 3px
-                .supports
-                  float left
-                  font-size 10px
-                  color #999
-                  border 1px solid #f1f1f1
-                  padding 0 2px
-                  border-radius 2px
-            .shop_rating_order
-              clearFix()
-              width 100%
-              margin-top 18px
-              margin-bottom 8px
-              .shop_rating_order_left
-                float left
-                color #ff9a0d
-                .star //2x图 3x图
-                  float left
-                  font-size 0
-                  .star-item
-                    display inline-block
-                    background-repeat no-repeat
-                  &.star-48
-                    .star-item
-                      width 20px
-                      height 20px
-                      margin-right 22px
-                      background-size 20px 20px
-                      &:last-child
-                        margin-right: 0
-                      &.on
-                        bg-image('./images/stars/star48_on')
-                      &.half
-                        bg-image('./images/stars/star48_half')
-                      &.off
-                        bg-image('./images/stars/star48_off')
-                  &.star-36
-                    .star-item
-                      width 15px
-                      height 15px
-                      margin-right 6px
-                      background-size 15px 15px
-                      &:last-child
-                        margin-right 0
-                      &.on
-                        bg-image('./images/stars/star36_on')
-                      &.half
-                        bg-image('./images/stars/star36_half')
-                      &.off
-                        bg-image('./images/stars/star36_off')
-                  &.star-24
-                    .star-item
-                      width 10px
-                      height 10px
-                      margin-right 3px
-                      background-size 10px 10px
-                      &:last-child
-                        margin-right 0
-                      &.on
-                        bg-image('./images/stars/star24_on')
-                      &.half
-                        bg-image('./images/stars/star24_half')
-                      &.off
-                        bg-image('./images/stars/star24_off')
-                .rating_section
-                  float left
-                  font-size 10px
-                  color #ff6000
-                  margin-left 4px
-                .order_section
-                  float left
-                  font-size 10px
-                  color #666
-                  transform scale(.8)
-              .shop_rating_order_right
-                float right
-                font-size 0
-                .delivery_style
-                  transform-origin 35px 0
-                  transform scale(.7)
-                  display inline-block
-                  font-size 12px
-                  padding 1px
-                  border-radius 2px
-                .delivery_left
-                  color #fff
-                  margin-right -10px
-                  background-color #02a774
-                  border 1px solid #02a774
-                .delivery_right
-                  color #02a774
-                  border 1px solid #02a774
-            .shop_distance
-              clearFix()
-              width 100%
-              font-size 12px
-              .shop_delivery_msg
-                float left
-                transform-origin 0
-                transform scale(.9)
-                color #666
-              .segmentation
-                color #ccc
 </style>
