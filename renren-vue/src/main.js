@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
-import { Button, Select } from 'element-ui';
+import { Button, Select,Input } from 'element-ui';
 import VueLazyload from 'vue-lazyload'
 import store from './store/index'
 
@@ -15,6 +15,7 @@ import loading from './common/imgs/loading.gif'
 
 Vue.component(Button.name, Button);
 Vue.component(Select.name, Select);
+Vue.component(Input.name, Input);
 
 Vue.use(VueLazyload, {
   // 内部自定义一个指令lazy

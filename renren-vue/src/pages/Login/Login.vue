@@ -8,20 +8,28 @@
 
     <!--登录部分-->
     <div class="am-list">
-      <div class="am-list-item">
-        <div class="am-list-control">
-          <input type="text" class="am-input-required" name="TPL_username" placeholder="手机号/邮箱/会员名" value="" id="username"/>
+      <form @submit.prevent="login" ref="tbForm">
+        <div class="am-list-item">
+          <div class="am-list-control">
+            <input @keyup="changePhone" @focus="changePhone" @blur="isShowDelPhone=false" v-model="phone" type="text" class="am-input-required" name="TPL_username" placeholder="手机号/邮箱/会员名" value="" id="username"/>
+          </div>
+          <!--删除按钮-->
+          <div class="am-list-action">
+            <i v-show="isShowDelPhone" @click="clearPhone" class="am-icon-clear iconfont  icon-shanchuguanbicha"></i>
+          </div>
         </div>
-        <div class="am-list-action"><i class="am-icon-clear" style="display: none;"></i></div>
-      </div>
 
-      <div class="am-list-item">
-        <div class="am-list-control">
-          <input type="password" class="am-input-required am-input-required-password" name="TPL_password" placeholder="请输入密码" value="" id="password">
+        <div class="am-list-item">
+          <div class="am-list-control">
+            <input @keyup="changePassWord" @focus="changePassWord" @blur="isShowDelPassWord=false" v-model="password" type="password" class="am-input-required am-input-required-password" name="TPL_password" placeholder="请输入密码" value="" id="password">
+          </div>
+          <!--删除按钮-->
+          <div class="am-list-action am-list-action-password">
+            <i v-show="isShowDelPassWord" class="am-icon-clear  iconfont  icon-shanchuguanbicha"></i>
+          </div>
+          <div class="pwd-show iconfont" id="show-pwd"></div>
         </div>
-        <div class="am-list-action am-list-action-password"><i class="am-icon-clear"></i></div>
-        <div class="pwd-show iconfont" id="show-pwd"></div>
-      </div>
+      </form>
     </div>
 
     <!--其它方式登录-->
@@ -33,7 +41,7 @@
     </div>
 
     <div class="am-field am-fieldBottom">
-      <button type="submit" class="am-button am-button-submit" id="btn-submit">登 录</button>
+      <button @click="doSubmit" type="submit" class="am-button am-button-submit" id="btn-submit">登 录</button>
     </div>
 
     <!--提示组件-->
@@ -54,13 +62,15 @@
     data(){
       return{
         isSmsLogin:true,
-        phone: '18865392565', // 手机号
+        phone: '', // 手机号
         isShowPwd: false, // 是否显示密码
         computeTime: 0, // 计时的时间
         password:'123456',//密码
         code:'',//短信验证码
         name:'13562959695',//用户名
         alertText:'',
+        isShowDelPhone:false, //是否显示删除会员名
+        isShowDelPassWord:false,//是否显示删除密码
         isShowAlert:false //是否显示提示框
       }
     },
@@ -71,108 +81,80 @@
     },
     methods:{
       ...mapActions(['saveUserInfo']),
+
       /**
-       * 发送短信验证码
+       * 提交表单
        */
-      async sendSms(){
-        if (!this.computeTime) {
-          this.computeTime = 60;
-          //倒计时
-          this.intId = setInterval(()=>{
-            this.computeTime--;
-            if (this.computeTime <= 0) {
-              this.computeTime = 0;
-              clearInterval(this.intId);
-            }
-          },1000);
-          // 发送验证码
-          let deviceId =  getDeviceId();
-          let result = await reqSendCode({mobile:this.phone,deviceId});
-
-          if(result.code!==0){
-            //发送失败
-            this.alertMsg(result.msg);
-            //重置定时
-            if (this.computeTime) {
-              clearInterval(this.intId);
-              this.computeTime = 0;
-            }
-          }
-
+      doSubmit(){
+        this.login();
+      },
+      /**
+       * 清空用户名
+       */
+      clearPhone(){
+        console.log('111');
+        this.phone = '';
+        this.isShowDelPhone = false;
+      },
+      /**
+       * 改变会员名内容
+       */
+      changePhone(){
+        let {phone} = this;
+        if (phone) {
+          this.isShowDelPhone = true;
+        }else {
+          this.isShowDelPhone = false;
+        }
+      },
+      changePassWord(){
+        let {password} = this;
+        if (password) {
+          this.isShowDelPassWord = true;
+        }else {
+          this.isShowDelPassWord = false;
         }
       },
       /**
        * 点击登录 做表单验证
        */
       async login(){
-        //判断登录方式
-        if (this.isSmsLogin) {
-          //短信登录
-          let {rightPhone,phone,code} = this;
-          if(!rightPhone){
-            //手机号不正确
-            this.alertMsg("手机号不正确");
-            return;
-          }else if(!code){
-            //验证码不能为空
-            this.alertMsg("验证码不能为空");
-            return;
-          }
-          let object = await reqSmsLogin({mobile:phone,password:code});
+        //手机号、邮箱、会员名密码登录
+        let {password} = this;
+        let phoneStr = this.phone;
+        console.log(phoneStr);
+        console.log(password);
 
-          //错误信息显示
-          if (object.code !== 0) {
-            this.alertMsg(object.msg);
-            return;
-          }else{
-            //保存token
-            setToken(object.token);
-          }
-          //获取用户信息
-          let token = object.token;
-          let userObj = await reqUserInfo({token});
-          console.log(userObj);
-
-          //保存用户信息到vuex
-          this.saveUserInfo(userObj);
-          //页面调转
-          this.$router.replace('/main');
-
-        }else {
-          //密码登录
-          let {name,password} = this;
-          if(!name){
-            //用户名不能为空
-            this.alertMsg("用户名不能为空");
-            return;
-          }else if(!password){
-            //密码不能为空
-            this.alertMsg("密码不能为空");
-            return;
-          }
-          let object = await reqPwdLogin({name,password});
-          console.log(object);
-
-          //错误信息显示
-          if (object.code !== 0) {
-            this.alertMsg(object.msg);
-            return;
-          }else{
-            //保存token
-            setToken(object.token);
-          }
-          //获取用户信息
-          let token = object.token;
-          let userObj = await reqUserInfo({token});
-          console.log(userObj);
-
-          //保存用户信息到vuex
-          this.saveUserInfo(userObj);
-
-          //获取用户信息
-          this.$router.replace('/main');
-
+        if(!phoneStr){
+          //用户名不能为空
+          this.alertMsg("请输入会员名");
+          return;
+        }else if(!password){
+          //密码不能为空
+          this.alertMsg("密码不能为空");
+          return;
         }
+        let object = await reqPwdLogin({phoneStr,password});
+        console.log(object);
+
+        //错误信息显示
+        if (object.code !== 0) {
+          this.alertMsg(object.msg);
+          return;
+        }else{
+          //保存token
+          setToken(object.token);
+        }
+        //获取用户信息
+        let token = object.token;
+        let userObj = await reqUserInfo({token});
+        console.log(userObj);
+
+        //保存用户信息到vuex
+        this.saveUserInfo(userObj);
+
+        //获取用户信息
+        this.$router.replace('/main');
       },
       /**
        * 关闭提示框
@@ -190,7 +172,7 @@
       }
     },
     components:{
-      AlertTip
+      AlertTip,
     },
   }
 </script>
@@ -256,6 +238,9 @@
           .am-icon-clear
             position: absolute;
             top: .04rem;
+            width: 0.7rem;
+            height: 0.7rem;
+            background-color transparent
             right: 0;
         .am-list-action-password
           right: .85333333rem;
