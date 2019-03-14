@@ -1,9 +1,9 @@
 **已实现的效果图**
- ![登录页1](https://github.com/wanhao838088/renren-frame/tree/master/renren-vue/gifs/login.gif)
+ ![登录页1](https://github.com/wanhao838088/renren-frame/blob/master/renren-vue/gifs/login.gif)
  <br>
- ![主页页1](https://github.com/wanhao838088/renren-frame/tree/master/renren-vue/gifs/main.gif)
+ ![主页页1](https://github.com/wanhao838088/renren-frame/blob/master/renren-vue/gifs/main.gif)
   <br>
-  ![详情页1](https://github.com/wanhao838088/renren-frame/tree/master/renren-vue/gifs/detail.gif)
+  ![详情页1](https://github.com/wanhao838088/renren-frame/blob/master/renren-vue/gifs/detail.gif)
    
 **项目结构** 
 ```
