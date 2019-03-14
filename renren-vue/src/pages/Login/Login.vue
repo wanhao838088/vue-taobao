@@ -1,53 +1,39 @@
 <template>
   <div class="loginContainer">
-    <div class="loginInner">
-      <div class="login_header">
-        <h2 class="login_logo">Security-Vue</h2>
-        <div class="login_header_title">
-          <a href="javascript:;" :class="{on:isSmsLogin}" @click="isSmsLogin=true">短信登录</a>
-          <a href="javascript:;" :class="{on:!isSmsLogin}" @click="isSmsLogin=false">密码登录</a>
-        </div>
-      </div>
-      <div class="login_content">
-        <form @submit.prevent="login">
-          <div :class="{on:isSmsLogin}">
-            <section class="login_message">
-              <input type="tel" maxlength="11" placeholder="手机号" v-model="phone">
-              <button :disabled="!rightPhone" @click.prevent="sendSms" class="get_verification" :class="{right_phone:rightPhone}">
-                {{computeTime===0?'获取验证码':'已发送'+computeTime+' s'}}
-              </button>
-            </section>
-            <section class="login_verification">
-              <input type="tel" maxlength="8" placeholder="验证码" v-model="code">
-            </section>
-            <section class="login_hint">
-              温馨提示：未注册的手机号，登录时将自动注册，且代表已同意
-              <a href="javascript:;">《用户服务协议》</a>
-            </section>
-          </div>
-          <div :class="{on:!isSmsLogin}">
-            <section>
-              <section class="login_message">
-                <input type="tel" maxlength="11" placeholder="手机/邮箱/用户名" value="admin" v-model="name">
-              </section>
-              <section class="login_verification">
-                <input type="text" maxlength="8" value="admin" placeholder="密码" v-if="isShowPwd" v-model="password">
-                <input type="password" maxlength="8" value="admin" placeholder="密码" v-else v-model="password">
+    <div class="need-login">
+      您需要登录才能继续访问
+      <a class="login-close" href="">关闭</a>
+    </div>
+    <div class="logo tb-logo"></div>
 
-                <div class="switch_button" :class="!isShowPwd?'off':'on'" @click="isShowPwd=!isShowPwd">
-                  <div class="switch_circle" :class="{right:isShowPwd}"></div>
-                  <span class="switch_text">{{isShowPwd?'abc':'...'}}</span>
-                </div>
-              </section>
-            </section>
-          </div>
-          <button class="login_submit">登录</button>
-        </form>
-        <a href="javascript:;" class="about_us">关于我们</a>
+    <!--登录部分-->
+    <div class="am-list">
+      <div class="am-list-item">
+        <div class="am-list-control">
+          <input type="text" class="am-input-required" name="TPL_username" placeholder="手机号/邮箱/会员名" value="" id="username"/>
+        </div>
+        <div class="am-list-action"><i class="am-icon-clear" style="display: none;"></i></div>
       </div>
-      <a href="javascript:" class="go_back" @click="$router.back()">
-        <i class="iconfont icon-jiantou2"></i>
-      </a>
+
+      <div class="am-list-item">
+        <div class="am-list-control">
+          <input type="password" class="am-input-required am-input-required-password" name="TPL_password" placeholder="请输入密码" value="" id="password">
+        </div>
+        <div class="am-list-action am-list-action-password"><i class="am-icon-clear"></i></div>
+        <div class="pwd-show iconfont" id="show-pwd"></div>
+      </div>
+    </div>
+
+    <!--其它方式登录-->
+    <div class="other-link">
+      <div class="am-field am-footer">
+        <a href="javascript:;" class="f-left" style="text-align: left;">短信验证码登录</a>
+        <a href="javascript:;" class="f-right" style="text-align: right;">免费注册</a>
+      </div>
+    </div>
+
+    <div class="am-field am-fieldBottom">
+      <button type="submit" class="am-button am-button-submit" id="btn-submit">登 录</button>
     </div>
 
     <!--提示组件-->
@@ -215,135 +201,106 @@
     width 100%
     height 100%
     background #fff
-    .loginInner
-      padding-top 0.9rem
-      width 80%
-      margin 0 auto
-      .login_header
-        .login_logo
-          font-size 0.75rem
-          font-weight bold
-          color #02a774
-          text-align center
-        .login_header_title
-          padding-top 40px
-          text-align center
-          display flex
-          >a
-            color #333
-            font-size 0.4rem
-            padding-bottom 0.3rem
-            flex 1
-            &.on
-              color #02a774
-              font-weight 700
-              border-bottom 2rem/$font-size-base solid #02a774
-      .login_content
-        >form
-          >div
-            display none
-            &.on
-              display block
-            input
-              width 100%
-              height 100%
-              padding-left 0.133rem  /* 10/75 */
-              box-sizing border-box
-              border 1px solid #ddd
-              border-radius 4px
-              outline 0
-              font 400 14px Arial
-              &:focus
-                border 1px solid #02a774
-            .login_message
-              position relative
-              margin-top 0.213rem  /* 16/75 */
-              height 48px
-              font-size 0.187rem  /* 14/75 */
-              background #fff
-              .get_verification
-                position absolute
-                top 50%
-                right 10px
-                transform translateY(-50%)
-                border 0
-                color #ccc
-                font-size 14px
-                background transparent
-                &.right_phone
-                  color black
-            .login_verification
-              position relative
-              margin-top 16px
-              height 48px
-              font-size 14px
-              background #fff
-              .switch_button
-                font-size 12px
-                border 1px solid #ddd
-                border-radius 8px
-                transition background-color .3s,border-color .3s
-                padding 6px
-                width 30px
-                height 16px
-                line-height 16px
-                color #fff
-                position absolute
-                top 50%
-                right 10px
-                transform translateY(-50%)
-                &.off
-                  background #fff
-                  .switch_text
-                    float right
-                    color #ddd
-                &.on
-                  background #02a774
-                >.switch_circle
-                  position absolute
-                  top -1px
-                  left -1px
-                  width 16px
-                  height 16px
-                  border 1px solid #ddd
-                  border-radius 50%
-                  background #fff
-                  box-shadow 0 2px 4px 0 rgba(0,0,0,.1)
-                  transition transform .3s
-                  &.right
-                    transform translateX(27px)
-            .login_hint
-              margin-top 12px
-              color #999
-              font-size 14px
-              line-height 20px
-              >a
-                color #02a774
-          .login_submit
-            display block
-            width 100%
-            height .96rem
-            margin-top .4rem
-            border-radius 4px
-            background #4cd96f
-            color #fff
-            text-align center
-            font-size .31rem
-            line-height .56rem
-            border 0
-        .about_us
-          display block
-          font-size 12px
-          margin-top 20px
-          text-align center
-          color #999
-      .go_back
-        position absolute
-        top 5px
-        left 5px
-        width 30px
-        height 30px
-        >.iconfont
-          font-size 20px
-          color #999
+    .am-field
+      font-size: .37333333rem;
+      width: 8.6rem;
+      margin: .69333333rem auto 0;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      .am-button
+        font-size: .42666667rem;
+        width: 100%;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        border-radius: .6rem;
+        text-align: center;
+        border: 0;
+      .am-button-submit
+        background: -webkit-linear-gradient(left,#ff9000,#ff5000) no-repeat;
+        color: #fff;
+        box-shadow: 0 0.08rem 0.16rem #f7c7b1;
+    .am-fieldBottom
+      margin-top: .94666667rem;
+    .other-link
+      font: inherit;
+      .am-field
+        font-size: .37333333rem;
+        width: 8.5rem;
+        margin: .69333333rem auto 0;
+        display: flex;
+        flex-flow: row nowrap;
+        .f-left, .f-right
+          color: #555;
+          flex 1
+          text-decoration: none;
+      .am-footer
+          margin-top: .58666667rem;
+    .am-list
+      width: 8.5rem;
+      position: relative;
+      margin: 0 auto;
+      font-size: .42666667rem;
+      color: #333;
+      .am-list-item
+        position: relative;
+        width: 100%;
+        margin: 1.2rem 0 0;
+        border-bottom: 1px solid #ff5000;
+        .am-list-action
+          position: absolute;
+          width: .53333333rem;
+          height: .26666667rem;
+          right: .18666667rem;
+          bottom: .4rem;
+          .am-icon-clear
+            position: absolute;
+            top: .04rem;
+            right: 0;
+        .am-list-action-password
+          right: .85333333rem;
+        .am-list-control
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font-size: 100%;
+          font: inherit;
+          vertical-align: baseline;
+          .am-input-required
+            font-size: inherit;
+            width: 100%;
+            height: .48rem;
+            margin: 0 0 .17333333rem .12rem;
+            outline: none;
+            border: 0;
+            color: #333;
+    .logo
+      width: 2.6rem;
+      height: 2.6rem;
+      background: url(https://gw.alicdn.com/tfs/TB1p.BGQXXXXXbFXFXXXXXXXXXX-160-160.png) no-repeat;
+      background-size: contain;
+      margin: -0.2rem auto 0;
+    .need-login
+      width: 100%;
+      height: 1.5rem;
+      background: rgb(238, 238, 238);
+      line-height: 1.36rem;
+      text-align: left;
+      box-sizing: border-box;
+      padding-left: 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.41rem;
+      font-weight: bold;
+      color: rgb(51, 51, 51);
+      .login-close
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 52px;
+        line-height: 52px;
+        padding: 0px 20px;
+        color: rgb(153, 153, 153);
 </style>
