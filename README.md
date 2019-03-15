@@ -1,10 +1,15 @@
 **已实现的效果图**
- ![登录页1](https://github.com/wanhao838088/renren-frame/blob/master/renren-vue/gifs/login.gif)
  <br>
- ![主页页1](https://github.com/wanhao838088/renren-frame/blob/master/renren-vue/gifs/main.gif)
+ * 登录页
+ ![登录页1](https://github.com/wanhao838088/renren-frame/blob/master/renren-vue/gifs/login_pwd.gif)
+ <br>
+ 
+ * 列表页和详情页
+ ![主页页1](https://github.com/wanhao838088/renren-frame/blob/master/renren-vue/gifs/list_detail.gif)
   <br>
-  ![详情页1](https://github.com/wanhao838088/renren-frame/blob/master/renren-vue/gifs/detail.gif)
-   
+  *  其它页面正在开发中....
+  <br>
+
 **项目结构** 
 ```
 renren-security
