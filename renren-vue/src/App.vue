@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <transition>
-      <div>
+      <div class="page-container">
         <router-view class="child-view"/>
         <FooterGuide  v-show="$route.meta.showFooter"></FooterGuide>
       </div>
@@ -52,6 +52,10 @@
     transition: all .5s cubic-bezier(.55, 0, .1, 1);
   }
 
+  .page-container{
+    position: relative;
+    padding-bottom: 40px;
+  }
   .slide-left-enter, .slide-right-leave-active {
     opacity: 0;
     transform: translate(100%, 0);

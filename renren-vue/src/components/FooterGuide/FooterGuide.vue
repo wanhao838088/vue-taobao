@@ -28,11 +28,28 @@
 </template>
 
 <script>
+  import {reqUserInfo} from '../../api/index'
+  import {getToken}  from '../../utils/utils'
+
   export default {
     name: "FooterGuide",
     methods:{
-      goTo (path) {
-        this.$router.replace(path)
+      async goTo (path) {
+        if (path === '/myTb') {
+          //我的淘宝 是否已经登录
+          let token = getToken();
+          let result = await reqUserInfo({token});
+          console.log(result);
+
+          if (result.code!==0){
+            //需要登录
+            this.$router.replace('/login')
+          }else {
+            this.$router.replace('/myTb')
+          }
+        }else {
+          this.$router.replace(path)
+        }
       }
     }
   }

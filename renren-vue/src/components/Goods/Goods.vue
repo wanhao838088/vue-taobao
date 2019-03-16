@@ -180,7 +180,6 @@
 
         if (token) {
           let result = await reqSecKill({goodsId});
-          console.log(result);
 
           switch (result.code) {
             case 0:
