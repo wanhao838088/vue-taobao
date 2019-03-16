@@ -46,7 +46,7 @@
   export default {
     data(){
       return{
-        phone: '', // 手机号
+        phone: '18865392565', // 手机号
         computeTime: 0, // 计时的时间
         password:'123456',//密码
         code:'',//短信验证码
@@ -87,6 +87,8 @@
           this.alertMsg("密码不能为空");
           return;
         }
+        this.$router.replace('/main');
+
         let object = await reqPwdLogin({phoneStr,password});
         console.log(object);
 

@@ -1,11 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import VueRouter from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Login from '@/pages/Login/Login'
 import Profile from '@/pages/Profile/Profile'
 import Main from '@/pages/Main/Main'
 import Goods from '@/components/Goods/Goods'
 import MobileLogin from '@/pages/MobileLogin/MobileLogin'
+
+VueRouter.prototype.goBack = function () {
+  this.isBack = true
+  window.history.go(-1)
+}
 
 Vue.use(Router);
 
