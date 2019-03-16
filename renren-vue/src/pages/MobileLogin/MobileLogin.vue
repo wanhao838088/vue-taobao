@@ -11,8 +11,23 @@
       <form @submit.prevent="login" ref="tbForm">
 
         <TbInput v-model="phone" type="text" placeholder="请输入手机号码" ></TbInput>
-        <TbInput v-model="password" type="password" placeholder="请输入密码" ></TbInput>
 
+        <div class="am-list-item">
+          <div class="am-list-control">
+            <input @keyup="changeValue" @focus="changeValue" @blur="blurInput"
+                    v-model="code" type="text"
+                   placeholder="校验码"
+                   class="am-input-required am-input-required-checkCode"
+                   value=""/>
+          </div>
+          <!--删除按钮-->
+          <div class="am-list-action am-list-action-msg">
+            <i v-show="isShowDel" class="am-icon-clear iconfont  icon-shanchuguanbicha"></i>
+          </div>
+          <div class="am-list-button">
+            <span class="get-checkcode">获取短信校验码</span>
+          </div>
+        </div>
       </form>
     </div>
 
@@ -25,6 +40,10 @@
 
     <div class="am-field am-fieldBottom">
       <button @click="doSubmit" type="submit" class="am-button am-button-submit" id="btn-submit">登 录</button>
+    </div>
+
+    <div class="am-field">
+      <a href="javascript:;" @click="$router.replace('/login')" class="am-button btn-change" id="btn-change">账户密码登录</a>
     </div>
 
     <!--提示组件-->
@@ -46,6 +65,7 @@
 
     data(){
       return{
+        isShowDel:false,
         phone: '', // 手机号
         computeTime: 0, // 计时的时间
         password:'123456',//密码
@@ -61,7 +81,26 @@
     },
     methods:{
       ...mapActions(['saveUserInfo']),
-
+      /**
+       * 改变内容
+       */
+      changeValue(){
+        let tbvalue = this.code;
+        if (tbvalue) {
+          this.isShowDel = true;
+        }else {
+          this.isShowDel = false;
+        }
+      },
+      /**
+       * 失去焦点 隐藏删除按钮
+       */
+      blurInput(){
+        //延迟执行
+        setTimeout(()=>{
+          this.isShowDel = false;
+        },100);
+      },
       /**
        * 提交表单
        */
@@ -144,6 +183,11 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
+      .btn-change
+        border: 1px solid #ff5000 !important;
+        color: #ff5000;
+        background: #fff;
+        text-decoration: none;
       .am-button
         font-size: .42666667rem;
         width: 100%;
@@ -183,22 +227,29 @@
         width: 100%;
         margin: 1.2rem 0 0;
         border-bottom: 1px solid #ff5000;
-        .am-list-action
+        .am-list-button
+          border-left: .02666667rem solid #b5b5b5;
           position: absolute;
-          width: .83333333rem;
-          height: .86666667rem;
-          right: .18666667rem;
-          bottom: -0.1rem;
+          left: 5.25rem;
+          bottom: .16rem;
+          .get-checkcode
+            width: 3.4rem;
+            display: block;
+            text-align: center;
+            color: #ff5000;
+            font-size: .42666667rem;
+        .am-list-action-msg
+          left: 4.66666667rem;
+          right: auto;
           .am-icon-clear
             position: absolute;
             top: .04rem;
-            width: 0.7rem;
-            z-index 999
-            height: 0.7rem;
-            background-color transparent
-            right: 0;
-        .am-list-action-password
-          right: .85333333rem;
+            right: 0.13rem;
+        .am-list-action
+          position: absolute;
+          width: .53333333rem;
+          height: .26666667rem;
+          bottom: .4rem;
         .am-list-control
           margin: 0;
           padding: 0;
@@ -206,9 +257,11 @@
           font-size: 100%;
           font: inherit;
           vertical-align: baseline;
+          .am-input-required-checkCode
+            width: 4.53333333rem;
+            float: left;
           .am-input-required
             font-size: inherit;
-            width: 100%;
             height: .48rem;
             margin: 0 0 .17333333rem .12rem;
             outline: none;
