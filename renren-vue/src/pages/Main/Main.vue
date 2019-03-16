@@ -1,12 +1,17 @@
 <template>
   <div class="msite">
     <!--首页头部-->
-    <HeaderTop :title="'首页'">
-    </HeaderTop>
+    <header class="sc-bxivhb QclmN">
+      <div class="header-bd">
+        <a class="placeholder">
+         <span class="text iconfont icon-sousuo">寻找宝贝店铺</span>
+        </a>
+      </div>
+    </header>
 
     <!--首页banner-->
     <nav class="msite_banner">
-      <div v-if="banners.length>0" class="swiper-container" style="margin-top: -16px;">
+      <div v-if="banners.length>0" class="swiper-container" style="margin-top: -24px;">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(cs,index) in banners" :key="index">
             <img class="banner-img" :src="cs.imgUrl" alt="">
@@ -40,6 +45,7 @@
       </nav>
     </div>
 
+    <!--商品列表-->
     <div class="msite_shop_list">
       <GoodsList></GoodsList>
     </div>
@@ -95,6 +101,34 @@
 
   .msite //首页
     width 100%
+    .QclmN
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background-color: #FF852A
+      .header-bd
+        width: 86%;
+        padding-left: 42px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        background-image: url('./images/tb_top.png');
+        background-repeat: no-repeat;
+        background-size: 27px 20px;
+        background-position: 9px center;
+        .placeholder
+          display: block;
+          font-size: 0;
+          background-color: #FF4E22;
+          text-align: center;
+          border-radius: 4px;
+          .text
+            height: 0.65rem;
+            line-height: 0.65rem;
+            font-size: 0.3rem;
+            display: inline-block;
+            color: #F0E0DC;
     .msite_banner
       bottom-border-1px(#e4e4e4)
       margin-top 45px

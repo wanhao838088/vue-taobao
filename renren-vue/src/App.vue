@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <transition :name="transitionName">
+    <transition>
       <router-view class="child-view"/>
     </transition>
   </div>
@@ -32,7 +32,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /*margin-top: 60px;*/
+  margin-top: 60px;
 }
 .child-view {
   margin: 0 auto;
