@@ -10,13 +10,14 @@
     <div class="am-list">
       <form @submit.prevent="login" ref="tbForm">
 
-        <TbInput v-model="phone" type="text" placeholder="请输入手机号码" ></TbInput>
+        <TbInput maxlength="11" v-model="mobile" type="text" placeholder="请输入手机号码" ></TbInput>
 
         <div class="am-list-item">
           <div class="am-list-control">
             <input @keyup="changeValue" @focus="changeValue" @blur="blurInput"
                     v-model="code" type="text"
                    placeholder="校验码"
+                   maxlength="6"
                    class="am-input-required am-input-required-checkCode"
                    value=""/>
           </div>
@@ -25,7 +26,9 @@
             <i v-show="isShowDel" class="am-icon-clear iconfont  icon-shanchuguanbicha"></i>
           </div>
           <div class="am-list-button">
-            <span class="get-checkcode">获取短信校验码</span>
+            <span @click="sendCode" class="get-checkcode">
+              {{computeTime>0 ? `在${computeTime}秒后重发` : '获取短信验证码'}}
+            </span>
           </div>
         </div>
       </form>
@@ -48,7 +51,7 @@
 
     <!--提示组件-->
     <AlertTip v-show="isShowAlert" :alertText="alertText" @closeTip="closeTip"></AlertTip>
-
+    <TbToast :msg="msg" ref="TbToast"></TbToast>
   </div>
 </template>
 
@@ -58,6 +61,8 @@
   import {mapActions} from 'vuex'
 
   import TbInput from '../../components/TbInput/TbInput'
+  import TbToast from '../../components/TbToast/TbToast'
+
   import {getDeviceId,setToken,getToken}  from '../../utils/utils'
 
   export default {
@@ -66,7 +71,8 @@
     data(){
       return{
         isShowDel:false,
-        phone: '', // 手机号
+        mobile: '18865392565', // 手机号
+        msg:'',
         computeTime: 0, // 计时的时间
         password:'123456',//密码
         code:'',//短信验证码
@@ -76,11 +82,55 @@
     },
     computed:{
       rightPhone(){
-        return /^1\d{10}$/.test(this.phone)
+        return /^1\d{10}$/.test(this.mobile)
       }
     },
     methods:{
       ...mapActions(['saveUserInfo']),
+      /**
+       * 发送短信验证码
+       */
+      async sendCode(){
+        // 如果当前没有计时
+        if(!this.computeTime) {
+          //检查输入格式
+          let flag = this.rightPhone;
+          if (!flag) {
+            this.msg='手机号码格式不正确，请检查';
+            this.$refs.TbToast.showToast();
+            return;
+          }
+          //发送验证码 && 启动倒计时
+          this.computeTime = 60;
+          this.intervalId = setInterval(() => {
+            this.computeTime--
+            if(this.computeTime<=0) {
+              // 停止计时
+              clearInterval(this.intervalId)
+            }
+          }, 1000);
+          let mobile = this.mobile;
+
+          let deviceId = getDeviceId();
+
+          // 发送ajax请求(向指定手机号发送验证码短信)
+          const result = await reqSendCode({mobile,deviceId});
+
+          console.log(result);
+
+          if(result.code!==0) {
+            // 显示提示
+            this.alertMsg(result.msg);
+            // 停止计时
+            if(this.computeTime) {
+              this.computeTime = 0;
+              clearInterval(this.intervalId)
+              this.intervalId = undefined
+            }
+          }
+        }
+
+      },
       /**
        * 改变内容
        */
@@ -111,22 +161,18 @@
        * 点击登录 做表单验证
        */
       async login(){
-        //手机号、邮箱、会员名密码登录
-        let {password} = this;
-        let phoneStr = this.phone;
-        console.log(phoneStr);
-        console.log(password);
+        //手机号、验证码登录
+        let {code} = this;
+        let mobileStr = this.mobile;
 
-        if(!phoneStr){
-          //用户名不能为空
-          this.alertMsg("请输入会员名");
+        if(!mobileStr){
+          this.alertMsg("请输入手机号");
           return;
-        }else if(!password){
-          //密码不能为空
-          this.alertMsg("密码不能为空");
+        }else if(!code){
+          this.alertMsg("验证码不能为空");
           return;
         }
-        let object = await reqPwdLogin({phoneStr,password});
+        let object = await reqSmsLogin({mobile:mobileStr,password:code});
         console.log(object);
 
         //错误信息显示
@@ -143,7 +189,7 @@
         console.log(userObj);
 
         //保存用户信息到vuex
-        this.saveUserInfo(userObj);
+        this.saveUserInfo(userObj.user);
 
         //获取用户信息
         this.$router.replace('/main');
@@ -165,7 +211,8 @@
     },
     components:{
       AlertTip,
-      TbInput
+      TbInput,
+      TbToast
     },
   }
 </script>

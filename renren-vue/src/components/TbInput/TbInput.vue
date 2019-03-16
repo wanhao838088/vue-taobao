@@ -6,6 +6,7 @@
              @blur="blurInput"
              :type="type"
              :value="value"
+             :maxlength="maxlength"
              ref="tbinput"
              class="am-input-required"
              value=""
@@ -32,7 +33,7 @@
       }
     },
     name: "TbInput",
-    props:['value','placeholder','type'],
+    props:['value','placeholder','type','maxlength'],
     methods:{
 
       /**

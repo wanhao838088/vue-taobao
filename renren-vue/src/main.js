@@ -10,7 +10,6 @@ import store from './store/index'
 
 // 加载过滤器
 import './fiters'
-import {generateUUID,setDeviceId,getDeviceId} from './utils/utils'
 import loading from './common/imgs/loading.gif'
 
 Vue.component(Button.name, Button);
@@ -28,14 +27,6 @@ Vue.config.productionTip = false;
 axios.defaults.withCredentials = true;
 
 //全局使用button
-
-//生成一个随机数作为设备id
-let deviceId = getDeviceId();
-if (!deviceId) {
-  let uuid = generateUUID();
-  console.log(uuid);
-  setDeviceId(uuid);
-}
 
 /* eslint-disable no-new */
 new Vue({

@@ -61,7 +61,15 @@ export function setToken(value) {
  * @returns {string}
  */
 export function getDeviceId() {
-  return window.localStorage.getItem("deviceId");
+  let temp = window.localStorage.getItem("deviceId");
+  if (temp){
+    return temp;
+  }
+  temp = generateUUID();
+  setDeviceId(temp);
+  console.log('设备Id  '+temp);
+  return temp;
+
 }
 
 /**
