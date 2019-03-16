@@ -2,7 +2,7 @@
   <div class="msite">
     <!--首页头部-->
     <header class="sc-bxivhb QclmN">
-      <div class="header-bd">
+      <div class="header-bd" @click="$router.push('/searchPage')">
         <a class="placeholder">
          <span class="text iconfont icon-sousuo">寻找宝贝店铺</span>
         </a>

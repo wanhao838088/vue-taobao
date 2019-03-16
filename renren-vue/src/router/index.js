@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import VueRouter from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Login from '@/pages/Login/Login'
 import Profile from '@/pages/Profile/Profile'
 import Main from '@/pages/Main/Main'
 import Goods from '@/components/Goods/Goods'
+import SearchPage from '@/components/SearchPage/SearchPage'
+
 import MobileLogin from '@/pages/MobileLogin/MobileLogin'
 import BuyCart from '@/pages/BuyCart/BuyCart'
 import OrderList from '@/pages/OrderList/OrderList'
@@ -25,6 +26,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/searchPage',
+      name: 'SearchPage',
+      component: SearchPage
     },
     {
       path: '/buyCart',
