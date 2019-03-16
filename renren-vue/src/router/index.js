@@ -7,10 +7,14 @@ import Profile from '@/pages/Profile/Profile'
 import Main from '@/pages/Main/Main'
 import Goods from '@/components/Goods/Goods'
 import MobileLogin from '@/pages/MobileLogin/MobileLogin'
+import BuyCart from '@/pages/BuyCart/BuyCart'
+import OrderList from '@/pages/OrderList/OrderList'
+import MyTb from '@/pages/MyTb/MyTb'
+import More from '@/pages/More/More'
 
 VueRouter.prototype.goBack = function () {
-  this.isBack = true
-  window.history.go(-1)
+  this.isBack = true;
+  window.history.go(-1);
 }
 
 Vue.use(Router);
@@ -18,14 +22,41 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/helloworld',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/buyCart',
+      name: 'BuyCart',
+      component: BuyCart,
+      meta: {
+        showFooter: true
+      }
+    },
+    {
+      path: '/orderList',
+      name: 'OrderList',
+      component: OrderList,
+      meta: {
+        showFooter: true
+      }
+    },
+    {
+      path: '/myTb',
+      name: 'MyTb',
+      component: MyTb,
+      meta: {
+        showFooter: true
+      }
+    },
+    {
+      path: '/more',
+      name: 'More',
+      component: More,
+      meta: {
+        showFooter: true
+      }
     },
     {
       path: '/mobileLogin',
@@ -40,7 +71,10 @@ export default new Router({
     {
       path: '/main',
       name: 'Main',
-      component: Main
+      component: Main,
+      meta: {
+        showFooter: true
+      }
     },
     {
       path: '/goods',

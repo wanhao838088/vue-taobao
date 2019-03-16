@@ -51,6 +51,7 @@
     </div>
 
   </div>
+
 </template>
 
 <script>
@@ -101,6 +102,33 @@
 
   .msite //首页
     width 100%
+    .tb-toolbar-container
+      box-sizing: border-box;
+      display: flex;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 1001;
+      background-color: #ffffff;
+      border-top: 1px solid #e7e7e7;
+      border-bottom: 1px solid #f8f8f8;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2px;
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+      .tab
+        color: #5d656b;
+        flex 1
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        .iconfont
+          font-size 0.5rem
+        .text
+          font-size: 0.35rem;
+          transform: scale(0.83333333);
     .QclmN
       position: fixed;
       left: 0;
