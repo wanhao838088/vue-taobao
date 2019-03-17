@@ -1,0 +1,297 @@
+2019-03-17 17:00:42,263 [INFO] [main] io.renren.ApiApplication [StartupInfoLogger.java : 50] Starting ApiApplication on SC-201811251034 with PID 7632 (C:\code\java\springboot\renren-security\renren-api\target\classes started by Administrator in C:\code\java\springboot\renren-security)
+2019-03-17 17:00:42,273 [DEBUG] [main] io.renren.ApiApplication [StartupInfoLogger.java : 53] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2019-03-17 17:00:42,280 [INFO] [main] io.renren.ApiApplication [SpringApplication.java : 684] The following profiles are active: dev
+2019-03-17 17:00:42,454 [INFO] [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java : 590] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@13c3c1e1: startup date [Sun Mar 17 17:00:42 CST 2019]; root of context hierarchy
+2019-03-17 17:00:46,762 [INFO] [main] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 172] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-17 17:00:47,690 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 326] Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$3f637a07] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 17:00:47,881 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 326] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$78f7bbd9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 17:00:49,013 [INFO] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 91] Tomcat initialized with port(s): 8081 (http)
+2019-03-17 17:00:49,073 [INFO] [main] org.apache.catalina.core.StandardService [DirectJDKLog.java : 180] Starting service [Tomcat]
+2019-03-17 17:00:49,074 [INFO] [main] org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 180] Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-03-17 17:00:49,084 [INFO] [localhost-startStop-1] org.apache.catalina.core.AprLifecycleListener [DirectJDKLog.java : 180] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_121\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.1\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Redis\;C:\java\apache-maven-3.5.0\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-03-17 17:00:49,321 [INFO] [localhost-startStop-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/renren-api] [DirectJDKLog.java : 180] Initializing Spring embedded WebApplicationContext
+2019-03-17 17:00:49,322 [INFO] [localhost-startStop-1] org.springframework.web.context.ContextLoader [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 6868 ms
+2019-03-17 17:00:49,591 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 17:00:49,592 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-17 17:00:49,593 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-17 17:00:49,593 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-17 17:00:49,593 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'xssFilter' to urls: [/*]
+2019-03-17 17:00:49,594 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'webStatFilter' to urls: [/*]
+2019-03-17 17:00:49,594 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 245] Mapping filter: 'configureCorsFilter' to: [/*]
+2019-03-17 17:00:49,594 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 187] Servlet dispatcherServlet mapped to [/]
+2019-03-17 17:00:49,596 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 187] Servlet statViewServlet mapped to [/druid/*]
+2019-03-17 17:00:49,963 [INFO] [main] c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
+2019-03-17 17:00:50,725 [INFO] [main] com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 930] {dataSource-1} inited
+2019-03-17 17:00:52,607 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:00:52,641 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:00:52,717 [DEBUG] [main] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:00:52,869 [INFO] [main] io.lettuce.core.EpollProvider [Slf4JLogger.java : 101] Starting without optional epoll library
+2019-03-17 17:00:52,873 [INFO] [main] io.lettuce.core.KqueueProvider [Slf4JLogger.java : 101] Starting without optional kqueue library
+2019-03-17 17:00:54,730 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/login],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.login(io.renren.form.LoginForm)
+2019-03-17 17:00:54,732 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/getCode],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.getCode(io.renren.form.CodeForm,javax.servlet.http.HttpServletRequest)
+2019-03-17 17:00:54,732 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/loginByCode],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.loginByCode(io.renren.form.LoginForm,javax.servlet.http.HttpServletRequest)
+2019-03-17 17:00:54,733 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/logout],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiLoginController.logout(long)
+2019-03-17 17:00:54,735 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/register],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.ApiRegisterController.register(io.renren.form.RegisterForm)
+2019-03-17 17:00:54,742 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/userId],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.userInfo(java.lang.Integer)
+2019-03-17 17:00:54,743 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/userInfo],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.userInfo(io.renren.entity.UserEntity)
+2019-03-17 17:00:54,744 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/notToken],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.ApiTestController.notToken()
+2019-03-17 17:00:54,745 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/goods/list],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.GoodsController.list()
+2019-03-17 17:00:54,746 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/goods/{id}],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.GoodsController.goodsDetail(java.lang.Long)
+2019-03-17 17:00:54,747 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/msite/bannerAndNav],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.MSiteController.bannerList()
+2019-03-17 17:00:54,749 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/secKill/killGoods],methods=[POST]}" onto public io.renren.common.utils.R io.renren.controller.SecKillController.secKill(io.renren.form.SecKillForm,io.renren.entity.UserEntity)
+2019-03-17 17:00:54,750 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/api/secKill/result],methods=[GET]}" onto public io.renren.common.utils.R io.renren.controller.SecKillController.miaoshaResult(io.renren.entity.UserEntity,long)
+2019-03-17 17:00:54,759 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-03-17 17:00:54,762 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-03-17 17:00:54,764 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-03-17 17:00:54,769 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-17 17:00:54,770 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 549] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-17 17:00:55,053 [INFO] [main] s.d.spring.web.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-03-17 17:00:55,390 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-17 17:00:55,733 [INFO] [main] o.s.w.s.mvc.method.annotation.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java : 588] Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@13c3c1e1: startup date [Sun Mar 17 17:00:42 CST 2019]; root of context hierarchy
+2019-03-17 17:00:55,842 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-17 17:00:55,842 [INFO] [main] o.s.web.servlet.handler.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 373] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-17 17:00:55,885 [INFO] [main] o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [ExceptionHandlerExceptionResolver.java : 288] Detected @ExceptionHandler methods in RRExceptionHandler
+2019-03-17 17:00:57,110 [INFO] [main] org.springframework.ui.freemarker.SpringTemplateLoader [SpringTemplateLoader.java : 62] SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@13c3c1e1: startup date [Sun Mar 17 17:00:42 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
+2019-03-17 17:00:57,112 [INFO] [main] o.s.web.servlet.view.freemarker.FreeMarkerConfigurer [FreeMarkerConfigurer.java : 131] ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-03-17 17:00:57,446 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 433] Registering beans for JMX exposure on startup
+2019-03-17 17:00:57,450 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'statFilter' has been autodetected for JMX exposure
+2019-03-17 17:00:57,450 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-17 17:00:57,467 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 895] Bean with name 'rabbitConnectionFactory' has been autodetected for JMX exposure
+2019-03-17 17:00:57,473 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 668] Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2019-03-17 17:00:57,475 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 675] Located managed bean 'rabbitConnectionFactory': registering with JMX server as MBean [org.springframework.amqp.rabbit.connection:name=rabbitConnectionFactory,type=CachingConnectionFactory]
+2019-03-17 17:00:57,507 [INFO] [main] o.s.jmx.export.annotation.AnnotationMBeanExporter [MBeanExporter.java : 668] Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2019-03-17 17:00:57,542 [INFO] [main] o.springframework.context.support.DefaultLifecycleProcessor [DefaultLifecycleProcessor.java : 356] Starting beans in phase 2147483647
+2019-03-17 17:00:57,543 [INFO] [main] s.d.spring.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 147] Context refreshed
+2019-03-17 17:00:57,567 [INFO] [main] s.d.spring.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 150] Found 1 custom documentation plugin(s)
+2019-03-17 17:00:57,628 [INFO] [main] s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2019-03-17 17:00:57,920 [INFO] [main] s.d.s.web.readers.operation.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: userInfoUsingGET_1
+2019-03-17 17:00:57,946 [INFO] [SimpleAsyncTaskExecutor-1] o.s.amqp.rabbit.connection.CachingConnectionFactory [AbstractConnectionFactory.java : 455] Attempting to connect to: [localhost:5672]
+2019-03-17 17:00:57,992 [INFO] [SimpleAsyncTaskExecutor-1] o.s.amqp.rabbit.connection.CachingConnectionFactory [AbstractConnectionFactory.java : 471] Created new connection: rabbitConnectionFactory#5fe5c68b:0/SimpleConnection@21376568 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 51701]
+2019-03-17 17:00:58,133 [INFO] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 206] Tomcat started on port(s): 8081 (http) with context path '/renren-api'
+2019-03-17 17:00:58,140 [INFO] [main] io.renren.ApiApplication [StartupInfoLogger.java : 59] Started ApiApplication in 19.284 seconds (JVM running for 22.093)
+2019-03-17 17:02:24,514 [INFO] [http-nio-8081-exec-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/renren-api] [DirectJDKLog.java : 180] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-17 17:02:24,515 [INFO] [http-nio-8081-exec-1] org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 494] FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-17 17:02:24,607 [INFO] [http-nio-8081-exec-1] org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 509] FrameworkServlet 'dispatcherServlet': initialization completed in 92 ms
+2019-03-17 17:02:24,730 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:02:24,731 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:02:24,767 [DEBUG] [http-nio-8081-exec-1] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:02:24,833 [DEBUG] [http-nio-8081-exec-2] io.renren.dao.TbBannerDao.selectList [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT id AS id,img_url AS imgUrl,link_url AS linkUrl,order_num AS orderNum FROM tb_banner 
+2019-03-17 17:02:24,837 [DEBUG] [http-nio-8081-exec-2] io.renren.dao.TbBannerDao.selectList [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:02:24,850 [DEBUG] [http-nio-8081-exec-2] io.renren.dao.TbBannerDao.selectList [BaseJdbcLogger.java : 159] <==      Total: 7
+2019-03-17 17:07:13,361 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.TokenDao.selectList [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT user_id AS userId,token,expire_time AS expireTime,update_time AS updateTime FROM tb_token WHERE (token = ?) 
+2019-03-17 17:07:13,363 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.TokenDao.selectList [BaseJdbcLogger.java : 159] ==> Parameters: 986ccf64e75346b39bb5728bb01c23a8(String)
+2019-03-17 17:07:13,372 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.TokenDao.selectList [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:07:13,378 [WARN] [http-nio-8081-exec-5] o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 140] Resolved [io.renren.common.exception.RRException: token失效，请重新登录]
+2019-03-17 17:09:28,484 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:09:28,485 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:09:28,510 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:09:42,615 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-17 17:09:42,619 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:09:42,626 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:09:42,660 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:09:42,661 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:09:42,675 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 7
+2019-03-17 17:09:42,691 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:09:42,692 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:09:42,700 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 27
+2019-03-17 17:09:42,713 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_props WHERE goods_id=? order by order_num asc 
+2019-03-17 17:09:42,714 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:09:42,727 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 25
+2019-03-17 17:09:42,741 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_service WHERE goods_id=? order by order_num asc 
+2019-03-17 17:09:42,743 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:09:42,745 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-17 17:09:42,762 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-17 17:09:42,763 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:09:42,776 [DEBUG] [http-nio-8081-exec-9] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:10:44,304 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:10:44,305 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:10:44,323 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:10:47,471 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-17 17:10:47,472 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:10:47,475 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:10:47,478 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:10:47,479 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:10:47,482 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-17 17:10:47,486 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:10:47,487 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:10:47,505 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 37
+2019-03-17 17:10:47,508 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_props WHERE goods_id=? order by order_num asc 
+2019-03-17 17:10:47,509 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:10:47,517 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 35
+2019-03-17 17:10:47,525 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_service WHERE goods_id=? order by order_num asc 
+2019-03-17 17:10:47,526 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:10:47,529 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-17 17:10:47,531 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-17 17:10:47,532 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:10:47,534 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:14:18,141 [DEBUG] [http-nio-8081-exec-17] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:14:18,143 [DEBUG] [http-nio-8081-exec-17] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:14:18,161 [DEBUG] [http-nio-8081-exec-17] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:14:21,278 [DEBUG] [http-nio-8081-exec-19] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:14:21,280 [DEBUG] [http-nio-8081-exec-19] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:14:21,305 [DEBUG] [http-nio-8081-exec-19] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:14:27,732 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-17 17:14:27,733 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:14:27,737 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:14:27,739 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:14:27,741 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:14:27,746 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 7
+2019-03-17 17:14:27,749 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:14:27,750 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:14:27,753 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 27
+2019-03-17 17:14:27,756 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_props WHERE goods_id=? order by order_num asc 
+2019-03-17 17:14:27,757 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:14:27,761 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 25
+2019-03-17 17:14:27,764 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_service WHERE goods_id=? order by order_num asc 
+2019-03-17 17:14:27,765 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:14:27,768 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-17 17:14:27,771 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-17 17:14:27,772 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:14:27,773 [DEBUG] [http-nio-8081-exec-21] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:14:58,902 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:14:58,903 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:14:58,917 [DEBUG] [http-nio-8081-exec-22] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:15:01,134 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-17 17:15:01,136 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:15:01,138 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:15:01,140 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:01,141 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:15:01,144 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-17 17:15:01,147 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:01,148 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:15:01,152 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 37
+2019-03-17 17:15:01,154 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_props WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:01,155 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:15:01,160 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 35
+2019-03-17 17:15:01,164 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_service WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:01,165 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:15:01,170 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-17 17:15:01,174 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-17 17:15:01,175 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:15:01,176 [DEBUG] [http-nio-8081-exec-24] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:15:06,497 [DEBUG] [http-nio-8081-exec-25] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:15:06,498 [DEBUG] [http-nio-8081-exec-25] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:15:06,510 [DEBUG] [http-nio-8081-exec-25] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:15:09,005 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-17 17:15:09,006 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 6(Long)
+2019-03-17 17:15:09,011 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:15:09,014 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:09,015 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 6(Long)
+2019-03-17 17:15:09,017 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 7
+2019-03-17 17:15:09,021 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:09,022 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 6(Long)
+2019-03-17 17:15:09,025 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 19
+2019-03-17 17:15:09,027 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_props WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:09,028 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 6(Long)
+2019-03-17 17:15:09,031 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 14
+2019-03-17 17:15:09,034 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_service WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:09,035 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 6(Long)
+2019-03-17 17:15:09,039 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-17 17:15:09,042 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-17 17:15:09,043 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:15:09,044 [DEBUG] [http-nio-8081-exec-27] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:15:46,000 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:15:46,001 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:15:46,012 [DEBUG] [http-nio-8081-exec-28] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:15:48,749 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-17 17:15:48,750 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:15:48,752 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:15:48,754 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:48,755 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:15:48,757 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-17 17:15:48,760 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:48,761 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:15:48,765 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 37
+2019-03-17 17:15:48,767 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_props WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:48,768 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:15:48,772 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 35
+2019-03-17 17:15:48,775 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_service WHERE goods_id=? order by order_num asc 
+2019-03-17 17:15:48,776 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:15:48,779 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-17 17:15:48,781 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-17 17:15:48,782 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:15:48,783 [DEBUG] [http-nio-8081-exec-30] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:20:42,018 [DEBUG] [http-nio-8081-exec-3] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:20:42,019 [DEBUG] [http-nio-8081-exec-3] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:20:42,032 [DEBUG] [http-nio-8081-exec-3] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:20:46,202 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-17 17:20:46,203 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:20:46,205 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:20:46,207 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:20:46,208 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:20:46,210 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-17 17:20:46,212 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:20:46,213 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:20:46,216 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 37
+2019-03-17 17:20:46,218 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_props WHERE goods_id=? order by order_num asc 
+2019-03-17 17:20:46,219 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:20:46,224 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 35
+2019-03-17 17:20:46,227 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_service WHERE goods_id=? order by order_num asc 
+2019-03-17 17:20:46,228 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 4(Long)
+2019-03-17 17:20:46,230 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 5
+2019-03-17 17:20:46,233 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-17 17:20:46,234 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:20:46,236 [DEBUG] [http-nio-8081-exec-5] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:21:05,627 [DEBUG] [http-nio-8081-exec-4] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:21:05,629 [DEBUG] [http-nio-8081-exec-4] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:21:05,641 [DEBUG] [http-nio-8081-exec-4] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:21:07,653 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-17 17:21:07,654 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:21:07,657 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:21:07,658 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:21:07,660 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:21:07,662 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 7
+2019-03-17 17:21:07,664 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:21:07,665 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:21:07,668 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 27
+2019-03-17 17:21:07,670 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_props WHERE goods_id=? order by order_num asc 
+2019-03-17 17:21:07,671 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:21:07,675 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 25
+2019-03-17 17:21:07,678 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_service WHERE goods_id=? order by order_num asc 
+2019-03-17 17:21:07,679 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 5(Long)
+2019-03-17 17:21:07,683 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 4
+2019-03-17 17:21:07,686 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-17 17:21:07,687 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:21:07,688 [DEBUG] [http-nio-8081-exec-7] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:22:48,175 [DEBUG] [http-nio-8081-exec-11] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:22:48,177 [DEBUG] [http-nio-8081-exec-11] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:22:48,188 [DEBUG] [http-nio-8081-exec-11] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:22:50,545 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-17 17:22:50,546 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 9(Long)
+2019-03-17 17:22:50,549 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:22:50,551 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:22:50,552 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 9(Long)
+2019-03-17 17:22:50,554 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 0
+2019-03-17 17:22:50,557 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:22:50,558 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 9(Long)
+2019-03-17 17:22:50,560 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 0
+2019-03-17 17:22:50,562 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_props WHERE goods_id=? order by order_num asc 
+2019-03-17 17:22:50,562 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 9(Long)
+2019-03-17 17:22:50,564 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 0
+2019-03-17 17:22:50,567 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_service WHERE goods_id=? order by order_num asc 
+2019-03-17 17:22:50,568 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 9(Long)
+2019-03-17 17:22:50,570 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 0
+2019-03-17 17:22:50,573 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-17 17:22:50,575 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:22:50,577 [DEBUG] [http-nio-8081-exec-12] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:23:15,118 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id 
+2019-03-17 17:23:15,119 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:23:15,130 [DEBUG] [http-nio-8081-exec-14] io.renren.dao.GoodsDao.listGoodsVo [BaseJdbcLogger.java : 159] <==      Total: 116
+2019-03-17 17:23:20,419 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: select g.*,mg.stock_count, UNIX_TIMESTAMP(mg.start_date)*1000 startTime , UNIX_TIMESTAMP(mg.end_date)*1000 endTime,mg.miaosha_price from miaosha_goods mg right join goods g on mg.goods_id = g.id where g.id = ? 
+2019-03-17 17:23:20,420 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 30(Long)
+2019-03-17 17:23:20,423 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsDao.getGoodsVoByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-03-17 17:23:20,425 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:23:20,426 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 30(Long)
+2019-03-17 17:23:20,428 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 7
+2019-03-17 17:23:20,431 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_detail_img WHERE goods_id=? order by order_num asc 
+2019-03-17 17:23:20,432 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 30(Long)
+2019-03-17 17:23:20,435 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsDetailImgDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 17
+2019-03-17 17:23:20,437 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_props WHERE goods_id=? order by order_num asc 
+2019-03-17 17:23:20,438 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 30(Long)
+2019-03-17 17:23:20,442 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsPropsDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 20
+2019-03-17 17:23:20,445 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT * FROM goods_service WHERE goods_id=? order by order_num asc 
+2019-03-17 17:23:20,446 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] ==> Parameters: 30(Long)
+2019-03-17 17:23:20,448 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsServiceEntityDao.getByGoodsId [BaseJdbcLogger.java : 159] <==      Total: 3
+2019-03-17 17:23:20,451 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT COUNT(1) FROM goods_comment 
+2019-03-17 17:23:20,452 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-03-17 17:23:20,453 [DEBUG] [http-nio-8081-exec-16] io.renren.dao.GoodsCommentDao.selectCount [BaseJdbcLogger.java : 159] <==      Total: 1

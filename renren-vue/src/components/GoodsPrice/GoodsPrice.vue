@@ -2,15 +2,27 @@
   <div class="d-price">
     <div class="present-price">
       <div class="main-price-wrapper">
-        <p class="o-t-price"><span class="num">{{goodsDetail.goodsPrice}}</span></p>
+        <p class="o-t-price">
+          <span class="num" v-if="goodsDetail.goodsMaxPrice">
+          {{goodsDetail.goodsMinPrice}}-{{goodsDetail.goodsMaxPrice}}
+          </span>
+          <span class="num" v-else>
+          {{goodsDetail.goodsMinPrice}}
+          </span>
+        </p>
         <p class="txt"><span>巨优惠</span></p>
       </div>
     </div>
     <!--原价-->
-    <div class="original-price">
+    <div class="original-price" v-show="goodsDetail.orgMinPrice">
       <div style="float: left;margin-right: 0.24rem;">
         价格:￥
-        <del>{{goodsDetail.orgPrice}}</del>
+        <del v-if="goodsDetail.orgMaxPrice">
+          {{goodsDetail.orgMinPrice}}-{{goodsDetail.orgMaxPrice}}
+        </del>
+        <del v-else>
+          {{goodsDetail.orgMinPrice}}
+        </del>
       </div>
     </div>
   </div>

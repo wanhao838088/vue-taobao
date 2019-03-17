@@ -76,9 +76,9 @@
         </transition>
 
 
-        <el-button type="primary" @click="doSecKill" :disabled="miaoshaStatus!=1" style="width: 100%;margin-top: .2rem;" >
-          立即秒杀
-        </el-button>
+        <!--<el-button type="primary" @click="doSecKill" :disabled="miaoshaStatus!=1" style="width: 100%;margin-top: .2rem;" >-->
+          <!--立即秒杀-->
+        <!--</el-button>-->
       </div>
 
       <!--底部固定bar-->

@@ -53,7 +53,7 @@
   }
 
   .page-container{
-    position: relative;
+    /*position: relative;*/
     padding-bottom: 40px;
   }
   .slide-left-enter, .slide-right-leave-active {

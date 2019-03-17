@@ -13,11 +13,11 @@
             <p class="d-price">
               <em class="h">
                 <span class="price-icon">¥</span>
-                <span class="font-num">{{item.goodsPrice}}</span>
+                <span class="font-num">{{item.goodsMinPrice}}</span>
               </em>
-              <del>
+              <del v-show="item.orgMinPrice">
                 <span class="price-icon">¥</span>
-                <span class="font-num">{{item.orgPrice}}</span>
+                <span class="font-num">{{item.orgMinPrice}}</span>
               </del>
             </p>
             <div class="d-main">

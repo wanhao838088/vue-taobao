@@ -328,7 +328,7 @@
       text-align: left;
       box-sizing: border-box;
       padding-left: 20px;
-      position: absolute;
+      position: fixed;
       left: 0;
       top: 0;
       font-size: 0.41rem;
