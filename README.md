@@ -1,6 +1,14 @@
 **已实现的效果图**
+ ![登录页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/login_1.png)
+ ![主页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/main_1.png)
+ ![详情页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/detail_1.png)
+ ![详情页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/detail_2.png)
+ ![详情页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/detail_3.png)
+ ![详情页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/detail_4.png)
+
  <br>
  * 登录页
+ 
  ![登录页1](https://github.com/wanhao838088/renren-frame/blob/master/renren-vue/gifs/login_pwd.gif)
  <br>
  
@@ -58,7 +66,8 @@ renren-security
             退出登录
         5) /api/register
             用户注册
-                
+        6) 商品列表 详情 轮播图 导航列表等
+               
 
 **项目说明** 
 - 采用SpringBoot、MyBatis、Shiro框架，开发的一套权限系统，极低门槛，拿来即用。设计之初，就非常注重安全性，为企业系统保驾护航，让一切都变得如此简单。
