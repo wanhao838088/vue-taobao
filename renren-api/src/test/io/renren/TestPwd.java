@@ -1,4 +1,4 @@
-package com.api.test;
+package io.renren;
 
 import io.renren.constants.SystemConstants;
 import org.apache.commons.codec.digest.DigestUtils;

@@ -14,12 +14,15 @@ import java.io.Serializable;
 public class Goods implements Serializable {
 	@TableId
 	private Long id;
-	private String goodsName;
 	private String goodsTitle;
 	private String goodsImg;
 	private String goodsDetail;
-	private Double goodsPrice;
-	private Double orgPrice;
+	private Double goodsMinPrice;
+	private Double goodsMaxPrice;
+
+	private Double orgMinPrice;
+	private Double orgMaxPrice;
+
 	/**
 	 * 所在地
 	 */
@@ -28,6 +31,9 @@ public class Goods implements Serializable {
 	 * 运费
 	 */
 	private Double deliveryFree;
+
 	private Integer goodsStock;
+
+	private Integer payCount;
 
 }

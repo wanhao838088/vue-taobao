@@ -35,7 +35,7 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoDao, OrderInfo> i
         orderInfo.setDeliveryAddrId(0L);
         orderInfo.setGoodsCount(1);
         orderInfo.setGoodsId(goods.getId());
-        orderInfo.setGoodsName(goods.getGoodsName());
+        orderInfo.setGoodsName(goods.getGoodsTitle());
         orderInfo.setGoodsPrice(goods.getMiaoshaPrice());
         orderInfo.setOrderChannel(1);
         orderInfo.setStatus(0);
