@@ -11,7 +11,7 @@
 
     <!--首页banner-->
     <nav class="msite_banner">
-      <div v-if="banners.length>0" class="swiper-container" style="margin-top: -24px;">
+      <div v-if="banners.length>0" class="swiper-container" style="margin-top: -26px;">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(cs,index) in banners" :key="index">
             <img class="banner-img" :src="cs.imgUrl" alt="">
@@ -50,6 +50,8 @@
       <GoodsList></GoodsList>
     </div>
 
+    <loading :show="show" :text="text"></loading>
+
   </div>
 
 </template>
@@ -57,13 +59,19 @@
 <script>
   import "swiper/dist/css/swiper.min.css"
   import Swiper from 'swiper'
-
+  import { Alert,Loading  } from 'vux'
   import HeaderTop from '../../components/HeaderTop/HeaderTop'
   import GoodsList from '../../components/GoodsList/GoodsList'
 
   import {mapActions,mapState,mapGetters}  from 'vuex'
 
   export default {
+    data() {
+      return {
+        show: false,
+        text: "厉害了"
+      };
+    },
     methods:{
       ...mapActions(['getGoods','getBannerAndNav'])
     },
@@ -87,7 +95,9 @@
     },
     components: {
       HeaderTop,
-      GoodsList
+      GoodsList,
+      Alert,
+      Loading
     },
     computed:{
       ...mapState(['banners','navs']),

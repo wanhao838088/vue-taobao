@@ -5,13 +5,12 @@
 
     </div>
 
-    <el-button v-if="user.userId" type="danger" style="width: 100%;" @click.native="logout">退出登录</el-button>
+    <!--<el-button v-if="user.userId" type="danger" style="width: 100%;" @click.native="logout">退出登录</el-button>-->
   </div>
 </template>
 
 <script>
   import {mapState,mapActions} from 'vuex'
-  import {MessageBox} from 'element-ui'
   import HeaderTop from '../../components/HeaderTop/HeaderTop'
 
   export default {
@@ -28,14 +27,14 @@
        */
       logout(){
         //弹出确认框
-        MessageBox.confirm('确定退出吗？').then(
-          action => {
-          this.reqLogout();
-          },
-          action => {
-            console.log('取消了...')
-          }
-        );
+        // MessageBox.confirm('确定退出吗？').then(
+        //   action => {
+        //   this.reqLogout();
+        //   },
+        //   action => {
+        //     console.log('取消了...')
+        //   }
+        // );
       }
     }
   }

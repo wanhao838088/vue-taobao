@@ -92,8 +92,6 @@
 
   import "swiper/dist/css/swiper.min.css"
   import Swiper from 'swiper'
-  import { MessageBox } from 'element-ui'
-  import { Message } from 'element-ui'
 
   import {reqGoodsDetail,reqSecKill,reqSecKillResult}  from '../../api'
 
@@ -187,18 +185,18 @@
               this.getSecKillResult(goodsId);
               break;
             case 500:
-              Message.error({
-                showClose: true,
-                message: '服务器内部错误',
-                type: 'error'
-              });
+              // Message.error({
+              //   showClose: true,
+              //   message: '服务器内部错误',
+              //   type: 'error'
+              // });
               break;
             case 300:
-              Message.error({
-                showClose: true,
-                message: result.msg,
-                type: 'warning'
-              });
+              // Message.error({
+              //   showClose: true,
+              //   message: result.msg,
+              //   type: 'warning'
+              // });
               break;
             case 10086:
               //token 过期跳转到登录
@@ -206,16 +204,16 @@
               break;
           }
         }else {
-          MessageBox.alert('请先登录!','提示', {
-            confirmButtonText: '确定',
-            callback: action => {
-              console.log(action);
-              if (action=='confirm') {
-                //跳转到登录
-                this.$router.push("/login");
-              }
-            }
-          })
+          // MessageBox.alert('请先登录!','提示', {
+          //   confirmButtonText: '确定',
+          //   callback: action => {
+          //     console.log(action);
+          //     if (action=='confirm') {
+          //       //跳转到登录
+          //       this.$router.push("/login");
+          //     }
+          //   }
+          // })
         }
       },
       /**

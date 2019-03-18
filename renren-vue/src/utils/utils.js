@@ -1,4 +1,3 @@
-import CryptoJS from 'crypto-js';
 
 /**
  * 生成uuid
@@ -80,37 +79,3 @@ export function getToken() {
   return window.localStorage.getItem("token");
 }
 
-//des工具方法
-//DES加密
-export const encryptBy = (message) => {
-  let key = 'wanhao';
-
-  function encryptByDES(message, key) {
-    let keyHex = CryptoJS.enc.Utf8.parse(key);
-    let option = {mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7};
-    let encrypted = CryptoJS.DES.encrypt(message, keyHex, option);
-    return encrypted.ciphertext.toString()
-  }
-
-  return encryptByDES(message, key);
-};
-
-//DES解密
-export const decryptBy = (message) => {
-  let key = 'wanhao';
-
-  //DES  ECB模式解密
-  function decryptByDES(message, key) {
-    let keyHex = CryptoJS.enc.Utf8.parse(key);
-    let decrypted = CryptoJS.DES.decrypt({
-      ciphertext: CryptoJS.enc.Hex.parse(message)
-    }, keyHex, {
-      mode: CryptoJS.mode.ECB,
-      padding: CryptoJS.pad.Pkcs7
-    });
-    let result_value = decrypted.toString(CryptoJS.enc.Utf8);
-    return result_value;
-  }
-
-  return decryptByDES(message, key);
-};
