@@ -11,7 +11,9 @@
  ![详情页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/detail_3.png)
  ![详情页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/detail_4.png)
  <br>
- 
+  ![我的淘宝页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/mytb.png)
+ <br>
+
  
  * 列表页和详情页
  ![主页页1](https://github.com/wanhao838088/renren-frame/blob/master/renren-vue/gifs/list_detail.gif)
