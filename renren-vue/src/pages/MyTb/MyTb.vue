@@ -13,7 +13,7 @@
           <!--用户名部分-->
           <div class="username-out">
             <span class="username">
-              DNF代练就找我
+              {{tbUserName}}
             </span>
           </div>
           <!--亲情账号-->
@@ -151,19 +151,19 @@
               <span class="order-div-item-span">待付款</span>
             </div>
             <div class="order-div-item">
-              <div class="order-item-icon" style="width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: contain; background-image: url(https://gw.alicdn.com/tfs/TB16GolmKuSBuNjy1XcXXcYjFXa-87-87.png_.webp);"></div>
+              <div class="order-item-icon" style="width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: contain; background-image: url(https://gw.alicdn.com/tfs/TB1cwzgmMmTBuNjy1XbXXaMrVXa-87-87.png_.webp);"></div>
               <span class="order-div-item-span">待发货</span>
             </div>
             <div class="order-div-item">
-              <div class="order-item-icon" style="width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: contain; background-image: url(https://gw.alicdn.com/tfs/TB16GolmKuSBuNjy1XcXXcYjFXa-87-87.png_.webp);"></div>
+              <div class="order-item-icon" style="width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: contain; background-image: url(https://gw.alicdn.com/tfs/TB1b3zgmMmTBuNjy1XbXXaMrVXa-87-87.png_.webp);"></div>
               <span class="order-div-item-span">待收货</span>
             </div>
             <div class="order-div-item">
-              <div class="order-item-icon" style="width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: contain; background-image: url(https://gw.alicdn.com/tfs/TB16GolmKuSBuNjy1XcXXcYjFXa-87-87.png_.webp);"></div>
+              <div class="order-item-icon" style="width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: contain; background-image: url(https://gw.alicdn.com/tfs/TB1fOKqm_tYBeNjy1XdXXXXyVXa-87-87.png_.webp);"></div>
               <span class="order-div-item-span">评价</span>
             </div>
             <div class="order-div-item">
-              <div class="order-item-icon" style="width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: contain; background-image: url(https://gw.alicdn.com/tfs/TB16GolmKuSBuNjy1XcXXcYjFXa-87-87.png_.webp);"></div>
+              <div class="order-item-icon" style="width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: contain; background-image: url(https://gw.alicdn.com/tfs/TB1fMzgmMmTBuNjy1XbXXaMrVXa-87-87.png_.webp);"></div>
               <span class="order-div-item-span">退款/售后</span>
             </div>
           </div>
@@ -184,8 +184,17 @@
 </template>
 
 <script>
+  import {mapState,mapGetters} from 'vuex'
+  /**
+   * 我的淘宝页面
+   */
   export default {
-    name: "MyTb"
+    name: "MyTb",
+    computed:{
+      ...mapState(['user']),
+      ...mapGetters(['tbUserName']),
+
+    }
   }
 </script>
 

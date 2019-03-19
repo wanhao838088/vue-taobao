@@ -1,11 +1,11 @@
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     druid:
-      url: jdbc:mysql://localhost:3306/renren_security?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
-      username: renren
-      password: 123456
+      url: jdbc:mysql://62.234.128.233:3306/renren_security?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+      username: root
+      password: wanhao838
       initial-size: 10
       max-active: 100
       min-idle: 10

@@ -46,7 +46,7 @@
   export default {
     data(){
       return{
-        phone: '18865392565', // 手机号
+        phone: '18888888888', // 手机号
         computeTime: 0, // 计时的时间
         password:'123456',//密码
         code:'',//短信验证码
@@ -75,8 +75,6 @@
         //手机号、邮箱、会员名密码登录
         let {password} = this;
         let phoneStr = this.phone;
-        console.log(phoneStr);
-        console.log(password);
 
         if(!phoneStr){
           //用户名不能为空
@@ -87,10 +85,7 @@
           this.alertMsg("密码不能为空");
           return;
         }
-        this.$router.replace('/main');
-
-        let object = await reqPwdLogin({phoneStr,password});
-        console.log(object);
+        let object = await reqPwdLogin({name:phoneStr,password});
 
         //错误信息显示
         if (object.code !== 0) {
@@ -103,10 +98,11 @@
         //获取用户信息
         let token = object.token;
         let userObj = await reqUserInfo({token});
+        console.log('用户信息为：');
         console.log(userObj);
 
         //保存用户信息到vuex
-        this.saveUserInfo(userObj);
+        this.saveUserInfo(userObj.user);
 
         //获取用户信息
         this.$router.replace('/main');
