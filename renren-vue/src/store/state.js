@@ -6,6 +6,7 @@ export default {
   user:{}, //用户信息
   goods:[], //商品列表
   banners:[],//you know
+  news:[],//新闻
   navs:[],//you know
   shopCart: [], // 购物车
 }

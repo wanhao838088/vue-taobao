@@ -7,7 +7,8 @@ import {
   SAVE_USER_INFO,
   RECEIVE_GOODS,
   SAVE_BANNERS,
-  SAVE_NAVS
+  SAVE_NAVS,
+  SAVE_NEWS
 } from './mutation-types'
 
 export default {
@@ -45,5 +46,13 @@ export default {
    */
   [SAVE_BANNERS] (state, {banners}) {
     state.banners = banners;
+  },
+  /**
+   * 保存新闻
+   * @param state
+   * @param news
+   */
+  [SAVE_NEWS] (state, {news}) {
+    state.news = news;
   },
 }

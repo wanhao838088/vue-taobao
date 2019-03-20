@@ -8,7 +8,8 @@ import {
   SAVE_USER_INFO,
   RECEIVE_GOODS,
   SAVE_BANNERS,
-  SAVE_NAVS
+  SAVE_NAVS,
+  SAVE_NEWS
 }
 from './mutation-types'
 
@@ -38,8 +39,10 @@ export default {
   async getBannerAndNav({commit, state},callBack) {
     const result = await reqBannerAndNav();
     if (result.code == 0) {
+      console.log(result);
       commit(SAVE_BANNERS,{banners:result.banners});
       commit(SAVE_NAVS,{navs:result.navs});
+      commit(SAVE_NEWS,{news:result.news});
       //回调
       callBack && callBack.call();
     }

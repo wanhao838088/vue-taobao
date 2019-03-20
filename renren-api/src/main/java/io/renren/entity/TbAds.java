@@ -8,34 +8,38 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * Created by LiuLiHao on 2019/3/8 0008 下午 03:28
+ * Created by LiuLiHao on 2019/3/19 0019 下午 04:42
  * @author : LiuLiHao
- * 描述：nav 实体
+ * 描述：广告实体类
  */
-@TableName("tb_nav")
+@TableName("tb_ads")
 @Data
-public class TbNav implements Serializable {
+public class TbAds implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
-     * 用户ID
+     * ID
      */
     @TableId
     private Integer id;
     /**
-     * 图片地址
+     * 广告图片
      */
-    private String imgUrl;
-    /**
-     * 链接地址
-     */
-    private String linkUrl;
+    private String adsImg;
     /**
      * 排序
      */
     @JsonIgnore
     private Integer orderNum;
     /**
-     * 菜单导航名称
+     * 广告标题
      */
-    private String navName;
+    private String adsTitle;
+    /**
+     * 点击广告连接
+     */
+    private String adsUrl;
+    /**
+     * 广告描述
+     */
+    private String adsDesc;
 }

@@ -10,32 +10,32 @@ import java.io.Serializable;
 /**
  * Created by LiuLiHao on 2019/3/8 0008 下午 03:28
  * @author : LiuLiHao
- * 描述：nav 实体
+ * 描述：新闻 实体
  */
-@TableName("tb_nav")
+@TableName("tb_news")
 @Data
-public class TbNav implements Serializable {
+public class TbNews implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
-     * 用户ID
+     * ID
      */
     @TableId
     private Integer id;
     /**
-     * 图片地址
+     * 地址
      */
-    private String imgUrl;
-    /**
-     * 链接地址
-     */
-    private String linkUrl;
+    private String newsUrl;
     /**
      * 排序
      */
     @JsonIgnore
     private Integer orderNum;
     /**
-     * 菜单导航名称
+     * 新闻标题名称
      */
-    private String navName;
+    private String newsName;
+    /**
+     * 新闻内容
+     */
+    private String newsContent;
 }

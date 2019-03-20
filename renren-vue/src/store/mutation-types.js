@@ -8,3 +8,5 @@ export const RECEIVE_GOODS = 'receive_goods';
 export const SAVE_BANNERS = 'save_banners';
 
 export const SAVE_NAVS = 'save_navs';
+
+export const SAVE_NEWS = 'save_news';

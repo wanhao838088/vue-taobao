@@ -21,4 +21,9 @@ public interface SystemConstants {
      * 登录时间过期
      */
     int LOGIN_OUT_DATE = 10086;
+
+    /**
+     * 缓存时间
+     */
+    int CACHE_TIME_MAIN = 24;
 }
