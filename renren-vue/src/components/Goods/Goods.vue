@@ -12,7 +12,7 @@
                 <img class="banner-img" :src="cs.imgUrl" alt="">
               </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="custom-pagination"></div>
           </div>
         </div>
 
@@ -255,7 +255,8 @@
             autoplay:true,
             // 如果需要分页器
             pagination: {
-              el: '.swiper-pagination',
+              type: 'fraction',
+              el: '.custom-pagination',
             }
           })
         })
@@ -330,6 +331,21 @@
       position absolute;
       overflow: hidden;
       top 0;
+      .custom-pagination
+        position: absolute;
+        display: inline-block;
+        right: 0.1rem;
+        bottom: 0.36rem;
+        left 8.5rem;
+        width 0.8rem;
+        font-size: 0.1rem;
+        height: 0.5rem;
+        line-height: 0.5rem;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 0 0.1rem;
+        border-radius: 0.5rem;
+        z-index: 10;
       .list-mask
         position fixed
         top 0
