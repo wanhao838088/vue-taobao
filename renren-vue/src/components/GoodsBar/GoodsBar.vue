@@ -20,7 +20,7 @@
        * 返回按钮
        */
       goBack(){
-        this.$router.back(-1);
+        this.$router.back();
       }
     }
   }
