@@ -10,11 +10,11 @@ import java.io.Serializable;
 /**
  * Created by LiuLiHao on 2019/3/19 0019 下午 04:42
  * @author : LiuLiHao
- * 描述：广告实体类
+ * 描述：广告类型
  */
-@TableName("tb_ads")
+@TableName("tb_ads_category")
 @Data
-public class TbAds implements Serializable {
+public class TbAdsCategory implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
      * ID

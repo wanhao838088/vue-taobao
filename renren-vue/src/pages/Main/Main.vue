@@ -48,10 +48,16 @@
     <!--新闻-->
     <TbNews></TbNews>
 
+    <!--新闻底部-->
+    <NewsBottom></NewsBottom>
+
+    <!--广告品区-->
+    <TbAds></TbAds>
+
     <!--商品列表-->
-    <div class="msite_shop_list">
-      <GoodsList></GoodsList>
-    </div>
+    <!--<div class="msite_shop_list">-->
+      <!--<GoodsList></GoodsList>-->
+    <!--</div>-->
 
     <loading :show="show" :text="text"></loading>
 
@@ -66,6 +72,8 @@
   import HeaderTop from '../../components/HeaderTop/HeaderTop'
   import GoodsList from '../../components/GoodsList/GoodsList'
   import TbNews from '../../components/TbNews/TbNews'
+  import NewsBottom from '../../components/NewsBottom/NewsBottom'
+  import TbAds from '../../components/TbAds/TbAds'
 
   import {mapActions,mapState,mapGetters}  from 'vuex'
 
@@ -106,7 +114,9 @@
       GoodsList,
       Alert,
       Loading,
-      TbNews
+      TbNews,
+      NewsBottom,
+      TbAds
     },
     computed:{
       ...mapState(['banners','navs']),

@@ -71,7 +71,7 @@
     data(){
       return{
         isShowDel:false,
-        mobile: '18865392565', // 手机号
+        mobile: '18888888888', // 手机号
         msg:'',
         computeTime: 0, // 计时的时间
         password:'123456',//密码
@@ -81,6 +81,9 @@
       }
     },
     computed:{
+      /**
+       * 校验手机号的正则
+       */
       rightPhone(){
         return /^1\d{10}$/.test(this.mobile)
       }
