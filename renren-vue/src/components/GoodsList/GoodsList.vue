@@ -290,6 +290,8 @@
     .status-suggest
       padding-bottom: 0;
       position: fixed;
+      z-index 1000
+      background-color white
       width 100%
       top: 0;
       .mytaobao
@@ -326,7 +328,7 @@
                 color: #999;
                 margin-right: 0.107rem
         .on
-          background-color: #fff
+          background-color: transparent
         .top-bar
           width: 100%;
           background: #f6f6f6;
@@ -440,7 +442,7 @@
                     right: -0.25rem
     .shop_list
       overflow hidden
-      margin-top: 1rem;
+      margin-top: 0.1rem;
       .shop_li
         height 3rem
         bottom-border-1px(#f1f1f1)
