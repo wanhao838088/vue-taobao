@@ -47,7 +47,32 @@
 <script>
   import {mapState} from 'vuex'
 
+  import {reqGoods} from '../../api/index'
+
   export default {
+    data(){
+      return{
+        goods:[] ,//搜索结果
+        pageNo:1 ,//分页参数 开始为1
+      }
+    },
+    async created(){
+      //发送请求获取商品列表
+      let cateId = this.$route.query.categoryId;
+      console.log(cateId);
+      let {pageNo} = this;
+
+      let form = {
+        cateId,
+        pageNo
+      };
+
+      let result =await reqGoods(form);
+      console.log(result);
+      if (result.code == 0) {
+        this.goods = result.page.records;
+      }
+    },
     methods:{
 
       /**
@@ -63,7 +88,7 @@
       }
     },
     computed:{
-      ...mapState(['goods'])
+      //...mapState(['goods'])
     },
   }
 </script>

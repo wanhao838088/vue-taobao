@@ -12,14 +12,12 @@ import io.renren.rabbitmq.MiaoshaMessage;
 import io.renren.service.GoodsService;
 import io.renren.service.MiaoshaOrderService;
 import io.renren.utils.RedisTemplatesUtil;
-import io.renren.vo.GoodsVo;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by LiuLiHao on 2019/3/7 0007 下午 02:28
@@ -113,14 +111,14 @@ public class SecKillController implements InitializingBean {
      */
     @Override
     public void afterPropertiesSet() throws Exception {
-        List<GoodsVo> goodsList = goodsService.listGoodsVo();
-        if(goodsList == null) {
-            return;
-        }
-        for(GoodsVo goods : goodsList) {
-            redisTemplate.opsForValue().set(""+goods.getId(), goods.getStockCount());
-            localOverMap.put(goods.getId(), false);
-        }
+//        List<GoodsVo> goodsList = goodsService.listGoodsVo();
+//        if(goodsList == null) {
+//            return;
+//        }
+//        for(GoodsVo goods : goodsList) {
+//            redisTemplate.opsForValue().set(""+goods.getId(), goods.getStockCount());
+//            localOverMap.put(goods.getId(), false);
+//        }
     }
 
 }

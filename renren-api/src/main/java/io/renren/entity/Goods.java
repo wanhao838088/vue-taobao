@@ -36,4 +36,6 @@ public class Goods implements Serializable {
 
 	private Integer payCount;
 
+	private Integer goodsCategory;
+
 }

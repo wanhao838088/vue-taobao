@@ -140,7 +140,6 @@
        * 关闭弹框
        */
       closeDialog(){
-        debugger
         this.goodsServiceShow = false;
         this.goodsPropsShow = false;
       },

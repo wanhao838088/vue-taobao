@@ -1,5 +1,4 @@
 import {
-  reqGoods,
   reqBannerAndNav
 }
 from '../api'
@@ -25,15 +24,6 @@ export default {
     commit(SAVE_USER_INFO,{user});
   },
 
-  // 异步获取商品列表
-  async getGoods({commit, state}) {
-    const result = await reqGoods();
-    let goods = [];
-    if (result.code == 0) {
-      goods = result.goodsList;
-    }
-    commit(RECEIVE_GOODS, {goods});
-  },
 
   // 异步获取商品详情
   async getBannerAndNav({commit, state},callBack) {

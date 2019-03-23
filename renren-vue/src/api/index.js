@@ -28,7 +28,8 @@ export const reqUserInfo = ({token}) => ajax(MY_URL + '/userInfo', {token});
 export const reqLogout = () => ajax(MY_URL + '/userController/logout');
 
 // 6、获取商品列表
-export const reqGoods = () => ajax(MY_URL + '/goods/list');
+export const reqGoods = (form) =>
+  ajax(MY_URL + '/goods/list', form,'POST',false);
 
 // 7、获取商品详情
 export const reqGoodsDetail = ({id}) => ajax(MY_URL + `/goods/${id}`);
@@ -44,3 +45,7 @@ export const reqBannerAndNav = () =>
 // 10、获取秒杀结果
 export const reqSecKillResult = ({goodsId}) =>
   ajax(MY_URL + `/secKill/result`,{goodsId},"GET",true);
+
+// 11、获取秒杀结果
+export const reqSearchCategory = (form) =>
+  ajax(MY_URL + `/goodsCategory/search`,form,"POST",false);

@@ -1,19 +1,16 @@
 package io.renren.controller;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.google.common.collect.Maps;
 import io.renren.common.utils.R;
-import io.renren.entity.GoodsDetailImg;
-import io.renren.entity.GoodsImg;
-import io.renren.entity.GoodsProps;
-import io.renren.entity.GoodsServiceEntity;
+import io.renren.common.validator.ValidatorUtils;
+import io.renren.entity.*;
+import io.renren.form.GoodsListSearchForm;
 import io.renren.service.*;
 import io.renren.vo.GoodsVo;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -59,11 +56,14 @@ public class GoodsController {
      * 商品列表页面
      * @return
      */
-    @GetMapping("list")
-    public R list() {
+    @PostMapping("list")
+    public R list(@RequestBody GoodsListSearchForm form) {
+        //表单校验
+        ValidatorUtils.validateEntity(form);
+
         //查询商品列表
-        List<GoodsVo> goodsList = goodsService.listGoodsVo();
-        return R.ok().put("goodsList",goodsList);
+        Page<Goods> page = goodsService.listGoodsVo(form);
+        return R.ok().put("page",page);
     }
 
     /**

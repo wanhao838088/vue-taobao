@@ -1,13 +1,15 @@
 package io.renren.service.impl;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import io.renren.dao.GoodsDao;
 import io.renren.entity.Goods;
+import io.renren.form.GoodsListSearchForm;
 import io.renren.service.GoodsService;
 import io.renren.vo.GoodsVo;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,8 +20,15 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsDao, Goods> implements Go
 
 
 	@Override
-	public List<GoodsVo> listGoodsVo(){
-		return baseMapper.listGoodsVo();
+	public Page<Goods> listGoodsVo(GoodsListSearchForm form){
+		Page<Goods> page = new Page<>(form.getPageNo()-1,10);
+
+		EntityWrapper<Goods> wrapper = new EntityWrapper<>();
+
+		wrapper.setEntity(new Goods());
+		//分类标题
+		wrapper.eq("goods_category",form.getCateId());
+		return selectPage(page, wrapper);
 	}
 
 	@Override

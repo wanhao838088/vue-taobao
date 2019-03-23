@@ -1,10 +1,11 @@
 package io.renren.service;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
 import io.renren.entity.Goods;
+import io.renren.form.GoodsListSearchForm;
 import io.renren.vo.GoodsVo;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,10 +15,10 @@ import java.util.Map;
 public interface GoodsService extends IService<Goods> {
 
 	/**
-	 * 商品列表
+	 * 条件查询商品列表
 	 * @return
 	 */
-	public List<GoodsVo> listGoodsVo();
+	public Page<Goods> listGoodsVo(GoodsListSearchForm form);
 
 	/**
 	 * 商品详情

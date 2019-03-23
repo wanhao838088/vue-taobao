@@ -6,6 +6,7 @@ import Profile from '@/pages/Profile/Profile'
 import Main from '@/pages/Main/Main'
 import Goods from '@/components/Goods/Goods'
 import SearchPage from '@/components/SearchPage/SearchPage'
+import GoodsList from '@/components/GoodsList/GoodsList'
 
 import MobileLogin from '@/pages/MobileLogin/MobileLogin'
 import BuyCart from '@/pages/BuyCart/BuyCart'
@@ -16,7 +17,7 @@ import More from '@/pages/More/More'
 VueRouter.prototype.goBack = function () {
   this.isBack = true;
   window.history.go(-1);
-}
+};
 
 Vue.use(Router);
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/searchPage',
       name: 'SearchPage',
       component: SearchPage
+    },
+    {
+      path: '/goodsList',
+      name: 'GoodsList',
+      component: GoodsList
     },
     {
       path: '/buyCart',

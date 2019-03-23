@@ -27,7 +27,7 @@
               <div class="s-input-frame">
                 <form action="" class="c-form-suggest">
                   <div class="s-form-search">
-                    <input type="text" class="J_autocomplete">
+                    <input @keyup="changeContent" v-model="content" type="text" class="J_autocomplete">
                   </div>
                   <div class="c-form-btn">
                     <input type="submit" name="search" class="icons-search">
@@ -42,11 +42,23 @@
           </div>
         </div>
       </header>
+      <div v-show="records.length>0" class="suggest-container">
+        <ul class="suggest-sug">
+          <li @click="gotoGoodsList(rd.id)" class="suggest-li" v-for="(rd,index) in records" :key="index">
+            {{rd.nameCn}}
+            <div class="add J_AddToQuery">
+              <div class="icons-suggest-addto"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  import {reqSearchCategory} from '../../api/index'
+
   /**
    * 搜索页面
    */
@@ -54,7 +66,44 @@
     name: "SearchPage",
     data(){
       return{
+        content:'', //搜索内容
         showCheck:false,//是否显示选择项
+        records:[], //搜索结果
+      }
+    },
+    methods:{
+      /**
+       * 跳转到商品列表
+       */
+      gotoGoodsList(id){
+        this.$router.push({
+          path: `/goodsList`,
+          query: {
+            categoryId: id,
+          }
+        })
+      },
+      /**
+       * 改变内容 搜索商品类别
+       */
+      async changeContent(){
+        let {content} = this;
+        if (content) {
+          //发送请求
+          let obj = {
+            ccame:content,
+            pageNo:1
+          };
+          let result =  await reqSearchCategory(obj);
+          console.log(result);
+          if (result.code == 0) {
+            //返回成功
+            this.records = result.data.records;
+          }
+        }else {
+          //清空内容
+          this.records = [];
+        }
       }
     }
   }
@@ -67,6 +116,37 @@
     top: 0;
     .mytaobao
       color: #3d4245;
+      .suggest-container
+        background: white;
+        overflow: hidden;
+        .suggest-sug
+          background: #f9f9f9;
+          .suggest-li
+            height: 0.8rem
+            text-align left
+            line-height: 0.8rem
+            background: #f9f9f9;
+            border-bottom: 1px solid #dedede;
+            padding: 0 0.213rem
+            color: #666;
+            font-size: 0.3rem
+            .add
+              height: 100%;
+              width: 0.8rem
+              float: right;
+              margin-right: -0.267rem
+              margin-bottom: auto;
+              .icons-suggest-addto
+                position: relative;
+                top: 0.3rem;
+                left: 0.147rem;
+                width: 0.2rem;
+                background-size: 100%;
+                height: 0.16rem;
+                background-image url("./images/i_arrow.png")
+            .match-word
+              color: #999;
+              margin-right: 0.107rem
       .on
         background-color: #fff
       .top-bar
@@ -157,20 +237,20 @@
                       position: relative;
                       top: -0.04rem
               .s-input-tab-txt
-                width: 0.747rem
+                width: 0.947rem
                 height: 0.4rem
                 line-height: 0.4rem
                 text-indent: 0.133rem
                 color: #999;
-                font-size: 0.187rem
+                font-size: 0.287rem
                 &:after
                   content: '';
                   position: absolute;
-                  width: 0.213rem  /* 16/75 */;
-                  height: 0.173rem  /* 13/75 */;
+                  width: 0.213rem
+                  height: 0.173rem
                   background-repeat: no-repeat;
                   background-image: url(./images/down_arrow.png);
-                  background-size: 0.213rem  /* 16/75 */ 0.173rem  /* 13/75 */;
-                  top: 0.09rem  /* 4/75 */;
-                  right: -0.2rem  /* -10/75 */;
+                  background-size: 0.213rem  0.173rem
+                  top: 0.09rem
+                  right: -0.2.5rem
 </style>

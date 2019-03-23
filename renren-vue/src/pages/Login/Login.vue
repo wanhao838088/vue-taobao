@@ -217,7 +217,7 @@
       height: 2.6rem;
       background: url(https://gw.alicdn.com/tfs/TB1p.BGQXXXXXbFXFXXXXXXXXXX-160-160.png) no-repeat;
       background-size: contain;
-      margin: -0.2rem auto 0;
+      margin: 1.4rem auto 0;
     .need-login
       width: 100%;
       height: 1.5rem;

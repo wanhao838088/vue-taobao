@@ -54,11 +54,6 @@
     <!--广告品区-->
     <TbAds></TbAds>
 
-    <!--商品列表-->
-    <!--<div class="msite_shop_list">-->
-      <!--<GoodsList></GoodsList>-->
-    <!--</div>-->
-
     <loading :show="show" :text="text"></loading>
 
   </div>
@@ -88,12 +83,10 @@
       this.show = true;
     },
     methods:{
-      ...mapActions(['getGoods','getBannerAndNav'])
+      ...mapActions(['getBannerAndNav'])
     },
 
     mounted(){
-      //获取商品列表
-      this.getGoods();
       //banner
       this.getBannerAndNav(()=>{
         this.show = false;
