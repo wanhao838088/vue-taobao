@@ -29,7 +29,7 @@
                 <div class="s-input-frame">
                   <form action="" class="c-form-suggest">
                     <div class="s-form-search">
-                      <input @keyup="changeContent" v-model="content" type="text" class="J_autocomplete">
+                      <input @focus="doSearch" @keyup="changeContent" v-model="content" type="text" class="J_autocomplete">
                     </div>
                     <div class="c-form-btn">
                       <input type="submit" name="search" class="icons-search">
@@ -39,90 +39,105 @@
               </div>
             </div>
 
-            <div @click="$router.back()" class="top-bar-btn closed"
+            <div @click="isClickHome" class="top-bar-btn closed"
                  style="transform-origin: 0px 0px; opacity: 1; transform: scale(1, 1);">
               <div v-if="isGoHome" class="icons-home"></div>
               <div v-else>取消</div>
             </div>
           </div>
         </header>
-      </div>
-    </div>
-
-    <!--过滤栏-->
-    <div class="filterbar-container">
-      <div class="filter-bar J_sortTab">
-        <div class="viewtype-switch J_SwitchViewtype">
-          <div class="icons-list" data-spm-anchor-id="0.0.0.i4.592748ccjgFJ6C"></div>
+        <div v-show="records.length>0" class="suggest-container">
+          <ul class="suggest-sug">
+            <li class="suggest-li" v-for="(rd,index) in records" :key="index">
+              {{rd.nameCn}}
+              <div class="add J_AddToQuery">
+                <div class="icons-suggest-addto"></div>
+              </div>
+            </li>
+          </ul>
         </div>
+      </div>
 
-        <!--排序部分-->
-        <ul class="sort-tab">
-          <li class="droplist-trigger selected">
-            <span class="text">综合排序</span>
-            <span class="arrow"></span>
-            <span class="bar"></span>
-          </li>
-          <li class="sort" data-value="_sale">销量优先<span class="bar"></span></li>
-          <li style="flex: 1">
-            <div class="top-bar-e">
+      <!--过滤栏-->
+      <div class="filterbar-container">
+        <div class="filter-bar J_sortTab">
+          <div class="viewtype-switch J_SwitchViewtype">
+            <div class="icons-list" data-spm-anchor-id="0.0.0.i4.592748ccjgFJ6C"></div>
+          </div>
+
+          <!--排序部分-->
+          <ul class="sort-tab">
+            <li class="droplist-trigger selected">
+              <span class="text">综合排序</span>
+              <span class="arrow"></span>
+              <span class="bar"></span>
+            </li>
+            <li class="sort" data-value="_sale">销量优先<span class="bar"></span></li>
+            <li style="flex: 1">
+              <div class="top-bar-e">
               <span id="J_Sift">
                 <i class="icons-sift"></i>筛选
               </span>
-            </div>
-          </li>
-        </ul>
+              </div>
+            </li>
+          </ul>
 
+        </div>
       </div>
     </div>
 
     <!--商品列表-->
-    <ul class="shop_list" v-if="goods">
-      <li class="shop_li" v-for="(item, index) in goods" :key="index" @click="toGoodsDetail(item.id)">
-        <div class="list-item">
-          <div class="p">
-            <img class="p-pic" :src="item.goodsImg" style="visibility: visible;">
-            <span class="flag c-icon-p4p"></span>
-          </div>
+    <div class="wrapper" :height="domHeight">
+      <scroller lock-x :height="domHeight"
+                @on-scroll-bottom="onScrollBottom" ref="scrollerBottom"
+                :scroll-bottom-offst="200">
+        <ul class="content shop_list" v-if="goods">
+          <li class="shop_li" v-for="(item, index) in goods" :key="index" @click="toGoodsDetail(item.id)">
+            <div class="list-item">
+              <div class="p">
+                <img class="p-pic" :src="item.goodsImg" style="visibility: visible;">
+                <span class="flag c-icon-p4p"></span>
+              </div>
 
-          <div class="d">
-            <h3 class="d-title">{{item.goodsTitle}}</h3>
-            <p class="d-price">
-              <em class="h">
-                <span class="price-icon">¥</span>
-                <span class="font-num">{{item.goodsMinPrice}}</span>
-              </em>
-              <del v-show="item.orgMinPrice">
-                <span class="price-icon">¥</span>
-                <span class="font-num">{{item.orgMinPrice}}</span>
-              </del>
-            </p>
-            <div class="d-main">
-              <p class="d-freight">{{item.deliveryFree==0?'免运费':`¥ ${item.deliveryFree}`}}</p>
-              <p class="d-num">
-                <span class="font-num">1614人付款</span>
-              </p>
-              <p class="d-area">{{item.location}}</p>
+              <div class="d">
+                <h3 class="d-title">{{item.goodsTitle}}</h3>
+                <p class="d-price">
+                  <em class="h">
+                    <span class="price-icon">¥</span>
+                    <span class="font-num">{{item.goodsMinPrice}}</span>
+                  </em>
+                  <del v-show="item.orgMinPrice">
+                    <span class="price-icon">¥</span>
+                    <span class="font-num">{{item.orgMinPrice}}</span>
+                  </del>
+                </p>
+                <div class="d-main">
+                  <p class="d-freight">{{item.deliveryFree==0?'免运费':`¥ ${item.deliveryFree}`}}</p>
+                  <p class="d-num">
+                    <span class="font-num">1614人付款</span>
+                  </p>
+                  <p class="d-area">{{item.location}}</p>
+                </div>
+              </div>
+
             </div>
-          </div>
+            <div class="icons-group">
+              <div class="item-icons-jinbi">金币抵2%</div>
+            </div>
+          </li>
 
-        </div>
-        <div class="icons-group">
-          <div class="item-icons-jinbi">金币抵2%</div>
-        </div>
+          <load-more tip="loading"></load-more>
+        </ul>
+      </scroller>
 
-      </li>
-    </ul>
-    <ul v-else>
-      <li v-for="item in 6">
-        <img class="shop_img" src="./images/shop_back.svg">
-      </li>
-    </ul>
+    </div>
+
   </div>
 </template>
 
 <script>
   import {mapState} from 'vuex'
+  import { Loading,LoadMore,Scroller  } from 'vux'
 
   import {reqGoods,reqSearchCategory} from '../../api/index'
 
@@ -133,14 +148,25 @@
         content:'', //搜索内容
         showCheck:false,//是否显示选择项
         records:[], //搜索结果
+        isPullUpLoad: false,
+        domHeight:'',
+        pullUpLoad:true, //是否需要下拉加载
         goods:[] ,//搜索结果
         pageNo:1 ,//分页参数 开始为1
+        categoryName:'',//搜索名称
+        pullUpDirty: true,
+        onFetching: false,
       }
     },
     async created(){
+      //获取高度
+      let temp = document.documentElement.clientHeight || document.body.clientHeight;
+      this.domHeight = temp+'px';
+      console.log(this.domHeight);
+
       //发送请求获取商品列表
-      let cateId = this.$route.query.categoryId;
-      console.log(cateId);
+      let cateId = this.$route.query.category.id;
+      this.content = this.$route.query.category.nameCn;
       let {pageNo} = this;
 
       let form = {
@@ -148,13 +174,68 @@
         pageNo
       };
 
+      //查询商品列表
       let result =await reqGoods(form);
-      console.log(result);
       if (result.code == 0) {
         this.goods = result.page.records;
       }
+
     },
     methods:{
+      onScrollBottom () {
+        if (this.onFetching) {
+          // do nothing
+        } else {
+          this.onFetching = true
+          setTimeout(() => {
+            this.bottomCount += 10;
+            this.$nextTick(() => {
+              this.$refs.scrollerBottom.reset()
+            })
+            this.onFetching = false
+          }, 2000)
+        }
+      },
+      /**
+       * 获取焦点的时候进行搜索
+       */
+      async doSearch(){
+        this.isGoHome = false;
+
+        let {content} = this;
+        if (content) {
+          //发送请求
+          let obj = {
+            ccame:content,
+            pageNo:1
+          };
+          let result =  await reqSearchCategory(obj);
+          console.log(result);
+          if (result.code == 0) {
+            //返回成功
+            this.records = result.data.records;
+          }
+        }else {
+          //清空内容
+          this.records = [];
+          this.isGoHome = true;
+        }
+      },
+      /**
+       * 点击取消或者回首页
+       */
+      isClickHome(){
+        let {isGoHome} = this;
+        if (isGoHome) {
+          //回首页
+          this.$router.push({
+            path: `/main`,
+          })
+        }else {
+          //取消搜索
+
+        }
+      },
       /**
        * 改变内容 搜索商品类别
        */
@@ -175,6 +256,7 @@
         }else {
           //清空内容
           this.records = [];
+          this.isGoHome = true;
         }
       },
       /**
@@ -189,9 +271,12 @@
         })
       }
     },
-    computed:{
-      //...mapState(['goods'])
-    },
+    components:{
+      Loading,
+      LoadMore,
+      Scroller
+    }
+
   }
 </script>
 
@@ -200,11 +285,12 @@
   .shop_container
     margin-bottom 20px
     width 100%
+    display: flex;
+    flex-direction column
     height: 100%
     .filterbar-container
       transform-origin: 0px 0px;
       opacity: 1;
-      margin-top 1rem
       .sort-tab
         display flex
         flex 1
@@ -291,6 +377,7 @@
       padding-bottom: 0;
       position: fixed;
       z-index 1000
+      height auto
       background-color white
       width 100%
       top: 0;
@@ -440,11 +527,24 @@
                     background-size: 0.213rem  0.173rem
                     top: 0.09rem
                     right: -0.25rem
+    .wrapper
+      margin-top: 1.9rem;
+      width 100%
+      flex 1
+      .pullup-wrapper
+        width: 100%
+        height 1rem
+        position: initial;
+        pointer-events: auto;
+        font-size 0.34rem
+        .after-trigger
+          margin-top: 0.133rem
     .shop_list
       overflow hidden
-      margin-top: 0.1rem;
+      height auto
+      pointer-events: auto;
       .shop_li
-        height 3rem
+        height auto
         bottom-border-1px(#f1f1f1)
         width 100%
         padding: 12px 6px;

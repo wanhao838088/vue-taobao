@@ -27,7 +27,7 @@
               <div class="s-input-frame">
                 <form action="" class="c-form-suggest">
                   <div class="s-form-search">
-                    <input @keyup="changeContent" v-model="content" type="text" class="J_autocomplete">
+                    <input ref="mInput" @keyup="changeContent" v-model="content" type="text" class="J_autocomplete">
                   </div>
                   <div class="c-form-btn">
                     <input type="submit" name="search" class="icons-search">
@@ -44,7 +44,7 @@
       </header>
       <div v-show="records.length>0" class="suggest-container">
         <ul class="suggest-sug">
-          <li @click="gotoGoodsList(rd.id)" class="suggest-li" v-for="(rd,index) in records" :key="index">
+          <li @click="gotoGoodsList(rd)" class="suggest-li" v-for="(rd,index) in records" :key="index">
             {{rd.nameCn}}
             <div class="add J_AddToQuery">
               <div class="icons-suggest-addto"></div>
@@ -71,15 +71,18 @@
         records:[], //搜索结果
       }
     },
+    mounted(){
+      this.$refs.mInput.focus();
+    },
     methods:{
       /**
        * 跳转到商品列表
        */
-      gotoGoodsList(id){
+      gotoGoodsList(category){
         this.$router.push({
           path: `/goodsList`,
           query: {
-            categoryId: id,
+            category
           }
         })
       },

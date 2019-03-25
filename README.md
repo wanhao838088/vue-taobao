@@ -1,16 +1,7 @@
 **已实现的效果图**
  <br>
  
- ![登录页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/login_1.png)
- ![主页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/main_1.png)
-  <br>
 
- ![详情页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/detail_1.png)
- ![详情页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/detail_2.png)
-  <br>
- ![详情页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/detail_3.png)
- ![详情页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/detail_4.png)
- <br>
   ![我的淘宝页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/mytb.png)
  <br>
 
