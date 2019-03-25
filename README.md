@@ -1,13 +1,12 @@
 **已实现的效果图**
  <br>
  
+  ![主页页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/gifs/process.gif)
 
   ![我的淘宝页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/mytb.png)
  <br>
 
  
- * 列表页和详情页
- ![主页页1](https://github.com/wanhao838088/renren-frame/blob/master/renren-vue/gifs/list_detail.gif)
   <br>
   *  其它页面正在开发中....
   <br>
