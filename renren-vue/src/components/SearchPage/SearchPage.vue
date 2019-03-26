@@ -82,7 +82,8 @@
         this.$router.push({
           path: `/goodsList`,
           query: {
-            category
+            categoryId:category.id,
+            categoryName:category.nameCn,
           }
         })
       },

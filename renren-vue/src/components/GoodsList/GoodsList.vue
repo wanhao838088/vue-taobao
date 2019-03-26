@@ -1,7 +1,7 @@
 <template>
   <div class="shop_container">
     <!--搜索栏-->
-    <div class="status-suggest">
+    <div ref="statusBar" class="status-suggest">
       <div class="mytaobao">
         <header class="top-bar on">
           <div class="top-bar-w">
@@ -114,7 +114,7 @@
                 <div class="d-main">
                   <p class="d-freight">{{item.deliveryFree==0?'免运费':`¥ ${item.deliveryFree}`}}</p>
                   <p class="d-num">
-                    <span class="font-num">1614人付款</span>
+                    <span class="font-num">{{item.payCount}}人付款</span>
                   </p>
                   <p class="d-area">{{item.location}}</p>
                 </div>
@@ -126,7 +126,7 @@
             </div>
           </li>
 
-          <load-more tip="loading"></load-more>
+          <TbLoading :showLoading="hasMore" :tip="tipMsg"></TbLoading>
         </ul>
       </scroller>
 
@@ -139,6 +139,7 @@
   import {mapState} from 'vuex'
   import { Loading,LoadMore,Scroller  } from 'vux'
 
+  import TbLoading from '../TbLoading/TbLoading'
   import {reqGoods,reqSearchCategory} from '../../api/index'
 
   export default {
@@ -153,47 +154,74 @@
         pullUpLoad:true, //是否需要下拉加载
         goods:[] ,//搜索结果
         pageNo:1 ,//分页参数 开始为1
+        hasMore:true , //是否还有更多数据
         categoryName:'',//搜索名称
-        pullUpDirty: true,
-        onFetching: false,
+        onFetching: false, //是否正在加载
+        tipMsg:'加载中...', //底部提示消息
       }
     },
-    async created(){
+    mounted(){
       //获取高度
       let temp = document.documentElement.clientHeight || document.body.clientHeight;
-      this.domHeight = temp+'px';
-      console.log(this.domHeight);
+      let statusBarHeight = this.$refs.statusBar.offsetHeight;
+      this.domHeight = (temp - statusBarHeight)+'px';
 
-      //发送请求获取商品列表
-      let cateId = this.$route.query.category.id;
-      this.content = this.$route.query.category.nameCn;
-      let {pageNo} = this;
-
-      let form = {
-        cateId,
-        pageNo
-      };
-
-      //查询商品列表
-      let result =await reqGoods(form);
-      if (result.code == 0) {
-        this.goods = result.page.records;
-      }
-
+      //请求商品数据
+      this.getDataByPageNo();
     },
     methods:{
+      async getDataByPageNo(){
+        //发送请求获取商品列表
+        let cateId = this.$route.query.categoryId;
+        this.content = this.$route.query.categoryName;
+        let {pageNo} = this;
+
+        let form = {
+          cateId,
+          pageNo
+        };
+
+        //查询商品列表
+        let result =await reqGoods(form);
+
+        if (result.code == 0) {
+          //是否有没有更多数据
+          if (result.page.records.length==0){
+            //没有更多了
+            this.tipMsg = '没有更多了';
+            this.hasMore = false;
+            this.pageNo--;
+
+            this.$nextTick(() => {
+              this.$refs.scrollerBottom.reset()
+            });
+            this.onFetching = false;
+            return;
+          }
+          //更新页面数据
+          if (pageNo == 1) {
+            this.goods = result.page.records;
+          }else {
+            //拼接数据
+            this.goods = this.goods.concat(result.page.records);
+          }
+
+          this.$nextTick(() => {
+            this.$refs.scrollerBottom.reset()
+          });
+          this.onFetching = false
+
+        }
+      },
+
       onScrollBottom () {
         if (this.onFetching) {
           // do nothing
         } else {
-          this.onFetching = true
-          setTimeout(() => {
-            this.bottomCount += 10;
-            this.$nextTick(() => {
-              this.$refs.scrollerBottom.reset()
-            })
-            this.onFetching = false
-          }, 2000)
+          this.onFetching = true;
+          //加载更多的数据
+          this.pageNo ++;
+          this.getDataByPageNo();
         }
       },
       /**
@@ -274,7 +302,8 @@
     components:{
       Loading,
       LoadMore,
-      Scroller
+      Scroller,
+      TbLoading
     }
 
   }
@@ -481,7 +510,7 @@
                       background: none;
                       width: 100%;
                       height: 0.447rem
-                      padding-left 0.2rem
+                      padding-left 0.4rem
                       padding-top: 0.12rem;
                       font-size: 0.35rem
               .s-input-tab
@@ -528,7 +557,7 @@
                     top: 0.09rem
                     right: -0.25rem
     .wrapper
-      margin-top: 1.9rem;
+      padding-top: 1.9rem;
       width 100%
       flex 1
       .pullup-wrapper
