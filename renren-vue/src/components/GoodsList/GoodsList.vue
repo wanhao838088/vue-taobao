@@ -67,13 +67,19 @@
 
           <!--排序部分-->
           <ul class="sort-tab">
-            <li class="droplist-trigger selected">
-              <span class="text">综合排序</span>
+            <li @click="isShowChoosePrice=!isShowChoosePrice"
+                :class="{'selected' : sortWay<=4}"
+                class="droplist-trigger">
+              <span class="text">{{sortText}}</span>
               <span class="arrow"></span>
               <span class="bar"></span>
             </li>
-            <li class="sort" data-value="_sale">销量优先<span class="bar"></span></li>
-            <li style="flex: 1">
+            <li @click="changeSort(5)"
+                :class="{'selected' : sortWay==5}"
+                class="sort"
+                data-value="_sale">销量优先<span class="bar"></span>
+            </li>
+            <li :class="{'selected' : sortWay==6}" style="flex: 1">
               <div class="top-bar-e">
               <span id="J_Sift">
                 <i class="icons-sift"></i>筛选
@@ -81,6 +87,19 @@
               </div>
             </li>
           </ul>
+          <!--选择价格等部分-->
+          <div v-show="isShowChoosePrice" class="droplist  droplist-expand">
+            <ul class="sorts">
+              <li class="sort" @click="changeSort(1,'综合排序')" :class="{'selected' : sortWay==1}" data-value="">
+                综合排序
+                <span class="icons-checked-icon"></span>
+              </li>
+              <li class="sort" @click="changeSort(2,'价格从高到低')" :class="{'selected' : sortWay==2}" data-value="_bid">价格从高到低<span class="icons-checked-icon"></span></li>
+              <li class="sort" @click="changeSort(3,'价格从低到高')" :class="{'selected' : sortWay==3}"  data-value="bid">价格从低到高<span class="icons-checked-icon"></span></li>
+              <li class="sort" @click="changeSort(4,'信用排序')" :class="{'selected' : sortWay==4}" style="border: none;" data-value="_ratesum">信用排序<span class="icons-checked-icon"></span></li>
+            </ul>
+
+          </div>
 
         </div>
       </div>
@@ -132,6 +151,9 @@
 
     </div>
 
+    <div v-show="isShowChoosePrice" @click="dismissMask" class="m-sift">
+      <div class="sort-droplist-mask"></div>
+    </div>
   </div>
 </template>
 
@@ -149,7 +171,6 @@
         content:'', //搜索内容
         showCheck:false,//是否显示选择项
         records:[], //搜索结果
-        isPullUpLoad: false,
         domHeight:'',
         pullUpLoad:true, //是否需要下拉加载
         goods:[] ,//搜索结果
@@ -158,6 +179,10 @@
         categoryName:'',//搜索名称
         onFetching: false, //是否正在加载
         tipMsg:'努力加载中...', //底部提示消息
+        isShowChoosePrice:false , //是否正在显示筛选价格
+        sortWay:1, //排序方式
+        sortText:'综合排序', //排序说明
+
       }
     },
     mounted(){
@@ -170,6 +195,31 @@
       this.getDataByPageNo();
     },
     methods:{
+
+      /**
+       * 隐藏遮罩层
+       */
+      dismissMask(){
+        this.isShowChoosePrice = false;
+      },
+      /**
+       * 切换排序方式
+       */
+      changeSort(type,text){
+        this.sortWay = type;
+        this.isShowChoosePrice = false;
+        if (type == 5) {
+          //销量排序
+
+        }else {
+          this.sortText = text;
+
+        }
+        //从新排序
+      },
+      /**
+       * 根据分页查询商品
+       */
       async getDataByPageNo(){
         //发送请求获取商品列表
         let cateId = this.$route.query.categoryId;
@@ -317,6 +367,17 @@
     display: flex;
     flex-direction column
     height: 100%
+    .m-sift
+      color: #051b28;
+      .sort-droplist-mask
+        z-index: 1;
+        top: 0.667rem  /* 50/75 */;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.7;
     .filterbar-container
       transform-origin: 0px 0px;
       opacity: 1;
@@ -339,12 +400,14 @@
           width: 30%;
           display: inline-block;
           height: 0.82rem
-          font-size: 0.387rem
+          font-size: 0.337rem
           text-align: center;
           line-height: 0.82rem
           position: relative;
         .selected
           color: #f50;
+          .arrow
+            background-image url("./images/arr_down.png") !important
         .droplist-trigger
           flex 1
           .arrow
@@ -357,7 +420,7 @@
             width: 0.233rem
             height: 0.18rem
             background-repeat: no-repeat;
-            background-image url("./images/arr_down.png")
+            background-image url("./images/down_arrow.png")
         .top-bar-e
           min-width: 0.533rem
           text-align: center;
@@ -385,6 +448,36 @@
         flex-direction row-reverse
         z-index: 100;
         position: relative;
+        .droplist
+          position: absolute;
+          top: 0.93rem
+          left: 0;
+          right: 0;
+          z-index: 2;
+          white-space: nowrap;
+          background: #fff;
+          line-height: 0.52rem
+          border-bottom: solid 1px #c8c7cc;
+          .sorts
+            margin-left: 0.701rem
+            list-style: none;
+            .selected
+              color: #f50;
+              .icons-checked-icon
+                display: block;
+                position: absolute;
+                right: 0.267rem
+                background-image url("./images/right.png")
+                background-size 100%
+                top: 0.2rem
+                width: 0.373rem
+                height: 0.307rem
+            .sort
+              position: relative;
+              font-size: 0.3rem;
+              text-align left
+              line-height: 0.8rem;
+              border-bottom: solid 1px #c8c7cc;
         .viewtype-switch
           float: right;
           width: 0.967rem
