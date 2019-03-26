@@ -160,14 +160,15 @@
       width: 100%;
       background-color: #FF852A
       .header-bd
-        width: 86%;
-        padding-left: 42px;
-        padding-top: 6px;
-        padding-bottom: 6px;
+        width: 93%;
+        padding-left: 0.66rem
+        padding-right: 0.9rem
+        padding-top: 0.08rem
+        padding-bottom: 0.08rem
         background-image: url('./images/tb_top.png');
         background-repeat: no-repeat;
-        background-size: 27px 20px;
-        background-position: 9px center;
+        background-size: 0.46rem 0.367rem ;
+        background-position: 0.12rem  center;
         .placeholder
           display: block;
           font-size: 0;

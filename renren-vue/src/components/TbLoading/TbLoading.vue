@@ -1,6 +1,6 @@
 <template>
   <div class="vux-loadmore weui-loadmore">
-    <i class="weui-loading" v-if="showLoading"></i>
+    <i class="my-loading" v-if="showLoading"></i>
     <span class="weui-loadmore__tips" v-show="tip || !showLoading">{{tip}}</span>
   </div>
 </template>
@@ -29,7 +29,7 @@
       display: inline-block;
       vertical-align: middle;
       line-height 0.267rem
-    .weui-loading
+    .my-loading
       width: 0.667rem
       height: 0.167rem
       padding-top: 0.2rem

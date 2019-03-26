@@ -13,8 +13,10 @@
   import FooterGuide from './components/FooterGuide/FooterGuide'
 
   export default {
-
     name: 'App',
+    created() {
+      document.body.removeChild(document.getElementById('Loading'))
+    },
     data() {
       return {
         transitionName: 'slide-left'

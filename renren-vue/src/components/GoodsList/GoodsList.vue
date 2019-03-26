@@ -157,7 +157,7 @@
         hasMore:true , //是否还有更多数据
         categoryName:'',//搜索名称
         onFetching: false, //是否正在加载
-        tipMsg:'加载中...', //底部提示消息
+        tipMsg:'努力加载中...', //底部提示消息
       }
     },
     mounted(){
