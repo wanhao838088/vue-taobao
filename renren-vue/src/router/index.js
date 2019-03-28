@@ -97,7 +97,8 @@ const router = new Router({
 
 // 全局路由守卫
 router.beforeEach((to, from, next) => {
-  const nextRoute = ['/myTb'];
+  //需要登录访问的地址
+  const nextRoute = ['/myTb','/buyCart'];
   let isLogin = false;
   if (getToken()) {
     isLogin = true;
