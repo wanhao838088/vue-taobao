@@ -40,4 +40,7 @@ public class GoodsListSearchForm implements Serializable {
     @NotNull(message="页码不能为空")
     private Integer pageNo;
 
+    @ApiModelProperty(value = "排序方式")
+    private Integer sortType;
+
 }

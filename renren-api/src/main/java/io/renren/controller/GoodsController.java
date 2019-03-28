@@ -62,12 +62,6 @@ public class GoodsController {
         ValidatorUtils.validateEntity(form);
 
         //查询商品列表
-        try {
-            //模拟网速慢
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         Page<Goods> page = goodsService.listGoodsVo(form);
         return R.ok().put("page",page);
     }

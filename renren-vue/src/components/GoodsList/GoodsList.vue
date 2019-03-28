@@ -206,14 +206,20 @@
        * 切换排序方式
        */
       changeSort(type,text){
+        if (this.sortWay===type || type==4){
+          return;
+        }
         this.sortWay = type;
         this.isShowChoosePrice = false;
+        //从新加载页数查询
+        this.pageNo = 1;
+
         if (type == 5) {
           //销量排序
-
+          this.getDataByPageNo();
         }else {
           this.sortText = text;
-
+          this.getDataByPageNo();
         }
         //从新排序
       },
@@ -224,11 +230,12 @@
         //发送请求获取商品列表
         let cateId = this.$route.query.categoryId;
         this.content = this.$route.query.categoryName;
-        let {pageNo} = this;
+        let {pageNo,sortWay} = this;
 
         let form = {
           cateId,
-          pageNo
+          pageNo,
+          sortType:sortWay
         };
 
         //查询商品列表
@@ -270,7 +277,7 @@
         } else {
           this.onFetching = true;
           //加载更多的数据
-          this.pageNo ++;
+          this.pageNo = this.pageNo+1;
           this.getDataByPageNo();
         }
       },
