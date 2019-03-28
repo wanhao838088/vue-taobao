@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import VueRouter from 'vue-router'
 import Login from '@/pages/Login/Login'
 import Profile from '@/pages/Profile/Profile'
 import Main from '@/pages/Main/Main'
@@ -13,15 +12,11 @@ import BuyCart from '@/pages/BuyCart/BuyCart'
 import OrderList from '@/pages/OrderList/OrderList'
 import MyTb from '@/pages/MyTb/MyTb'
 import More from '@/pages/More/More'
-
-VueRouter.prototype.goBack = function () {
-  this.isBack = true;
-  window.history.go(-1);
-};
+import {getToken} from '../utils/utils'
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/login',
@@ -98,4 +93,25 @@ export default new Router({
       redirect: '/main'
     }
   ]
-})
+});
+
+// 全局路由守卫
+router.beforeEach((to, from, next) => {
+  const nextRoute = ['/myTb'];
+  let isLogin = false;
+  if (getToken()) {
+    isLogin = true;
+  }
+  //根据路径判断
+  if (nextRoute.indexOf(to.path) >= 0) {
+    if (!isLogin) {
+      next();
+      router.push('/login')
+    }
+  }
+
+  next();
+});
+
+
+export default router;

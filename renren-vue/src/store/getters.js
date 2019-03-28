@@ -21,6 +21,9 @@ export default {
   tbUserName(state){
     let {username,mobile} = state.user;
     if (username == mobile) {
+      if (!mobile || mobile.length < 10){
+        return;
+      }
       //显示隐藏的手机号
       return username.substr(0,3) + "****" +username.substr(7,11);
     }
