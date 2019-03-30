@@ -1,6 +1,6 @@
 package io.renren.vo;
 
-import io.renren.entity.Goods;
+import io.renren.entity.goods.Goods;
 import lombok.Data;
 
 import java.util.Date;

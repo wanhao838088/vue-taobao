@@ -1,8 +1,8 @@
 package io.renren;
 
 
-import io.renren.entity.*;
-import io.renren.service.*;
+import io.renren.entity.goods.*;
+import io.renren.service.goods.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
+import java.util.Date;
 
 /**
  * Created by LiuLiHao on 2019/3/17 0017 上午 10:10
@@ -26,7 +27,11 @@ public class GoodsDetailMaker {
     @Autowired
     private GoodsImgService imgService;
     @Autowired
-    private GoodsPropsService propsService;
+    private GoodsPropsKeyService propsService;
+
+    @Autowired
+    private GoodsPropsValueService valueService;
+
     @Autowired
     private GoodsService goodsService;
     @Autowired
@@ -36,7 +41,7 @@ public class GoodsDetailMaker {
     @Autowired
     private GoodsSkuService skuService;
 
-    private static String path = "C:/taobaoHtml/99.html";
+    private static String path = "C:/taobaoHtml/1.html";
 
     @Test
     public void test1() throws Exception {
@@ -45,23 +50,23 @@ public class GoodsDetailMaker {
 
         Document doc = Jsoup.parse(input, "UTF-8", "http://example.com/");
 
-        //1 轮播图
-        getTopImgs(doc,goods);
-        //2 商品价格
-        getPrice(doc,goods);
+//        //1 轮播图
+//        getTopImgs(doc,goods);
+//        //2 商品价格
+//        getPrice(doc,goods);
 
         //3 产品参数
         getParam(doc,goods);
 
-        //4 商品详情图
-        getDetailImgs(doc,goods);
-
-        //5 产品服务
-        getServices(doc,goods);
-        //6 改变库存
-        getQuantity(doc,goods);
-        //7 sku添加
-        getSku(doc,goods);
+//        //4 商品详情图
+//        getDetailImgs(doc,goods);
+//
+//        //5 产品服务
+//        getServices(doc,goods);
+//        //6 改变库存
+//        getQuantity(doc,goods);
+//        //7 sku添加
+//        getSku(doc,goods);
     }
 
     /**
@@ -152,17 +157,26 @@ public class GoodsDetailMaker {
         Elements paramLis = paramUl.get(0).children();
         int k =1;
         for(int i=0;i<paramLis.size();i++){
-            GoodsProps goodsProps = new GoodsProps();
-            goodsProps.setGoodsId(goods.getId());
+            GoodsPropsKey goodsPropsKey = new GoodsPropsKey();
             //键值对
             String key = paramLis.get(i).child(0).text();
             String content = paramLis.get(i).child(1).text();
-            goodsProps.setOrderNum(k++);
-            goodsProps.setPropKey(key);
-            goodsProps.setPropContent(content);
+            goodsPropsKey.setOrderNum(k++);
+            goodsPropsKey.setBrandId(2);
+            goodsPropsKey.setPropKey(key);
             System.out.println(key + " " + content);
             //插入数据库
-            propsService.insertOrUpdate(goodsProps);
+            propsService.insertOrUpdate(goodsPropsKey);
+
+            //属性值
+            GoodsPropsValue propsValue = new GoodsPropsValue();
+            propsValue.setBrandId(2);
+            propsValue.setCreateTime(new Date());
+            long id = goodsPropsKey.getId();
+            propsValue.setPropsId((int)id);
+            propsValue.setValueName(content);
+            valueService.insert(propsValue);
+
         }
     }
 

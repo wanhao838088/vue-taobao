@@ -1,9 +1,9 @@
 package io.renren.rabbitmq;
 
-import io.renren.entity.MiaoshaOrder;
-import io.renren.entity.UserEntity;
-import io.renren.service.GoodsService;
-import io.renren.service.MiaoshaOrderService;
+import io.renren.entity.seckill.MiaoshaOrder;
+import io.renren.entity.user.UserEntity;
+import io.renren.service.goods.GoodsService;
+import io.renren.service.seckill.MiaoshaOrderService;
 import io.renren.utils.RedisTemplatesUtil;
 import io.renren.vo.GoodsVo;
 import org.slf4j.Logger;

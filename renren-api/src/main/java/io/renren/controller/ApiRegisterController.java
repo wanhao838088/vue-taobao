@@ -3,9 +3,9 @@ package io.renren.controller;
 
 import io.renren.common.utils.R;
 import io.renren.common.validator.ValidatorUtils;
-import io.renren.entity.UserEntity;
+import io.renren.entity.user.UserEntity;
 import io.renren.form.RegisterForm;
-import io.renren.service.UserService;
+import io.renren.service.user.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.codec.digest.DigestUtils;

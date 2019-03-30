@@ -1,7 +1,7 @@
 package io.renren.rabbitmq;
 
 
-import io.renren.entity.UserEntity;
+import io.renren.entity.user.UserEntity;
 import lombok.Data;
 
 /**

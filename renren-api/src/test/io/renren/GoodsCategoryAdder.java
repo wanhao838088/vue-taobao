@@ -1,7 +1,7 @@
 package io.renren;
 
-import io.renren.entity.GoodsCategory;
-import io.renren.service.GoodsCategoryService;
+import io.renren.entity.goods.GoodsCategory;
+import io.renren.service.goods.GoodsCategoryService;
 import org.apache.commons.lang.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

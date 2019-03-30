@@ -4,9 +4,13 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.google.common.collect.Maps;
 import io.renren.common.utils.R;
 import io.renren.common.validator.ValidatorUtils;
-import io.renren.entity.*;
+import io.renren.entity.goods.Goods;
+import io.renren.entity.goods.GoodsDetailImg;
+import io.renren.entity.goods.GoodsImg;
+import io.renren.entity.goods.GoodsServiceEntity;
 import io.renren.form.GoodsListSearchForm;
-import io.renren.service.*;
+import io.renren.service.goods.*;
+import io.renren.vo.GoodsPropsVo;
 import io.renren.vo.GoodsVo;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +48,7 @@ public class GoodsController {
      * 属性
      */
     @Autowired
-    private GoodsPropsService propsService;
+    private GoodsPropsKeyService propsService;
 
     /**
      * 服务
@@ -81,7 +85,7 @@ public class GoodsController {
         //商品详情图
         List<GoodsDetailImg> goodsDetailImgs = detailImgService.getByGoodsId(id);
         //商品属性
-        List<GoodsProps> goodsProps = propsService.getByGoodsId(id);
+        List<GoodsPropsVo> goodsPropKeys = propsService.getByBrandId(goodsVo.getBrandId());
 
         //服务
         List<GoodsServiceEntity> serviceEntities = serviceEntityService.getByGoodsId(id);
@@ -96,7 +100,7 @@ public class GoodsController {
         map.put("commentsCount",count);
         map.put("goodsImgs",goodsImgs);
         map.put("serviceEntities",serviceEntities);
-        map.put("goodsProps",goodsProps);
+        map.put("goodsProps", goodsPropKeys);
         map.put("goodsDetailImgs",goodsDetailImgs);
 
         //商品详情
