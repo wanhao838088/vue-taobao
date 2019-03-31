@@ -106,7 +106,7 @@
           //发送验证码 && 启动倒计时
           this.computeTime = 60;
           this.intervalId = setInterval(() => {
-            this.computeTime--
+            this.computeTime--;
             if(this.computeTime<=0) {
               // 停止计时
               clearInterval(this.intervalId)
@@ -175,7 +175,7 @@
           this.alertMsg("验证码不能为空");
           return;
         }
-        let object = await reqSmsLogin({mobile:mobileStr,password:code});
+        let object = await reqSmsLogin({mobile:mobileStr,password:code,loginType:1});
         console.log(object);
 
         //错误信息显示

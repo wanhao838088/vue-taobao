@@ -19,6 +19,7 @@
       <div>
         <div class="allItemv2">
           <div class="bundlev2">
+            <!--店铺信息-->
             <div class="shop">
               <div class="o-t-title-shop">
                 <div class="tcont">
@@ -29,11 +30,37 @@
                         <i style="width: 100%;height: 100%;" class="iconfont icon-yuanquan"></i>
                       </label>
                     </p>
+                  </div>
 
+                  <!--企业图标-->
+                  <div class="ico">
+                    <img style="width: 100%" src="//gtms04.alicdn.com/tps/i4/TB1x4ExHVXXXXalXFXXSutbFXXX.jpg">
+                  </div>
+
+                  <!--店铺名称-->
+                  <div class="contact">
+                    <a href="//shop.m.taobao.com/shop/shop_index.htm?shop_id=72584016" >
+                      <p class="title">华联液晶</p>
+                      <p class="arrow iconfont icon-arrow-right-copy-copy-copy">
+                        <span class="icon-right"></span>
+                      </p>
+                    </a>
+                  </div>
+
+                  <div class="state">
+                    <div class="state-cont">
+                      <p class="edit">领券</p>
+                    </div>
+                    <div class="state-cont">
+                      <p class="edit undefined">编辑</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!--商品列表-->
+            <div class="group"></div>
           </div>
 
         </div>
@@ -60,6 +87,8 @@
         margin-top: .32rem;
         background: #fff;
         border-bottom: .01333rem solid #e7e7e7;
+        .group
+          list-style: none;
         .shop
           list-style: none;
           .o-t-title-shop
@@ -74,6 +103,52 @@
               width: 100%;
               height: 1.067rem;
               display: flex;
+              .state
+                margin-left: .32rem;
+                display: flex;
+                .state-cont
+                  flex: 1;
+                  box-align: center;
+                  display: box;
+                  cursor: pointer;
+                  .edit
+                    border: none;
+                    width: 1.48rem;
+                    text-align: center;
+                    cursor: pointer;
+              .contact
+                box-align: center;
+                flex: 1;
+                display: -webkit-box;
+                .arrow
+                  min-width: .52rem;
+                  min-height: .547rem;
+                  line-height: 0.5rem;
+                  text-align left
+                  width: .52rem;
+                  background-size: .4rem .647rem;
+                  flex: 1;
+                  background-position: left center;
+                .title
+                  margin-right: .52rem;
+                  line-height: .547rem;
+                  word-break: break-all;
+                  display: -webkit-box;
+                  text-align: left;
+                  overflow: hidden;
+                  -webkit-line-clamp: 1;
+                & a
+                  width: 100%;
+                  color: #051b28;
+                  display: flex;
+                  padding-right: .52rem;
+                  box-sizing: border-box;
+              .ico
+                margin-right: .32rem;
+                width: .427rem;
+                margin-top 0
+                display: flex;
+                align-items: center;
               .shopcb
                 -webkit-box-align: center;
                 display: -webkit-box;

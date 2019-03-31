@@ -25,7 +25,7 @@ public class GoodsSku implements Serializable {
     /**
      * 价格
      */
-    private Integer priceMoney;
+    private Double priceMoney;
 
 
     /**
@@ -42,4 +42,9 @@ public class GoodsSku implements Serializable {
      * 创建时间
      */
     private Date createTime;
+
+    /**
+     * 商品图
+     */
+    private String skuImg;
 }

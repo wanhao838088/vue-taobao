@@ -4,10 +4,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.google.common.collect.Maps;
 import io.renren.common.utils.R;
 import io.renren.common.validator.ValidatorUtils;
-import io.renren.entity.goods.Goods;
-import io.renren.entity.goods.GoodsDetailImg;
-import io.renren.entity.goods.GoodsImg;
-import io.renren.entity.goods.GoodsServiceEntity;
+import io.renren.entity.goods.*;
 import io.renren.form.GoodsListSearchForm;
 import io.renren.service.goods.*;
 import io.renren.vo.GoodsPropsVo;
@@ -51,6 +48,12 @@ public class GoodsController {
     private GoodsPropsKeyService propsService;
 
     /**
+     * sku
+     */
+    @Autowired
+    private GoodsSkuService skuService;
+
+    /**
      * 服务
      */
     @Autowired
@@ -81,6 +84,10 @@ public class GoodsController {
         GoodsVo goodsVo = goodsService.getGoodsVoByGoodsId(id);
         //商品图
         List<GoodsImg> goodsImgs = goodsImgService.getByGoodsId(id);
+
+        //查找sku
+        List<GoodsSku> skus = skuService.getByGoodsId(id);
+        goodsVo.setSkus(skus);
 
         //商品详情图
         List<GoodsDetailImg> goodsDetailImgs = detailImgService.getByGoodsId(id);

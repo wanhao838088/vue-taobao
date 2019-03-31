@@ -40,4 +40,12 @@ public interface GoodsDao extends BaseMapper<Goods> {
      */
     @Update("update miaosha_goods set stock_count = stock_count - 1 where goods_id = #{goodsId} and stock_count>0")
     int decCount(Long id);
+
+    /**
+     * 根据商品Id查找
+     * @param goodsId
+     * @return
+     */
+    @Select("SELECT gd.*,ts.seller_name FROM goods gd JOIN tb_seller ts ON gd.seller_id=ts.id where gd.id=#{goodsId}")
+    GoodsVo getByGoodsId(@Param("goodsId") Long goodsId);
 }

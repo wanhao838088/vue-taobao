@@ -22,7 +22,7 @@ public class BuyCart implements Serializable {
     /**
      * 用户id
      */
-    private Integer userId;
+    private Long userId;
     /**
      * 卖家id
      */

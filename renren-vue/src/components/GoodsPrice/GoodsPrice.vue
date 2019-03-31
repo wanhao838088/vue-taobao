@@ -3,11 +3,8 @@
     <div class="present-price">
       <div class="main-price-wrapper">
         <p class="o-t-price">
-          <span class="num" v-if="goodsDetail.goodsMaxPrice">
-          {{goodsDetail.goodsMinPrice}}-{{goodsDetail.goodsMaxPrice}}
-          </span>
-          <span class="num" v-else>
-          {{goodsDetail.goodsMinPrice}}
+          <span class="num">
+            {{goodsPriceRange}}
           </span>
         </p>
         <p class="txt"><span>巨优惠</span></p>
@@ -17,11 +14,8 @@
     <div class="original-price" v-show="goodsDetail.orgMinPrice">
       <div style="float: left;margin-right: 0.24rem;">
         价格:￥
-        <del v-if="goodsDetail.orgMaxPrice">
-          {{goodsDetail.orgMinPrice}}-{{goodsDetail.orgMaxPrice}}
-        </del>
-        <del v-else>
-          {{goodsDetail.orgMinPrice}}
+        <del>
+          {{goodsOldPriceRange}}
         </del>
       </div>
     </div>
@@ -36,6 +30,52 @@
     name: "GoodsPrice",
     props:{
       goodsDetail:Object
+    },
+    computed:{
+      goodsOldPriceRange(){
+        let skus = this.goodsDetail.skus;
+        if (!skus || !skus[0]){
+          return;
+        }
+        let minPrice = skus[0].priceMoney;
+        let maxPrice = skus[0].priceMoney;
+        if (skus.length == 1) {
+          return `￥ ${minPrice}`;
+        }
+        skus.forEach((sku)=>{
+          if (sku.priceMoney<minPrice){
+            minPrice = sku.priceMoney;
+          }
+          if (sku.priceMoney > minPrice) {
+            maxPrice = sku.priceMoney;
+          }
+        });
+        return `${minPrice+10}-${maxPrice+50}`;
+      },
+      /**
+       * 计算价格区间
+       *
+       */
+      goodsPriceRange(){
+        let skus = this.goodsDetail.skus;
+        if (!skus || !skus[0]){
+          return;
+        }
+        let minPrice = skus[0].priceMoney;
+        let maxPrice = skus[0].priceMoney;
+        if (skus.length == 1) {
+          return `￥ ${minPrice}`;
+        }
+        skus.forEach((sku)=>{
+          if (sku.priceMoney<minPrice){
+            minPrice = sku.priceMoney;
+          }
+          if (sku.priceMoney > minPrice) {
+            maxPrice = sku.priceMoney;
+          }
+        });
+        return `${minPrice}-${maxPrice}`;
+      },
     }
   }
 </script>

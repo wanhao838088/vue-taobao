@@ -14,7 +14,7 @@
       <span class="btn-text">收藏</span>
     </div>
     <div class="bottom-bar-btn cart ">
-      <span class="btn-title">加入购物车</span>
+      <span @click="$emit('addToCart')" class="btn-title">加入购物车</span>
     </div>
 
     <div class="bottom-bar-btn buy" style="margin-right: 0.11rem;">

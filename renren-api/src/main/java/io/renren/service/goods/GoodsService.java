@@ -41,4 +41,12 @@ public interface GoodsService extends IService<Goods> {
 	 * @param map
 	 */
 	void isSecKillGoods(GoodsVo goodsVo, Map<String, Object> map);
+
+	/**
+	 * 根据商品Id查找
+	 * @param goodsId
+	 * @return
+	 */
+	public GoodsVo getByGoodsId(Long goodsId);
+
 }

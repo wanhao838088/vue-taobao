@@ -85,7 +85,7 @@
           this.alertMsg("密码不能为空");
           return;
         }
-        let object = await reqPwdLogin({name:phoneStr,password});
+        let object = await reqPwdLogin({name:phoneStr,password,loginType:1});
 
         //错误信息显示
         if (object.code !== 0) {

@@ -8,8 +8,8 @@ import ajax from './ajax'
 const MY_URL = 'http://localhost:8081/renren-api/api';
 
 // 1、手机号密码登陆
-export const reqPwdLogin = ({name, password}) =>
-  ajax(MY_URL + `/login`, {mobile: name, password}, "POST");
+export const reqPwdLogin = ({name, password,loginType}) =>
+  ajax(MY_URL + `/login`, {mobile: name, password,loginType}, "POST");
 
 // 2、发送短信验证码
 export const reqSendCode = ({mobile, deviceId}) =>
@@ -17,8 +17,8 @@ export const reqSendCode = ({mobile, deviceId}) =>
 
 
 // 3、手机号验证码登陆
-export const reqSmsLogin = ({mobile, password}) =>
-  ajax(MY_URL + '/loginByCode', {mobile, password}, "POST");
+export const reqSmsLogin = ({mobile, password,loginType}) =>
+  ajax(MY_URL + '/loginByCode', {mobile, password,loginType}, "POST");
 
 
 // 4、根据token获取用户信息
@@ -49,3 +49,7 @@ export const reqSecKillResult = ({goodsId}) =>
 // 11、获取秒杀结果
 export const reqSearchCategory = (form) =>
   ajax(MY_URL + `/goodsCategory/search`,form,"POST",false);
+
+// 12、添加商品到购物车
+export const reqAddSku2Cart = (form) =>
+  ajax(MY_URL + `/buyCart/addSku2Cart`,form,"POST",true);

@@ -111,4 +111,9 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsDao, Goods> implements Go
 		map.put("remainSeconds",remainSeconds);
 	}
 
+	@Override
+	public GoodsVo getByGoodsId(Long goodsId) {
+		return baseMapper.getByGoodsId(goodsId);
+	}
+
 }
