@@ -2,6 +2,7 @@ package io.renren.entity.buycart;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -54,5 +55,9 @@ public class BuyCart implements Serializable {
      */
     private String sellerName;
 
-
+    /**
+     * 删除标识
+     */
+    @JsonIgnore
+    private Integer delFlag;
 }

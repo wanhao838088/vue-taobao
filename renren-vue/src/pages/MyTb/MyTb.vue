@@ -22,7 +22,7 @@
           </div>
           <!--日期和设置-->
           <div class="date-setting">
-            <div class="date-wrapper">
+            <div @click="$router.push('/signIn')" class="date-wrapper">
               <div
                 style="width: 100%; height: 100%; background-image: url(https://gw.alicdn.com/tfs/TB1RP44oQvoK1RjSZFDXXXY3pXa-54-54.png_.webp); background-repeat: no-repeat; background-position: center center; background-size: 100% 100%;"></div>
             </div>
@@ -201,9 +201,8 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .main-layout
     margin-top: -0.11rem;
-    height: auto;
+    height: 12rem;
     background-color: #FF5000;
-    position: fixed;
     top: 0;
     background-image: -webkit-linear-gradient(left, #FD9126, #FF5000);
     background-image: linear-gradient(to right, #FD9126, #FF5000);

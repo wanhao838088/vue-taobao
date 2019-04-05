@@ -1,5 +1,6 @@
 package io.renren.controller;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import io.renren.annotation.Login;
 import io.renren.annotation.LoginUser;
 import io.renren.common.utils.R;
@@ -15,10 +16,7 @@ import io.renren.utils.ComputeUtil;
 import io.renren.vo.GoodsVo;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -50,7 +48,6 @@ public class BuyCartController {
         //表单校验
         ValidatorUtils.validateEntity(form);
 
-
         BuyCart buyCart = new BuyCart();
         buyCart.setAddTime(new Date());
         buyCart.setAmount(form.getAmount());
@@ -66,4 +63,31 @@ public class BuyCartController {
         buyCartService.insert(buyCart);
         return R.ok();
     }
+
+    /**
+     * 分页查询购物项
+     * @param pageNo 页码
+     * @param user
+     * @return
+     */
+    @Login
+    @GetMapping(value = "getBuyCartData")
+    public R getBuyCartData(Integer pageNo,@LoginUser UserEntity user){
+        Page<BuyCart> page = buyCartService.getCartByPageNo(user.getUserId(), pageNo);
+        return R.ok().put("page",page);
+    }
+
+    /**
+     * 删除购物项
+     * @param skuId sku
+     * @param user
+     * @return 标记删除为1
+     */
+    @Login
+    @GetMapping(value = "deleteCartItem")
+    public R deleteCartItem(Integer skuId,@LoginUser UserEntity user){
+        buyCartService.deleteCartItem(skuId,user.getUserId());
+        return R.ok();
+    }
+
 }

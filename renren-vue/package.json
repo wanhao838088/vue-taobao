@@ -16,6 +16,7 @@
     "better-scroll": "^1.13.4",
     "date-fns": "^1.30.1",
     "mockjs": "^1.0.1-beta3",
+    "moment": "^2.24.0",
     "px2rem-loader": "^0.1.9",
     "stylus": "^0.54.5",
     "swiper": "^4.4.2",

@@ -6,6 +6,7 @@ import Main from '@/pages/Main/Main'
 import Goods from '@/components/Goods/Goods'
 import SearchPage from '@/components/SearchPage/SearchPage'
 import GoodsList from '@/components/GoodsList/GoodsList'
+import SignIn from '@/components/SignIn/SignIn'
 
 import MobileLogin from '@/pages/MobileLogin/MobileLogin'
 import BuyCart from '@/pages/BuyCart/BuyCart'
@@ -74,6 +75,11 @@ const router = new Router({
       path: '/profile',
       name: 'Profile',
       component: Profile
+    },
+    {
+      path: '/signIn',
+      name: 'SignIn',
+      component: SignIn
     },
     {
       path: '/main',
