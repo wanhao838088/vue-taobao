@@ -10,3 +10,5 @@ export const SAVE_BANNERS = 'save_banners';
 export const SAVE_NAVS = 'save_navs';
 
 export const SAVE_NEWS = 'save_news';
+
+export const RECEIVE_BUY_CART = 'receive_buy_cart';

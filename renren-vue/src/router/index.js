@@ -15,6 +15,8 @@ import MyTb from '@/pages/MyTb/MyTb'
 import More from '@/pages/More/More'
 import {getToken} from '../utils/utils'
 
+import {reqUserInfo} from '../api/index'
+
 Vue.use(Router);
 
 const router = new Router({
@@ -105,10 +107,12 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   //需要登录访问的地址
   const nextRoute = ['/myTb','/buyCart'];
-  let isLogin = false;
-  if (getToken()) {
-    isLogin = true;
-  }
+
+  let token = getToken();
+  let isLogin = getUserInfo({
+    token
+  });
+
   //根据路径判断
   if (nextRoute.indexOf(to.path) >= 0) {
     if (!isLogin) {
@@ -120,5 +124,12 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+const getUserInfo = async function(token){
+  let res = await reqUserInfo(token);
+  if (res.code == 0) {
+    return true;
+  }
+  return false;
+};
 
 export default router;

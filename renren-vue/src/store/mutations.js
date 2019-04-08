@@ -1,11 +1,11 @@
 /*
 vuex 的 mutations 模块
 */
-import Vue from 'vue'
 
 import {
   SAVE_USER_INFO,
   RECEIVE_GOODS,
+  RECEIVE_BUY_CART,
   SAVE_BANNERS,
   SAVE_NAVS,
   SAVE_NEWS
@@ -54,5 +54,13 @@ export default {
    */
   [SAVE_NEWS] (state, {news}) {
     state.news = news;
+  },
+  /**
+   * 保存新闻
+   * @param state
+   * @param news
+   */
+  [RECEIVE_BUY_CART] (state, {data}) {
+    state.buyCart = data;
   },
 }

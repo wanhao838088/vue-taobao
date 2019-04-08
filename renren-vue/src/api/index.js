@@ -55,8 +55,8 @@ export const reqAddSku2Cart = (form) =>
   ajax(MY_URL + `/buyCart/addSku2Cart`,form,"POST",true);
 
 // 13、查询购物车列表
-export const reqgetBuyCartData = (form) =>
-  ajax(MY_URL + `/buyCart/getBuyCartData`,form,"GET",true);
+export const reqgetBuyCartData = () =>
+  ajax(MY_URL + `/buyCart/getBuyCartData`,{},"GET",true);
 
 // 13、删除购物项
 export const reqgetDeleteCartItem = (form) =>

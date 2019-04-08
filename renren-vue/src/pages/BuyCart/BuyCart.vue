@@ -1,9 +1,9 @@
 <template>
   <div id="J_cartBuy" class="cartbuy">
-    <div>
+    <div class="btm-one-five">
       <!--头部-->
       <header class="o-c-header">
-        <div @click="$router.back();" class="back"><p class="bk-img"></p></div>
+        <div @click="$router.back()" class="back"><p class="bk-img"></p></div>
         <div class="title">
           <span >购物车</span>
           <span>
@@ -20,7 +20,7 @@
         <div class="allItemv2">
           <div class="bundlev2">
             <!--店铺信息-->
-            <div class="shop">
+            <div class="shop" v-for="(cda,key) in buyCart" :key="key">
               <div class="o-t-title-shop">
                 <div class="tcont">
                   <div class="shopcb">
@@ -40,7 +40,7 @@
                   <!--店铺名称-->
                   <div class="contact">
                     <a href="//shop.m.taobao.com/shop/shop_index.htm?shop_id=72584016" >
-                      <p class="title">华联液晶</p>
+                      <p class="title">{{cda.name}}</p>
                       <p class="arrow iconfont icon-arrow-right-copy-copy-copy">
                         <span class="icon-right"></span>
                       </p>
@@ -57,60 +57,61 @@
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!--商品列表-->
-            <div class="group">
-              <div class="itemv2">
-                <div class="item-box">
-                  <div class="item-list o-t-item">
-                    <div class="item-cb">
-                      <p style="line-height: 0;">
-                        <input type="text" class="o-t-cb">
-                        <label class="o-t-cb-label" for="cb-155378244395023">
-                          <i style="width: 100%;height: 100%;" class="iconfont icon-yuanquan"></i>
-                        </label>
-                      </p>
-                    </div>
 
-                    <!--详情部分-->
-                    <div class="item-detail">
-                      <div style="display: flex;width: 100%">
-                        <div class="item-img">
-                          <a href="javascript:;">
-                            <img style="width: 100%;transform: translateZ(0);"
-                              src="https://gw.alicdn.com/bao/uploaded/i2/906746002/O1CN01y8lOzB1uCxfn0uPiJ_!!906746002.png_200x200.jpg_.webp"
-                              alt="">
-                          </a>
-                        </div>
-                        <div class="item-info">
-                          <a href="javascript:;">
-                            <h3 class="title">超清55寸4K液晶电视32 42 60 65 75彩电曲面网络智能wifi防爆KTV</h3>
-                            <div class="edit-sku">
-                              <div>
-                                <p>32寸高清网络版支持wifi[护眼+节能]</p>
+              <!--商品列表-->
+              <div class="group">
+                <div class="itemv2" v-for="(lta,index) in cda.list" :key="index">
+                  <div class="item-box">
+                    <div class="item-list o-t-item">
+                      <div class="item-cb">
+                        <p style="line-height: 0;">
+                          <input type="text" class="o-t-cb">
+                          <label class="o-t-cb-label" for="cb-155378244395023">
+                            <i style="width: 100%;height: 100%;" class="iconfont icon-yuanquan"></i>
+                          </label>
+                        </p>
+                      </div>
+
+                      <!--详情部分-->
+                      <div class="item-detail">
+                        <div style="display: flex;width: 100%">
+                          <div class="item-img">
+                            <a href="javascript:;">
+                              <img style="width: 100%;transform: translateZ(0);"
+                                   :src="lta.skuImg"
+                                   alt="">
+                            </a>
+                          </div>
+                          <div class="item-info">
+                            <a href="javascript:;">
+                              <h3 class="title">{{lta.goodsTitle}}</h3>
+                              <div class="edit-sku">
+                                <div>
+                                  <p>{{lta.skuName}}</p>
+                                </div>
                               </div>
-                            </div>
-                          </a>
-                          <div class="pay">
-                            <div class="pay-price">
-                              <div class="price">
-                                <p class="o-t-price">
-                                  <span class="major">688</span>
+                            </a>
+                            <div class="pay">
+                              <div class="pay-price">
+                                <div class="price">
+                                  <p class="o-t-price">
+                                    <span class="major">{{lta.priceMoney}}</span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="edit-quantity">
+                                <p class="btn-minus">
+                                  <a href="" class="btn"></a>
+                                </p>
+                                <p class="btn-input">
+                                  <input :value="lta.amount" style="width: 100%;text-align: center;border: none;"
+                                         type="number" max="2558" min="1"/>
+                                </p>
+                                <p class="btn-plus">
+                                  <a href="" class="btn plus"></a>
                                 </p>
                               </div>
-                            </div>
-                            <div class="edit-quantity">
-                              <p class="btn-minus">
-                                <a href="" class="btn"></a>
-                              </p>
-                              <p class="btn-input">
-                                <input value="22" style="width: 100%;text-align: center;border: none;"
-                                       type="number" max="2558" min="1"/>
-                              </p>
-                              <p class="btn-plus">
-                                <a href="" class="btn plus"></a>
-                              </p>
                             </div>
                           </div>
                         </div>
@@ -119,6 +120,7 @@
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
 
@@ -164,17 +166,36 @@
 </template>
 
 <script>
+  import {mapActions,mapState}  from 'vuex'
   /**
    * 购物车
    */
   export default {
-    name: "BuyCart"
+    name: "BuyCart",
+    data(){
+      return{
+        pageNo:1, //分页 页数
+        cartData:null, //购物车数据
+      }
+    },
+    methods:{
+      ...mapActions(['getBuyCart'])
+    },
+    computed:{
+      ...mapState(['buyCart'])
+    },
+    async mounted(){
+      //获取购物车
+      this.getBuyCart();
+    }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .cartbuy
     position: relative;
+    .btm-one-five
+      padding-bottom 1.5rem
     .cart-footer
       width: 100%;
       position: fixed;

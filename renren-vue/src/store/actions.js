@@ -1,11 +1,12 @@
 import {
-  reqBannerAndNav
+  reqBannerAndNav,
+  reqgetBuyCartData
 }
 from '../api'
 
 import {
   SAVE_USER_INFO,
-  RECEIVE_GOODS,
+  RECEIVE_BUY_CART,
   SAVE_BANNERS,
   SAVE_NAVS,
   SAVE_NEWS
@@ -37,6 +38,15 @@ export default {
       callBack && callBack.call();
     }
   },
-
+  // 异步获取商家商品列表
+  async getBuyCart({commit},callBack) {
+    const result = await reqgetBuyCartData();
+    if (result.code === 0) {
+      const data = result.data
+      commit(RECEIVE_BUY_CART, {data});
+      //调用回调
+      callBack && callBack();
+    }
+  },
 }
 

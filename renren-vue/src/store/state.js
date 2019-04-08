@@ -8,5 +8,5 @@ export default {
   banners:[],//you know
   news:[],//新闻
   navs:[],//you know
-  shopCart: [], // 购物车
+  buyCart: [], // 购物车
 }

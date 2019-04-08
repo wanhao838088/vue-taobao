@@ -1,8 +1,10 @@
 package io.renren.service.buycart;
 
-import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
 import io.renren.entity.buycart.BuyCart;
+import io.renren.vo.BuyCartVo;
+
+import java.util.List;
 
 /**
  * 订单
@@ -13,10 +15,9 @@ public interface BuyCartService extends IService<BuyCart> {
     /**
      * 分页查询购物列表
      * @param userId
-     * @param pageNo
      * @return  购物列表
      */
-    public Page<BuyCart> getCartByPageNo(Long userId, Integer pageNo);
+    public List<BuyCartVo> getCart(Long userId);
 
     /**
      * 删除购物项
