@@ -3,7 +3,7 @@
     <div>
       <!--头部-->
       <header class="o-c-header">
-        <div class="back"><p class="bk-img"></p></div>
+        <div @click="$router.back();" class="back"><p class="bk-img"></p></div>
         <div class="title">
           <span >购物车</span>
           <span>
@@ -124,6 +124,41 @@
 
         </div>
       </div>
+
+    </div>
+
+    <!--底部结算-->
+    <div class="cart-footer">
+      <div class="ft-cb">
+        <p>
+          <input style="display: none;" id="cb-footer" type="checkbox" class="cb o-t-cb"/>
+          <label class="cb-footer iconfont icon-yuanquan" for="cb-footer"></label>
+        </p>
+      </div>
+      <div class="qx">全选</div>
+      <div class="pay">
+        <div>
+          <div>
+            <span class="hj">合计：</span>
+            <p class="o-t-price" data-symbol="￥">
+                <span>
+                  <span class="major">0</span>
+                  <span class="point">.</span>
+                  <span class="minor">00</span>
+                </span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn">
+        <p>
+          <span>结算</span>
+          <span>(</span>
+          <span>0</span>
+          <span>)</span>
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -140,6 +175,65 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .cartbuy
     position: relative;
+    .cart-footer
+      width: 100%;
+      position: fixed;
+      z-index: 2;
+      left 0
+      bottom 1rem
+      height: 1.30667rem;
+      background: #fff;
+      border-top: .02667rem solid #e7e7e7;
+      display: flex;
+      .btn
+        width: 2.77333rem;
+        color: #fff;
+        background: #f50;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-left: .32rem;
+        & p
+          font-size 0.35rem
+      .pay
+        flex: 1;
+        align-items: center;
+        display: flex;
+        .o-t-price
+          color: #f50;
+          display: inline;
+          .major
+            font-size 0.39rem
+          &::before
+            content: attr(data-symbol);
+            display: inline-block;
+            text-decoration: inherit;
+            vertical-align: inherit;
+        .hj
+          font-size: 0.35rem
+        & div
+          flex: 1;
+          text-align: right;
+      .qx
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-size: 0.35rem
+      .ft-cb
+        position: relative;
+        width: 1.17333rem;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        .cb-footer
+          width: .53333rem;
+          height: .53333rem;
+          background-size: .52rem;
+          &::after
+            position: absolute;
+            width: 1.6rem;
+            height: 100%;
+            top: 0;
     .allItemv2
       list-style: none;
       .bundlev2

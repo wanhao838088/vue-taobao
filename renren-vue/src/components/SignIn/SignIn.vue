@@ -116,7 +116,8 @@
 
         <!--签到按钮-->
         <div class="sign-btn">
-          <span class="sign-sp">已签到</span>
+          <span v-if="isSigned" class="sign-sp">已签到</span>
+          <span @click="signToday" v-else class="no-sign-up">今日签到</span>
         </div>
       </div>
       <!--下拉的图片-->
@@ -128,6 +129,26 @@
            class="arrow-down">
     </div>
 
+    <div v-show="isShowMask" class="mask">
+      <div class="mask-content">
+        <div class="alert-content">
+          <img class="alert-img" src="https://gw.alicdn.com/tfs/TB1qhbDOwHqK1RjSZFPXXcwapXa-580-580.png_580x10000.jpg_.webp" alt="">
+          <div class="bottom-wrapper">
+            <div class="date-wrapper">
+              <span class="date-day">08</span>
+              <span class="date-year">2019年04月</span>
+            </div>
+            <div class="nongli">
+              <span class="nongli-day">初四</span>
+              <span class="nongli-desc">时间扑面而来，我们终将释怀。</span>
+            </div>
+          </div>
+          <img src="https://gw.alicdn.com/tfs/TB1pCVHcNnaK1RjSZFtXXbC2VXa-542-14.png_570x10000.jpg_.webp" alt=""
+               class="mid-split">
+        </div>
+        <img @click="isShowMask=false" class="close-img" src="https://gw.alicdn.com/tfs/TB1HEsERVXXXXbIXFXXXXXXXXXX-88-88.png_110x10000.jpg_.webp" alt="">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -148,6 +169,8 @@
         selectDatas:[], //顶部显示的日期数据
         checkedIndex: 0, //选中的日期
         isShowShrink: true,
+        isSigned:false , //今日是否签到过了
+        isShowMask:false ,// 是否正在显示遮罩内容
         myMoment: {}, //当前日期对象
         animHeight:0 ,//计算得到的高度
         tweenedNumber: 0
@@ -167,6 +190,13 @@
       }
     },
     methods: {
+      /**
+       * 今日签到
+       */
+      signToday(){
+        this.isSigned = true;
+        this.isShowMask = true;
+      },
       /**
        * 开关显示日历
        */
@@ -326,6 +356,153 @@
     flex-direction: column;
     align-content: flex-start;
     flex-shrink: 0;
+    .mask
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+      background-color: rgba(0, 0, 0, 0.6);
+      opacity: 1;
+      z-index: 100;
+      .close-img
+        display: flex;
+        width: 0.688rem
+        height: 0.688rem
+        margin-top: 0.391rem
+        opacity: 1;
+      .mask-content
+        border: 0px solid black;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        flex-direction: column;
+        align-content: flex-start;
+        flex-shrink: 0;
+        width: 10rem
+        height:  12.267rem
+        -webkit-box-align: center;
+        align-items: center;
+        margin-top: 1.133rem
+        padding-left: 1.133rem
+        padding-right: 1.133rem
+        .alert-content
+          border: 0px solid black;
+          position: relative;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          align-content: flex-start;
+          flex-shrink: 0;
+          align-items: center;
+          width: 7.733rem
+          height: 10.4rem
+          border-radius: 0.267rem
+          background-color: transparent;
+          .mid-split
+            display: flex;
+            width: 7.227rem
+            height: 0.187rem
+            position: absolute;
+            left: 0.24rem
+            bottom: 2.56rem
+          .bottom-wrapper
+            border: 0px solid black;
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            flex-direction: row;
+            place-content: flex-start space-between;
+            flex-shrink: 0;
+            width: 7.733rem  /* 580/75 */;
+            height: 2.667rem  /* 200/75 */;
+            background-color: rgb(255, 255, 255);
+            border-radius: 0.32rem  /* 24/75 */;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            padding: 0rem  /* 0/75 */ 0.56rem  /* 42/75 */;
+            .nongli
+              border: 0px solid black;
+              position: relative;
+              box-sizing: border-box;
+              display: flex;
+              -webkit-box-orient: vertical;
+              flex-direction: column;
+              place-content: flex-start space-between;
+              flex: 1 1 0%;
+              margin-left: 78px;
+              -webkit-box-flex: 1;
+              -webkit-box-pack: justify;
+              min-height: 1.333rem
+              .nongli-desc
+                white-space: pre-wrap;
+                border: 0px solid black;
+                position: relative;
+                text-align left
+                box-sizing: border-box;
+                display: block;
+                -webkit-box-orient: vertical;
+                flex-direction: column;
+                align-content: flex-start;
+                flex-shrink: 0;
+                font-size: 0.32rem
+                color: rgb(51, 51, 51);
+              .nongli-day
+                white-space: pre-wrap;
+                border: 0px solid black;
+                position: relative;
+                box-sizing: border-box;
+                text-align left
+                display: block;
+                -webkit-box-orient: vertical;
+                flex-direction: column;
+                align-content: flex-start;
+                flex-shrink: 0;
+                font-size: 0.48rem
+                color: rgb(51, 51, 51);
+                font-weight: bold;
+            .date-wrapper
+              border: 0px solid black;
+              position: relative;
+              box-sizing: border-box;
+              display: flex;
+              -webkit-box-orient: vertical;
+              flex-direction: column;
+              align-content: flex-start;
+              flex-shrink: 0;
+              .date-year
+                white-space: pre-wrap;
+                border: 0px solid black;
+                position: relative;
+                box-sizing: border-box;
+                display: block;
+                -webkit-box-orient: vertical;
+                flex-direction: column;
+                align-content: flex-start;
+                flex-shrink: 0;
+                font-size: 0.32rem
+                color: rgb(153, 153, 153);
+              .date-day
+                white-space: pre-wrap;
+                border: 0px solid black;
+                position: relative;
+                box-sizing: border-box;
+                display: block;
+                -webkit-box-orient: vertical;
+                flex-direction: column;
+                align-content: flex-start;
+                flex-shrink: 0;
+                font-size: 1.067rem  /* 80/75 */;
+                color: rgb(51, 51, 51);
+                font-weight: bold;
+          .alert-img
+            display: flex;
+            width: 7.733rem
+            height: 7.733rem
+            border-radius: 0.32rem
     .tada
       opacity: 1.0;
     .slide-left-enter-active
@@ -389,6 +566,17 @@
           align-items: center;
           -webkit-box-pack: center;
           background-image: linear-gradient(to right, rgb(255, 195, 62), rgb(255, 105, 83));
+          .no-sign-up
+            white-space: pre-wrap;
+            border: 0 solid black;
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+            flex-direction: column;
+            align-content: flex-start;
+            flex-shrink: 0;
+            font-size: 15.76px;
+            color: rgb(255, 255, 255);
           .sign-sp
             white-space: pre-wrap;
             border: 0px solid black;
