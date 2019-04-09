@@ -104,14 +104,19 @@ const router = new Router({
 });
 
 // 全局路由守卫
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   //需要登录访问的地址
   const nextRoute = ['/myTb','/buyCart'];
 
   let token = getToken();
-  let isLogin = getUserInfo({
-    token
-  });
+  let res = await reqUserInfo({token});
+
+  let isLogin = false;
+  if (res.code === 0) {
+    isLogin =  true;
+  }else if(res.code ===10086){
+    isLogin =  false;
+  }
 
   //根据路径判断
   if (nextRoute.indexOf(to.path) >= 0) {
@@ -124,12 +129,5 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
-const getUserInfo = async function(token){
-  let res = await reqUserInfo(token);
-  if (res.code == 0) {
-    return true;
-  }
-  return false;
-};
 
 export default router;

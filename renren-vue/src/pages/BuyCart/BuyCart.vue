@@ -8,7 +8,7 @@
           <span >购物车</span>
           <span>
             <span>(</span>
-            <span>2</span>
+            <span>{{cartCount}}</span>
             <span>)</span>
           </span>
         </div>
@@ -66,9 +66,8 @@
                     <div class="item-list o-t-item">
                       <div class="item-cb">
                         <p style="line-height: 0;">
-                          <input type="text" class="o-t-cb">
-                          <label class="o-t-cb-label" for="cb-155378244395023">
-                            <i style="width: 100%;height: 100%;" class="iconfont icon-yuanquan"></i>
+                          <input :id="lta.id" type="text" class="o-t-cb">
+                          <label @click="checkThisGoods(lta.id,$event)" class="o-t-cb-label" :for="lta.id">
                           </label>
                         </p>
                       </div>
@@ -166,7 +165,7 @@
 </template>
 
 <script>
-  import {mapActions,mapState}  from 'vuex'
+  import {mapActions,mapState,mapGetters}  from 'vuex'
   /**
    * 购物车
    */
@@ -179,12 +178,28 @@
       }
     },
     methods:{
-      ...mapActions(['getBuyCart'])
+      ...mapActions(['getBuyCart']),
+      /**
+       * 点击label选择sku商品
+       * @param goodsId
+       */
+      checkThisGoods(goodsId,event){
+        //获取元素class名
+        let clazzName = event.currentTarget.className;
+        if (clazzName.indexOf('o-t-cb-label-checked') !== -1) {
+          event.currentTarget.className=' o-t-cb-label';
+        }else {
+          event.currentTarget.className+=' o-t-cb-label-checked';
+        }
+        //元素本身
+        console.log(event.currentTarget)
+      }
     },
     computed:{
-      ...mapState(['buyCart'])
+      ...mapState(['buyCart']),
+      ...mapGetters(['cartCount']),
     },
-    async mounted(){
+    mounted(){
       //获取购物车
       this.getBuyCart();
     }
@@ -407,6 +422,16 @@
                   width: 1.173rem;
                   margin-right: -.32rem;
                   position: relative;
+                  .o-t-cb-label-checked
+                    background-image url("./images/checked.png") !important
+                  .o-t-cb-label
+                    display: inline-block;
+                    width: .533rem;
+                    background-size 100%
+                    background-repeat no-repeat
+                    background-image url("./images/cycle.png")
+                    height: .533rem;
+                    cursor: pointer;
                   .o-t-cb
                     display: none;
                   & p
@@ -479,11 +504,6 @@
                 -webkit-box-align: center;
                 display: -webkit-box;
                 margin-right: .32rem;
-                .o-t-cb-label
-                  display: inline-block;
-                  width: .533rem;
-                  height: .533rem;
-                  cursor: pointer;
                 .o-t-cb
                   display: none;
     .o-c-header

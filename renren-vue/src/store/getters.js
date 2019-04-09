@@ -48,5 +48,18 @@ export default {
       });
     }
     return destNews;
+  },
+  /**
+   * 购物车里面的购物项数量
+   * @param state
+   */
+  cartCount(state){
+    let buyCart = state.buyCart;
+    let count = 0;
+    for(let i=0;i<buyCart.length;i++){
+      let  list = buyCart[i].list;
+      count+=list.length;
+    }
+    return count;
   }
 }
