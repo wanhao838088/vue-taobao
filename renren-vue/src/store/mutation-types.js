@@ -12,3 +12,7 @@ export const SAVE_NAVS = 'save_navs';
 export const SAVE_NEWS = 'save_news';
 
 export const RECEIVE_BUY_CART = 'receive_buy_cart';
+
+export const SELECT_SKU_ITEM = 'select_sku_item'; //选择单个sku
+
+export const ADD_SKU_ITEM_COUNT = 'add_sku_item_count'; //改变sku购买数量

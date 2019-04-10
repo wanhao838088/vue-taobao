@@ -61,5 +61,40 @@ export default {
       count+=list.length;
     }
     return count;
+  },
+  /**
+   * 购物车里面选中的sku数量
+   * @param state
+   */
+  cartSelectedCount(state){
+    let buyCart = state.buyCart;
+    let count = 0;
+    for(let i=0;i<buyCart.length;i++){
+      let  list = buyCart[i].list;
+      list.forEach((obj)=>{
+        if (obj.isSelect) {
+          count += obj.amount;
+        }
+      })
+    }
+    return count;
+  },
+  /**
+   * 购物车里面选中的sku价格
+   * @param state
+   */
+  cartSelectedPrice(state){
+    let buyCart = state.buyCart;
+    let price = 0.0;
+
+    for(let i=0;i<buyCart.length;i++){
+      let  list = buyCart[i].list;
+      list.forEach((obj)=>{
+        if (obj.isSelect) {
+          price += obj.amount * obj.priceMoney;
+        }
+      })
+    }
+    return price;
   }
 }

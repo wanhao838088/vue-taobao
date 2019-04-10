@@ -9,7 +9,9 @@ import {
   RECEIVE_BUY_CART,
   SAVE_BANNERS,
   SAVE_NAVS,
-  SAVE_NEWS
+  SAVE_NEWS,
+  SELECT_SKU_ITEM,
+  ADD_SKU_ITEM_COUNT
 }
 from './mutation-types'
 
@@ -47,6 +49,24 @@ export default {
       //调用回调
       callBack && callBack();
     }
+  },
+  /**
+   * 在购物车里选择sku
+   * @param commit
+   * @param state
+   * @param obj 一维下标
+   */
+  selectSkuItem({commit, state},obj){
+    commit(SELECT_SKU_ITEM,obj);
+  },
+  /**
+   * 增加或减少sku的购买数量
+   * @param commit
+   * @param state
+   * @param obj
+   */
+  addSkuItemCount({commit, state},obj){
+    commit(ADD_SKU_ITEM_COUNT,obj);
   },
 }
 

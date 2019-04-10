@@ -7,9 +7,7 @@
         <div class="title">
           <span >购物车</span>
           <span>
-            <span>(</span>
-            <span>{{cartCount}}</span>
-            <span>)</span>
+            <span>({{cartCount}})</span>
           </span>
         </div>
         <div class="last"></div>
@@ -25,9 +23,8 @@
                 <div class="tcont">
                   <div class="shopcb">
                     <p style="line-height: 0;">
-                      <input id="cb-155378244395023" type="text" class="o-t-cb">
-                      <label class="o-t-cb-label" for="cb-155378244395023">
-                        <i style="width: 100%;height: 100%;" class="iconfont icon-yuanquan"></i>
+                      <input type="text" class="o-t-cb">
+                      <label class="o-t-cb-label" :class="{'o-t-cb-label-checked':cda.isSelect}">
                       </label>
                     </p>
                   </div>
@@ -67,7 +64,7 @@
                       <div class="item-cb">
                         <p style="line-height: 0;">
                           <input :id="lta.id" type="text" class="o-t-cb">
-                          <label @click="checkThisGoods(lta.id,$event)" class="o-t-cb-label" :for="lta.id">
+                          <label @click="checkThisGoods(key,index,$event)" class="o-t-cb-label" :for="lta.id">
                           </label>
                         </p>
                       </div>
@@ -100,15 +97,15 @@
                                 </div>
                               </div>
                               <div class="edit-quantity">
-                                <p class="btn-minus">
-                                  <a href="" class="btn"></a>
+                                <p @click="addSkuBuyCount(key,index,lta.amount,-1)" class="btn-minus">
+                                  <a  href="javascript:;" class="btn"></a>
                                 </p>
                                 <p class="btn-input">
                                   <input :value="lta.amount" style="width: 100%;text-align: center;border: none;"
                                          type="number" max="2558" min="1"/>
                                 </p>
-                                <p class="btn-plus">
-                                  <a href="" class="btn plus"></a>
+                                <p @click="addSkuBuyCount(key,index,lta.amount,1)" class="btn-plus">
+                                  <a href="javascript:;" class="btn plus"></a>
                                 </p>
                               </div>
                             </div>
@@ -143,9 +140,7 @@
             <span class="hj">合计：</span>
             <p class="o-t-price" data-symbol="￥">
                 <span>
-                  <span class="major">0</span>
-                  <span class="point">.</span>
-                  <span class="minor">00</span>
+                  <span class="major">{{cartSelectedPrice}}</span>
                 </span>
             </p>
           </div>
@@ -155,9 +150,7 @@
       <div class="btn">
         <p>
           <span>结算</span>
-          <span>(</span>
-          <span>0</span>
-          <span>)</span>
+          <span>( {{cartSelectedCount}} )</span>
         </p>
       </div>
     </div>
@@ -175,29 +168,54 @@
       return{
         pageNo:1, //分页 页数
         cartData:null, //购物车数据
+        selectedIds:[] , //选中的数组下标
       }
     },
     methods:{
-      ...mapActions(['getBuyCart']),
+      ...mapActions(['getBuyCart','selectSkuItem']),
+      /**
+       * 增加或者减少sku购买数量
+       */
+      addSkuBuyCount(oneId,twoId,amount,number){
+        console.log(oneId,twoId,amount,number)
+        if (amount <= 1 && number===-1) {
+          //不能再减少
+          return;
+        }
+        //改变vuex状态
+        this.$store.dispatch('addSkuItemCount',{
+          oneId,
+          twoId,
+          number
+        });
+      },
       /**
        * 点击label选择sku商品
        * @param goodsId
        */
-      checkThisGoods(goodsId,event){
+      checkThisGoods(oneId,twoId,event){
         //获取元素class名
         let clazzName = event.currentTarget.className;
+        let isSelect = false;
         if (clazzName.indexOf('o-t-cb-label-checked') !== -1) {
           event.currentTarget.className=' o-t-cb-label';
         }else {
           event.currentTarget.className+=' o-t-cb-label-checked';
+          isSelect = true;
         }
-        //元素本身
-        console.log(event.currentTarget)
+
+        //改变vuex状态
+        this.$store.dispatch('selectSkuItem',{
+          oneId,
+          twoId,
+          isSelect
+        });
+
       }
     },
     computed:{
       ...mapState(['buyCart']),
-      ...mapGetters(['cartCount']),
+      ...mapGetters(['cartCount','cartSelectedCount','cartSelectedPrice']),
     },
     mounted(){
       //获取购物车
@@ -504,6 +522,16 @@
                 -webkit-box-align: center;
                 display: -webkit-box;
                 margin-right: .32rem;
+                .o-t-cb-label-checked
+                  background-image url("./images/checked.png") !important
+                .o-t-cb-label
+                  display: inline-block;
+                  width: .5rem;
+                  background-size 100%
+                  background-repeat no-repeat
+                  background-image url("./images/cycle.png")
+                  height: .5rem;
+                  cursor: pointer;
                 .o-t-cb
                   display: none;
     .o-c-header
