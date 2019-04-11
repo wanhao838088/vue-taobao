@@ -11,8 +11,9 @@ import store from './store/index'
 import './fiters'
 import loading from './common/imgs/loading.gif'
 
-import { Alert } from 'vux'
+import { Alert,ConfirmPlugin } from 'vux'
 
+Vue.use(ConfirmPlugin)
 Vue.component('alert', Alert)
 
 Vue.use(VueLazyload, {

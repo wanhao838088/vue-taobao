@@ -33,4 +33,10 @@ public class BuyCartServiceImpl extends ServiceImpl<BuyCartDao, BuyCart> impleme
         wrapper.eq("user_id",userId).and().eq("sku_id",skuId);
         baseMapper.update(buyCart,wrapper);
     }
+
+    @Override
+    @Transactional
+    public int addCartItemCount(Integer skuId, Integer number) {
+        return baseMapper.addCartItemCount(skuId,number);
+    }
 }

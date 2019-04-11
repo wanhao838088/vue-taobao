@@ -25,4 +25,12 @@ public interface BuyCartService extends IService<BuyCart> {
      * @param userId 用户
      */
     void deleteCartItem(Integer skuId, Long userId);
+
+    /**
+     * 改变购物项数量
+     * @param skuId
+     * @param number +1 还是 -1
+     * @return 数量
+     */
+    int addCartItemCount(Integer skuId, Integer number);
 }

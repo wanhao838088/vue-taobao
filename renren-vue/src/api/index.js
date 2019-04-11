@@ -58,6 +58,10 @@ export const reqAddSku2Cart = (form) =>
 export const reqgetBuyCartData = () =>
   ajax(MY_URL + `/buyCart/getBuyCartData`,{},"GET",true);
 
-// 13、删除购物项
-export const reqgetDeleteCartItem = (form) =>
+// 14、删除购物项
+export const reqDeleteCartItem = (form) =>
   ajax(MY_URL + `/buyCart/deleteCartItem`,form,"GET",true);
+
+// 15、删除购物项
+export const reqAddCartItem = (form) =>
+  ajax(MY_URL + `/buyCart/addCartItemCount`,form,"GET",true);

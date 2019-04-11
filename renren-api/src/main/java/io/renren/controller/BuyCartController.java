@@ -119,4 +119,24 @@ public class BuyCartController {
         return R.ok();
     }
 
+    /**
+     * 改变购物项数量
+     * @param skuId sku
+     * @param user
+     * @return
+     */
+    @Login
+    @GetMapping(value = "addCartItemCount")
+    public R addCartItemCount(Integer skuId,Integer number,@LoginUser UserEntity user){
+        if (skuId!=null && number!=null){
+            int i = buyCartService.addCartItemCount(skuId, number);
+            if (i<=0){
+                return R.error("更新失败");
+            }else {
+                return R.ok();
+            }
+        }
+        return R.error();
+    }
+
 }

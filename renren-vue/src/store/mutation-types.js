@@ -20,3 +20,7 @@ export const ADD_SKU_ITEM_COUNT = 'add_sku_item_count'; //改变sku购买数量
 export const SELECT_SHOP_SKU_ITEMS = 'select_shop_sku_items'; //全选店铺sku
 
 export const SELECT_ALL_SKU = 'select_all_sku'; //全选所有sku
+
+export const EDIT_SHOP_SKUS = 'edit_shop_skus'; //编辑所有sku
+
+export const DELETE_SKU = 'delete_sku'; //删除单个sku

@@ -5,6 +5,7 @@ import io.renren.entity.buycart.BuyCart;
 import io.renren.vo.BuyCartVo;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -26,4 +27,12 @@ public interface BuyCartDao extends BaseMapper<BuyCart> {
     List<BuyCartVo> getCartData(@Param("userId") Long userId);
 
 
+    /**
+     * 改变购物项数量
+     * @param skuId
+     * @param number +1 还是 -1
+     * @return 更新数量
+     */
+    @Update("UPDATE order_buy_cart SET amount=amount + #{number} WHERE sku_id=#{skuId} AND amount>=0")
+    int addCartItemCount(@Param("skuId")Integer skuId, @Param("number")Integer number);
 }

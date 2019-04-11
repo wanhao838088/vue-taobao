@@ -2,7 +2,7 @@
   <div class="navi-bar">
     <div style="position: relative;width: 100%">
       <button @click="goBack" class="btn-back"><i class="iconfont icon-fanhui1"></i></button>
-      <button class="btn-cart"><i class="iconfont icon-gouwuche-01"></i></button>
+      <button @click="$router.push('/buyCart')" class="btn-cart"><i class="iconfont icon-gouwuche-01"></i></button>
     </div>
   </div>
 </template>

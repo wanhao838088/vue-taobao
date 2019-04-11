@@ -12,7 +12,9 @@ import {
   SELECT_SKU_ITEM,
   ADD_SKU_ITEM_COUNT,
   SELECT_SHOP_SKU_ITEMS,
-  SELECT_ALL_SKU
+  SELECT_ALL_SKU,
+  EDIT_SHOP_SKUS,
+  DELETE_SKU
 } from './mutation-types'
 
 export default {
@@ -147,5 +149,37 @@ export default {
     state.buyCart = null;
     state.buyCart = temp;
   },
+  /**
+   * 编辑店铺下所有sku
+   * @param state
+   * @param obj
+   */
+  [EDIT_SHOP_SKUS](state,obj){
+    let shopEditFlag = state.buyCart[obj.oneId].isEdit;
+    let skuList = state.buyCart[obj.oneId].list;
 
+    //已经是编辑状态了
+    state.buyCart[obj.oneId].isEdit = !shopEditFlag;
+    skuList.forEach((sObj)=>{
+      sObj.isEdit = !shopEditFlag;
+    });
+
+    let temp = state.buyCart;
+    //重置一下 否则不触发getter更新数据
+    state.buyCart = null;
+    state.buyCart = temp;
+  },
+  /**
+   * 删除单个sku
+   */
+  [DELETE_SKU](state,obj){
+    let skuList = state.buyCart[obj.oneId].list;
+    //根据下标删除
+    skuList.splice(obj.twoId,1);
+
+    let temp = state.buyCart;
+    //重置一下 否则不触发getter更新数据
+    state.buyCart = null;
+    state.buyCart = temp;
+  }
 }

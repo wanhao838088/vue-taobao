@@ -47,11 +47,11 @@
                   </div>
 
                   <div class="state">
+                    <!--<div class="state-cont">-->
+                      <!--<p class="edit">领券</p>-->
+                    <!--</div>-->
                     <div class="state-cont">
-                      <p class="edit">领券</p>
-                    </div>
-                    <div class="state-cont">
-                      <p class="edit undefined">编辑</p>
+                      <p @click="editShopSku(key,$event)" class="edit">编辑</p>
                     </div>
                   </div>
                 </div>
@@ -61,7 +61,8 @@
               <!--商品列表-->
               <div class="group">
                 <div class="itemv2" v-for="(lta,index) in cda.list" :key="index">
-                  <div class="item-box">
+                  <div class="item-box"
+                       :class="{'item-delete-show':lta.isEdit,'item-delete-hide':!lta.isEdit}">
                     <div class="item-list o-t-item">
                       <div class="item-cb">
                         <p style="line-height: 0;">
@@ -102,14 +103,14 @@
                                 </div>
                               </div>
                               <div class="edit-quantity">
-                                <p @click="addSkuBuyCount(key,index,lta.amount,-1)" class="btn-minus">
+                                <p @click="addSkuBuyCount(key,index,lta.amount,-1,lta.skuId)" class="btn-minus">
                                   <a  href="javascript:;" class="btn"></a>
                                 </p>
                                 <p class="btn-input">
                                   <input :value="lta.amount" style="width: 100%;text-align: center;border: none;"
                                          type="number" max="2558" min="1"/>
                                 </p>
-                                <p @click="addSkuBuyCount(key,index,lta.amount,1)" class="btn-plus">
+                                <p @click="addSkuBuyCount(key,index,lta.amount,1,lta.skuId)" class="btn-plus">
                                   <a href="javascript:;" class="btn plus"></a>
                                 </p>
                               </div>
@@ -118,6 +119,14 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+
+                  <!--编辑部分 删除-->
+                  <div class="op">
+                    <div @click="deleteSku(key,index,lta.skuId)" class="item-del">
+                      <p>删除</p>
+                    </div>
+                    <div class="op2"></div>
                   </div>
                 </div>
               </div>
@@ -161,10 +170,16 @@
         </p>
       </div>
     </div>
+
+    <confirm>
+    </confirm>
+
   </div>
 </template>
 
 <script>
+  import { Confirm,ConfirmPlugin  } from 'vux'
+
   import {mapActions,mapState,mapGetters}  from 'vuex'
   /**
    * 购物车
@@ -180,6 +195,47 @@
     },
     methods:{
       ...mapActions(['getBuyCart','selectSkuItem']),
+
+      /**
+       * 删除这个sku购物项
+       */
+      deleteSku(oneId,twoId,skuId){
+        // 显示
+        const _this = this;
+        //1 弹出确认
+        this.$vux.confirm.show({
+          title: '提示',
+          content: '确定要删除这个宝贝吗？',
+          onCancel () {
+          },
+          onConfirm () {
+            //2 使用skuId删除购物项
+            _this.$store.dispatch('deleteSku',{
+              oneId,
+              twoId,
+              skuId
+            });
+          }
+        })
+
+      },
+      /**
+       * 编辑店铺下面的sku
+       */
+      editShopSku(oneId,event){
+        let orgHtml = event.currentTarget.innerHTML;
+
+        if (orgHtml=='编辑'){
+          event.currentTarget.innerHTML = '完成';
+        } else {
+          event.currentTarget.innerHTML = '编辑';
+        }
+
+        //通知vuex
+        this.$store.dispatch('editShopSkus',{
+          oneId
+        });
+      },
       /**
        * 全选和取消全选 所有sku
        */
@@ -206,8 +262,7 @@
       /**
        * 增加或者减少sku购买数量
        */
-      addSkuBuyCount(oneId,twoId,amount,number){
-        console.log(oneId,twoId,amount,number)
+      addSkuBuyCount(oneId,twoId,amount,number,skuId){
         if (amount <= 1 && number===-1) {
           //不能再减少
           return;
@@ -216,7 +271,8 @@
         this.$store.dispatch('addSkuItemCount',{
           oneId,
           twoId,
-          number
+          number,
+          skuId
         });
       },
       /**
@@ -257,6 +313,9 @@
     mounted(){
       //获取购物车
       this.getBuyCart();
+    },
+    components:{
+      Confirm
     }
   }
 </script>
@@ -347,6 +406,43 @@
             margin-top: .08rem;
             position: relative;
             z-index: 0;
+            .item-delete-hide
+              transition: -webkit-transform 0.2s ease-in 0s;
+              transform: translateX(0);
+            .item-delete-show
+              transition: -webkit-transform 0.2s ease-in 0s !important;
+              transform: translateX(-1.6rem) !important;
+            .op
+              display: flex;
+              position: absolute;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              width: 1.6rem;
+              z-index: -1;
+              border-top: .01333rem solid #f5f5f5;
+              border-bottom: .01333rem solid #f5f5f5;
+              .item-del
+                width: 1.6rem;
+                color: #fff;
+                background: #f50!important;
+                cursor: pointer;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                overflow: hidden;
+                & p
+                  font-size 0.3rem
+              .op2
+                z-index: 1;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 1.6rem;
+                z-index: -1;
+                border-top: .01333rem solid #f5f5f5;
+                border-bottom: .01333rem solid #f5f5f5;
             .item-box
               transition: -webkit-transform 0.2s ease-in;
               transform: translateX(0);
@@ -577,7 +673,7 @@
                   background-size 100%
                   background-repeat no-repeat
                   background-image url("./images/cycle.png")
-                  height: .5rem;
+                  height: 1.5rem;
                   cursor: pointer;
                 .o-t-cb
                   display: none;
