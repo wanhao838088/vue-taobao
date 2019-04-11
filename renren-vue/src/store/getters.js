@@ -96,5 +96,21 @@ export default {
       })
     }
     return price;
-  }
+  },
+  /**
+   * 购物车里面是否全选了
+   * @param state
+   */
+  cartIsSelectAll(state){
+    let buyCart = state.buyCart;
+
+    let flag = true;
+    //执行过滤操作
+    flag = buyCart.some((element, index, array)=>{
+      return !element.isSelect;
+    });
+
+    return !flag;
+  },
+
 }

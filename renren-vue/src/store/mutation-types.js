@@ -16,3 +16,7 @@ export const RECEIVE_BUY_CART = 'receive_buy_cart';
 export const SELECT_SKU_ITEM = 'select_sku_item'; //选择单个sku
 
 export const ADD_SKU_ITEM_COUNT = 'add_sku_item_count'; //改变sku购买数量
+
+export const SELECT_SHOP_SKU_ITEMS = 'select_shop_sku_items'; //全选店铺sku
+
+export const SELECT_ALL_SKU = 'select_all_sku'; //全选所有sku

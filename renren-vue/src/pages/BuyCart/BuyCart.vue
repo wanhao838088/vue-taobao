@@ -22,9 +22,11 @@
               <div class="o-t-title-shop">
                 <div class="tcont">
                   <div class="shopcb">
-                    <p style="line-height: 0;">
+                    <p  style="line-height: 0;">
                       <input type="text" class="o-t-cb">
-                      <label class="o-t-cb-label" :class="{'o-t-cb-label-checked':cda.isSelect}">
+                      <label @click="checkShopItems(key,$event)"
+                             class="o-t-cb-label"
+                             :class="{'o-t-cb-label-checked':cda.isSelect}">
                       </label>
                     </p>
                   </div>
@@ -64,7 +66,10 @@
                       <div class="item-cb">
                         <p style="line-height: 0;">
                           <input :id="lta.id" type="text" class="o-t-cb">
-                          <label @click="checkThisGoods(key,index,$event)" class="o-t-cb-label" :for="lta.id">
+                          <label @click="checkThisGoods(key,index,$event)"
+                                 class="o-t-cb-label"
+                                 :class="{'o-t-cb-label-checked':lta.isSelect}"
+                                 :for="lta.id">
                           </label>
                         </p>
                       </div>
@@ -130,7 +135,9 @@
       <div class="ft-cb">
         <p>
           <input style="display: none;" id="cb-footer" type="checkbox" class="cb o-t-cb"/>
-          <label class="cb-footer iconfont icon-yuanquan" for="cb-footer"></label>
+          <label @click="selectAllSku($event)"
+                 :class="{'o-t-cb-label-checked':cartIsSelectAll}"
+                 class="cb-footer o-t-cb-label" for="cb-footer"></label>
         </p>
       </div>
       <div class="qx">全选</div>
@@ -174,6 +181,29 @@
     methods:{
       ...mapActions(['getBuyCart','selectSkuItem']),
       /**
+       * 全选和取消全选 所有sku
+       */
+      selectAllSku(event){
+        let isSelect = this._eventIsSelected(event);
+        //改变vuex状态
+        this.$store.dispatch('selectAllSku',{
+          isSelect
+        });
+      },
+      /**
+       * 全选和取消全选 店铺下的sku
+       */
+      checkShopItems(oneId,event){
+        let isSelect = this._eventIsSelected(event);
+
+        //改变vuex状态
+        this.$store.dispatch('selectShopSkuItems',{
+          oneId,
+          isSelect
+        });
+
+      },
+      /**
        * 增加或者减少sku购买数量
        */
       addSkuBuyCount(oneId,twoId,amount,number){
@@ -190,10 +220,9 @@
         });
       },
       /**
-       * 点击label选择sku商品
-       * @param goodsId
+       * 根据元素class判断 是否选中了
        */
-      checkThisGoods(oneId,twoId,event){
+      _eventIsSelected(event){
         //获取元素class名
         let clazzName = event.currentTarget.className;
         let isSelect = false;
@@ -203,6 +232,14 @@
           event.currentTarget.className+=' o-t-cb-label-checked';
           isSelect = true;
         }
+        return isSelect;
+      },
+      /**
+       * 点击label选择sku商品
+       * @param goodsId
+       */
+      checkThisGoods(oneId,twoId,event){
+        let isSelect = this._eventIsSelected(event);
 
         //改变vuex状态
         this.$store.dispatch('selectSkuItem',{
@@ -215,7 +252,7 @@
     },
     computed:{
       ...mapState(['buyCart']),
-      ...mapGetters(['cartCount','cartSelectedCount','cartSelectedPrice']),
+      ...mapGetters(['cartCount','cartSelectedCount','cartSelectedPrice','cartIsSelectAll']),
     },
     mounted(){
       //获取购物车
@@ -279,6 +316,16 @@
         justify-content: center;
         align-items: center;
         display: flex;
+        .o-t-cb-label-checked
+          background-image url("./images/checked.png") !important
+        .o-t-cb-label
+          display: inline-block;
+          width: .533rem;
+          background-size 100%
+          background-repeat no-repeat
+          background-image url("./images/cycle.png")
+          height: .533rem;
+          cursor: pointer;
         .cb-footer
           width: .53333rem;
           height: .53333rem;

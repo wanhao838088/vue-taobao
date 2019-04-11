@@ -11,7 +11,9 @@ import {
   SAVE_NAVS,
   SAVE_NEWS,
   SELECT_SKU_ITEM,
-  ADD_SKU_ITEM_COUNT
+  ADD_SKU_ITEM_COUNT,
+  SELECT_SHOP_SKU_ITEMS,
+  SELECT_ALL_SKU
 }
 from './mutation-types'
 
@@ -68,5 +70,23 @@ export default {
   addSkuItemCount({commit, state},obj){
     commit(ADD_SKU_ITEM_COUNT,obj);
   },
+  /**
+   * 全选店铺下的所有sku
+   * @param commit
+   * @param state
+   * @param obj
+   */
+  selectShopSkuItems({commit, state},obj){
+    commit(SELECT_SHOP_SKU_ITEMS,obj);
+  },
+  /**
+   * 全选所有sku
+   * @param commit
+   * @param state
+   * @param obj
+   */
+  selectAllSku({commit, state},obj){
+    commit(SELECT_ALL_SKU,obj);
+  }
 }
 

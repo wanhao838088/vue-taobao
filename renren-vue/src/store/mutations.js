@@ -10,7 +10,9 @@ import {
   SAVE_NAVS,
   SAVE_NEWS,
   SELECT_SKU_ITEM,
-  ADD_SKU_ITEM_COUNT
+  ADD_SKU_ITEM_COUNT,
+  SELECT_SHOP_SKU_ITEMS,
+  SELECT_ALL_SKU
 } from './mutation-types'
 
 export default {
@@ -103,4 +105,47 @@ export default {
     state.buyCart = null;
     state.buyCart = temp;
   },
+  /**
+   * 在购物车里选择sku
+   * @param state
+   * @param obj
+   */
+  [SELECT_SHOP_SKU_ITEMS] (state,obj) {
+    //切换sku的选择状态
+    let list = state.buyCart[obj.oneId].list;
+    list.forEach((objList)=>{
+      objList.isSelect = obj.isSelect
+    });
+
+    Vue.set(state.buyCart[obj.oneId], 'isSelect', obj.isSelect)
+
+    let temp = state.buyCart;
+    //重置一下 否则不触发getter更新数据
+    state.buyCart = null;
+    state.buyCart = temp;
+  },
+  /**
+   * 在购物车里选择sku
+   * @param state
+   * @param obj
+   */
+  [SELECT_ALL_SKU] (state,obj) {
+    //切换所有sku的选择状态
+    let shopList = state.buyCart;
+    shopList.forEach((temp)=>{
+      temp.isSelect = obj.isSelect;
+      let skuList = temp.list;
+      if (skuList && skuList.length > 0) {
+        skuList.forEach((tobj)=>{
+          tobj.isSelect = obj.isSelect;
+        })
+      }
+    });
+
+    let temp = state.buyCart;
+    //重置一下 否则不触发getter更新数据
+    state.buyCart = null;
+    state.buyCart = temp;
+  },
+
 }
