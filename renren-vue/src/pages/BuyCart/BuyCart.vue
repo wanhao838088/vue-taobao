@@ -1,6 +1,6 @@
 <template>
   <div id="J_cartBuy" class="cartbuy">
-    <div class="btm-one-five">
+    <div :class="{'btm-one-five':buyCart && buyCart.length>0}">
       <!--头部-->
       <header class="o-c-header">
         <div @click="$router.back()" class="back"><p class="bk-img"></p></div>
@@ -16,7 +16,7 @@
       <!--商品-->
       <div>
         <div class="allItemv2">
-          <div class="bundlev2">
+          <div v-if="buyCart && buyCart.length>0" class="bundlev2">
             <!--店铺信息-->
             <div class="shop" v-for="(cda,key) in buyCart" :key="key">
               <div class="o-t-title-shop">
@@ -134,13 +134,35 @@
             </div>
           </div>
 
+          <!--购物车为空的时候显示-->
+          <div v-else class="o-t-error">
+            <div class="img">
+              <img src="//gw.alicdn.com/tfscom/TB1xdQSJFXXXXcuXXXXy7S8WFXX-176-176.png">
+            </div>
+            <div class="info">
+              <h1 class="title">购物车快饿瘪了T.T</h1>
+              <p class="sub">主人快给我挑点宝贝吧</p>
+              <p class="btn">
+                <a href="javascript:;" @click="$router.replace('/main')">去逛逛</a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
 
+    <!--猜你喜欢-->
+    <div class="recommend-list-wrapper">
+      <div class="recommend-container">
+        <div class="recommend-hd">
+          <img src="https://img.alicdn.com/tfs/TB1V2eQrKSSBuNjy0FlXXbBpVXa-966-114.png" class="recommend-hd-bg">
+        </div>
+      </div>
+    </div>
+
     <!--底部结算-->
-    <div class="cart-footer">
+    <div v-show="buyCart && buyCart.length>0" class="cart-footer">
       <div class="ft-cb">
         <p>
           <input style="display: none;" id="cb-footer" type="checkbox" class="cb o-t-cb"/>
@@ -170,9 +192,6 @@
         </p>
       </div>
     </div>
-
-    <confirm>
-    </confirm>
 
   </div>
 </template>
@@ -323,6 +342,28 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .cartbuy
     position: relative;
+    .recommend-list-wrapper
+      margin-top: .66667rem;
+      padding-bottom: 1.6rem;
+      .recommend-container
+        display: flex;
+        position: relative;
+        box-sizing: border-box;
+        flex-direction: row;
+        place-content: flex-start space-between;
+        flex-shrink: 0;
+        overflow: hidden;
+        flex-wrap: wrap;
+        padding: 0 7.56px;
+        background: #f2f2f2;
+        padding-bottom: 12.096px
+        .recommend-hd
+          padding: 12.096px 0;
+          width: 100%;
+          text-align: center;
+          .recommend-hd-bg
+            width: 4.164rem
+            height: 0.455rem
     .btm-one-five
       padding-bottom 1.5rem
     .cart-footer
@@ -396,6 +437,40 @@
             top: 0;
     .allItemv2
       list-style: none;
+      .o-t-error
+        margin-top: 2.13333rem;
+        margin-bottom: 2.13333rem;
+        .info
+          list-style: none;
+          .btn
+            text-align: center;
+            margin-top: .26667rem;
+            & a
+              display: inline-block;
+              border: .01333rem solid #051b28;
+              color: #051b28;
+              border-radius: .10667rem;
+              padding: .10667rem .66667rem;
+              cursor: pointer;
+          .sub
+            margin-top: .13333rem;
+            text-align: center;
+            color: #999;
+          .title
+            margin-top: .32rem;
+            text-align: center;
+            font-size 0.35rem
+        .img
+          margin: 0 auto;
+          width: 2.93333rem;
+          height: 2.93333rem;
+          background: #ccc;
+          border-radius: 100%;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          & img
+            width 1.6rem
       .bundlev2
         margin-top: .32rem;
         background: #fff;

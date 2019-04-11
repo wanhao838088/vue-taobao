@@ -176,6 +176,10 @@ export default {
     let skuList = state.buyCart[obj.oneId].list;
     //根据下标删除
     skuList.splice(obj.twoId,1);
+    //如果这个店铺下面的都删除了 需要置空父级
+    if (!skuList || skuList.length == 0) {
+      state.buyCart.splice(obj.oneId,1);
+    }
 
     let temp = state.buyCart;
     //重置一下 否则不触发getter更新数据
