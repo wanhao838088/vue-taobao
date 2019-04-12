@@ -1,10 +1,10 @@
 package io.renren.modules.tbsys.controller;
 
-import io.renren.common.entity.tbsys.TbNews;
+import io.renren.common.entity.tbsys.TbNav;
 import io.renren.common.utils.PageUtils;
 import io.renren.common.utils.R;
 import io.renren.common.validator.ValidatorUtils;
-import io.renren.modules.tbsys.service.NewsService;
+import io.renren.modules.tbsys.service.NavService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,27 +13,26 @@ import java.util.Arrays;
 import java.util.Map;
 
 
-
 /**
- * 淘宝新闻
+ *
  *
  * @author liulihao
  * @email 838088516@qq.com
- * @date 2019-04-12 09:30:36
+ * @date 2019-04-12 10:58:44
  */
 @RestController
-@RequestMapping("tbsys/news")
-public class NewsController {
+@RequestMapping("tbsys/nav")
+public class NavController {
     @Autowired
-    private NewsService newsService;
+    private NavService navService;
 
     /**
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("tbsys:news:list")
+    @RequiresPermissions("tbsys:nav:list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = newsService.queryPage(params);
+        PageUtils page = navService.queryPage(params);
 
         return R.ok().put("page", page);
     }
@@ -43,20 +42,20 @@ public class NewsController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("tbsys:news:info")
+    @RequiresPermissions("tbsys:nav:info")
     public R info(@PathVariable("id") Integer id){
-        TbNews news = newsService.selectById(id);
+        TbNav nav = navService.selectById(id);
 
-        return R.ok().put("news", news);
+        return R.ok().put("nav", nav);
     }
 
     /**
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("tbsys:news:save")
-    public R save(@RequestBody TbNews news){
-        newsService.insert(news);
+    @RequiresPermissions("tbsys:nav:save")
+    public R save(@RequestBody TbNav nav){
+        navService.insert(nav);
 
         return R.ok();
     }
@@ -65,10 +64,10 @@ public class NewsController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("tbsys:news:update")
-    public R update(@RequestBody TbNews news){
-        ValidatorUtils.validateEntity(news);
-        newsService.updateAllColumnById(news);//全部更新
+    @RequiresPermissions("tbsys:nav:update")
+    public R update(@RequestBody TbNav nav){
+        ValidatorUtils.validateEntity(nav);
+        navService.updateAllColumnById(nav);//全部更新
 
         return R.ok();
     }
@@ -77,9 +76,9 @@ public class NewsController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("tbsys:news:delete")
+    @RequiresPermissions("tbsys:nav:delete")
     public R delete(@RequestBody Integer[] ids){
-        newsService.deleteBatchIds(Arrays.asList(ids));
+        navService.deleteBatchIds(Arrays.asList(ids));
 
         return R.ok();
     }

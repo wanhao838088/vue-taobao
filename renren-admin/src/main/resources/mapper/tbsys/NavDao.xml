@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.tbsys.dao.NavDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.common.entity.tbsys.TbNav" id="navMap">
+        <result property="id" column="id"/>
+        <result property="imgUrl" column="img_url"/>
+        <result property="linkUrl" column="link_url"/>
+        <result property="orderNum" column="order_num"/>
+        <result property="navName" column="nav_name"/>
+    </resultMap>
+
+
+</mapper>

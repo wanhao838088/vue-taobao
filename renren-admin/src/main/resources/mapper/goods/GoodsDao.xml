@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.goods.dao.GoodsDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.common.entity.goods.Goods" id="goodsMap">
+        <result property="id" column="id"/>
+        <result property="goodsTitle" column="goods_title"/>
+        <result property="goodsImg" column="goods_img"/>
+        <result property="goodsDetail" column="goods_detail"/>
+        <result property="goodsStock" column="goods_stock"/>
+        <result property="goodsMinPrice" column="goods_min_price"/>
+        <result property="goodsMaxPrice" column="goods_max_price"/>
+        <result property="orgMinPrice" column="org_min_price"/>
+        <result property="orgMaxPrice" column="org_max_price"/>
+        <result property="location" column="location"/>
+        <result property="deliveryFree" column="delivery_free"/>
+        <result property="payCount" column="pay_count"/>
+        <result property="oneCategoryId" column="one_category_id"/>
+        <result property="twoCategoryId" column="two_category_id"/>
+        <result property="threeCategoryId" column="three_category_id"/>
+        <result property="brandId" column="brand_id"/>
+        <result property="publishStatus" column="publish_status"/>
+        <result property="auditStatus" column="audit_status"/>
+        <result property="sellerId" column="seller_id"/>
+    </resultMap>
+
+
+</mapper>

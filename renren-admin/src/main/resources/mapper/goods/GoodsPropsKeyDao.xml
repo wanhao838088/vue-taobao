@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.goods.dao.GoodsPropsKeyDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.common.entity.goods.GoodsPropsKey" id="goodsPropsKeyMap">
+        <result property="id" column="id"/>
+        <result property="propKey" column="prop_key"/>
+        <result property="brandId" column="brand_id"/>
+        <result property="aliasFlag" column="alias_flag"/>
+        <result property="colorFlag" column="color_flag"/>
+        <result property="sellFlag" column="sell_flag"/>
+        <result property="searchFlag" column="search_flag"/>
+        <result property="needFlag" column="need_flag"/>
+        <result property="orderNum" column="order_num"/>
+    </resultMap>
+
+
+</mapper>

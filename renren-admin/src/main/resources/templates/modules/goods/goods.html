@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+		<#include "/header.html">
+</head>
+<body>
+<div id="rrapp" v-cloak>
+    <div v-show="showList">
+        <div class="grid-btn">
+			<#if shiro.hasPermission("goods:goods:save")>
+            <a class="btn btn-primary" @click="add"><i class="fa fa-plus"></i>&nbsp;新增</a>
+			</#if>
+			<#if shiro.hasPermission("goods:goods:update")>
+            <a class="btn btn-primary" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
+			</#if>
+			<#if shiro.hasPermission("goods:goods:delete")>
+            <a class="btn btn-primary" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+			</#if>
+        </div>
+        <table id="jqGrid"></table>
+        <div id="jqGridPager"></div>
+    </div>
+
+    <div v-show="!showList" class="panel panel-default">
+        <div class="panel-heading">{{title}}</div>
+        <form class="form-horizontal">
+														                    <div class="form-group">
+                        <div class="col-sm-2 control-label">商品标题</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.goodsTitle" placeholder="商品标题"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">商品图片</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.goodsImg" placeholder="商品图片"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">商品详情介绍</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.goodsDetail" placeholder="商品详情介绍"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">商品库存,-1表示没有限制</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.goodsStock" placeholder="商品库存,-1表示没有限制"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">商品现最小价格</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.goodsMinPrice" placeholder="商品现最小价格"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">商品现最大价格</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.goodsMaxPrice" placeholder="商品现最大价格"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">原最小价格</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.orgMinPrice" placeholder="原最小价格"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">原最大价格</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.orgMaxPrice" placeholder="原最大价格"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">所在地</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.location" placeholder="所在地"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">运费 0 为免运费</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.deliveryFree" placeholder="运费 0 为免运费"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">付款人数</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.payCount" placeholder="付款人数"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">一级分类ID</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.oneCategoryId" placeholder="一级分类ID"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">二级分类ID</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.twoCategoryId" placeholder="二级分类ID"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">三级分类ID</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.threeCategoryId" placeholder="三级分类ID"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">品牌表的ID</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.brandId" placeholder="品牌表的ID"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">上下架状态：0下架1上架</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.publishStatus" placeholder="上下架状态：0下架1上架"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">审核状态：0未审核，1已审核</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.auditStatus" placeholder="审核状态：0未审核，1已审核"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">所属卖家id</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="goods.sellerId" placeholder="所属卖家id"/>
+                        </div>
+                    </div>
+							            <div class="form-group">
+                <div class="col-sm-2 control-label"></div>
+                <input type="button" class="btn btn-primary" @click="saveOrUpdate" value="确定"/>
+                &nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="${request.contextPath}/statics/js/modules/goods/goods.js?_${.now?long}"></script>
+</body>
+</html>
