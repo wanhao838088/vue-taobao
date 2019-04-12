@@ -11,6 +11,12 @@ import SignIn from '@/components/SignIn/SignIn'
 import MobileLogin from '@/pages/MobileLogin/MobileLogin'
 import BuyCart from '@/pages/BuyCart/BuyCart'
 import OrderList from '@/pages/OrderList/OrderList'
+import All from '@/pages/OrderList/All/All'
+import WaitComment from '@/pages/OrderList/WaitComment/WaitComment'
+import WaitDelivery from '@/pages/OrderList/WaitDelivery/WaitDelivery'
+import WaitPayment from '@/pages/OrderList/WaitPayment/WaitPayment'
+import WaitReceive from '@/pages/OrderList/WaitReceive/WaitReceive'
+
 import MyTb from '@/pages/MyTb/MyTb'
 import More from '@/pages/More/More'
 import {getToken} from '../utils/utils'
@@ -50,7 +56,49 @@ const router = new Router({
       component: OrderList,
       meta: {
         showFooter: true
-      }
+      },
+      children:[
+        {
+          path: '/orderList/all',
+          component: All,
+          meta: {
+            showFooter: true
+          },
+        },
+        {
+          path: '/orderList/waitComment',
+          component: WaitComment,
+          meta: {
+            showFooter: true
+          },
+        },
+        {
+          path: '/orderList/waitDelivery',
+          component: WaitDelivery,
+          meta: {
+            showFooter: true
+          },
+        },
+        {
+          path: '/orderList/waitPayment',
+          component: WaitPayment,
+          meta: {
+            showFooter: true
+          },
+        },
+        {
+          path: '/orderList/waitReceive',
+          component: WaitReceive,
+          meta: {
+            showFooter: true
+          },
+        },
+        {
+          path: '/',
+          redirect: '/orderList/all'
+        }
+      ],
+
     },
     {
       path: '/myTb',

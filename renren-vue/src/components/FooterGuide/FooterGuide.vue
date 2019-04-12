@@ -10,7 +10,7 @@
       <p class="text">购物车</p>
     </span>
 
-    <span class="tab" :class="{active: '/orderList'===$route.path}" @click="goTo('/orderList')">
+    <span class="tab" :class="{active: $route.path.indexOf('orderList') !== -1}" @click="goTo('/orderList')">
       <span class="iconfont icon-dingdan1"></span>
       <p class="text">订单列表</p>
     </span>

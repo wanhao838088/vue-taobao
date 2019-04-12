@@ -153,13 +153,7 @@
     </div>
 
     <!--猜你喜欢-->
-    <div class="recommend-list-wrapper">
-      <div class="recommend-container">
-        <div class="recommend-hd">
-          <img src="https://img.alicdn.com/tfs/TB1V2eQrKSSBuNjy0FlXXbBpVXa-966-114.png" class="recommend-hd-bg">
-        </div>
-      </div>
-    </div>
+    <Recommend></Recommend>
 
     <!--底部结算-->
     <div v-show="buyCart && buyCart.length>0" class="cart-footer">
@@ -200,6 +194,9 @@
   import { Confirm,ConfirmPlugin  } from 'vux'
 
   import {mapActions,mapState,mapGetters}  from 'vuex'
+
+  import Recommend from '../../components/Recommend/Recommend'
+
   /**
    * 购物车
    */
@@ -334,7 +331,8 @@
       this.getBuyCart();
     },
     components:{
-      Confirm
+      Confirm,
+      Recommend
     }
   }
 </script>
