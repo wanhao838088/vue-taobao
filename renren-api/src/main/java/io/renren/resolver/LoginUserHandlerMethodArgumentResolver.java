@@ -17,7 +17,7 @@
 package io.renren.resolver;
 
 import io.renren.annotation.LoginUser;
-import io.renren.entity.user.UserEntity;
+import io.renren.common.entity.user.UserEntity;
 import io.renren.interceptor.AuthorizationInterceptor;
 import io.renren.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

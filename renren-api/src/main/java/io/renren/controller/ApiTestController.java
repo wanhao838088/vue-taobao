@@ -3,8 +3,8 @@ package io.renren.controller;
 
 import io.renren.annotation.Login;
 import io.renren.annotation.LoginUser;
+import io.renren.common.entity.user.UserEntity;
 import io.renren.common.utils.R;
-import io.renren.entity.user.UserEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +27,7 @@ public class ApiTestController {
 
     @Login
     @GetMapping("userInfo")
-    @ApiOperation(value="获取用户信息", response=UserEntity.class)
+    @ApiOperation(value="获取用户信息", response= UserEntity.class)
     public R userInfo(@ApiIgnore @LoginUser UserEntity user){
         return R.ok().put("user", user);
     }

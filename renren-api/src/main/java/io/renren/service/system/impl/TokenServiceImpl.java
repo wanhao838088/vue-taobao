@@ -18,8 +18,8 @@ package io.renren.service.system.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import io.renren.common.entity.tbsys.TokenEntity;
 import io.renren.dao.system.TokenDao;
-import io.renren.entity.system.TokenEntity;
 import io.renren.service.system.TokenService;
 import org.springframework.stereotype.Service;
 

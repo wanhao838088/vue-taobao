@@ -1,8 +1,8 @@
 package io.renren.service.goods.impl;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import io.renren.common.entity.goods.GoodsPropsValue;
 import io.renren.dao.goods.GoodsPropsValueDao;
-import io.renren.entity.goods.GoodsPropsValue;
 import io.renren.service.goods.GoodsPropsValueService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

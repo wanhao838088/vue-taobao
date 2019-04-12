@@ -1,7 +1,7 @@
 package io.renren.dao.buycart;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import io.renren.entity.buycart.BuyCart;
+import io.renren.common.entity.buycart.BuyCart;
 import io.renren.vo.BuyCartVo;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

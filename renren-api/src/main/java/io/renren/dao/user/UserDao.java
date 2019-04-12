@@ -17,7 +17,7 @@
 package io.renren.dao.user;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import io.renren.entity.user.UserEntity;
+import io.renren.common.entity.user.UserEntity;
 
 /**
  * 用户

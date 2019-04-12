@@ -1,7 +1,7 @@
 package io.renren.dao.goods;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import io.renren.entity.goods.GoodsComment;
+import io.renren.common.entity.goods.GoodsComment;
 
 /**
  * GoodsComment

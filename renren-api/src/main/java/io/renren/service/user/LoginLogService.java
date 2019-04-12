@@ -1,7 +1,7 @@
 package io.renren.service.user;
 
 import com.baomidou.mybatisplus.service.IService;
-import io.renren.entity.user.LoginLog;
+import io.renren.common.entity.user.LoginLog;
 
 /**
  * 登录日志

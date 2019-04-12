@@ -18,9 +18,9 @@ package io.renren.interceptor;
 
 
 import io.renren.annotation.Login;
+import io.renren.common.entity.tbsys.TokenEntity;
 import io.renren.common.exception.RRException;
 import io.renren.constants.SystemConstants;
-import io.renren.entity.system.TokenEntity;
 import io.renren.service.system.TokenService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

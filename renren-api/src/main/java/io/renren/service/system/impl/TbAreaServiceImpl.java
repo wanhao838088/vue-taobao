@@ -1,8 +1,8 @@
 package io.renren.service.system.impl;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import io.renren.common.entity.tbsys.TbArea;
 import io.renren.dao.system.TbAreaDao;
-import io.renren.entity.system.TbArea;
 import io.renren.service.system.TbAreaService;
 import org.springframework.stereotype.Service;
 

@@ -2,15 +2,12 @@ package io.renren.controller;
 
 import io.renren.annotation.Login;
 import io.renren.annotation.LoginUser;
+import io.renren.common.entity.user.UserEntity;
 import io.renren.common.utils.R;
 import io.renren.common.validator.ValidatorUtils;
-import io.renren.entity.seckill.MiaoshaOrder;
-import io.renren.entity.user.UserEntity;
 import io.renren.form.SecKillForm;
 import io.renren.rabbitmq.MQSender;
-import io.renren.rabbitmq.MiaoshaMessage;
 import io.renren.service.goods.GoodsService;
-import io.renren.service.seckill.MiaoshaOrderService;
 import io.renren.utils.RedisTemplatesUtil;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +27,6 @@ public class SecKillController implements InitializingBean {
 
     @Autowired
     private GoodsService goodsService;
-
-    /**
-     * 秒杀订单service
-     */
-    @Autowired
-    private MiaoshaOrderService miaoshaOrderService;
 
     @Autowired
     private RedisTemplate<String,Object> redisTemplate;
@@ -76,17 +67,17 @@ public class SecKillController implements InitializingBean {
         }
 
         //2 这个用户是否已经秒杀了这个商品
-        MiaoshaOrder miaoshaOrder = miaoshaOrderService.getOrderByGoodsIdAndUserId(form.getGoodsId(), user.getUserId());
-        if (miaoshaOrder!=null){
-            //已经秒杀过了 再把库存加上
-            redisTemplatesUtil.increment(""+goodsId);
-            return R.error(300,"限购一件，请下次再来!");
-        }
-        //入队
-        MiaoshaMessage mm = new MiaoshaMessage();
-        mm.setUser(user);
-        mm.setGoodsId(goodsId);
-        sender.sendMiaoshaMessage(mm);
+//        MiaoshaOrder miaoshaOrder = miaoshaOrderService.getOrderByGoodsIdAndUserId(form.getGoodsId(), user.getUserId());
+//        if (miaoshaOrder!=null){
+//            //已经秒杀过了 再把库存加上
+//            redisTemplatesUtil.increment(""+goodsId);
+//            return R.error(300,"限购一件，请下次再来!");
+//        }
+//        //入队
+//        MiaoshaMessage mm = new MiaoshaMessage();
+//        mm.setUser(user);
+//        mm.setGoodsId(goodsId);
+//        sender.sendMiaoshaMessage(mm);
 
         return R.ok();
     }
@@ -101,8 +92,8 @@ public class SecKillController implements InitializingBean {
     @Login
     public R miaoshaResult(@LoginUser UserEntity user,
                                       @RequestParam("goodsId")long goodsId) {
-        long result = miaoshaOrderService.getMiaoshaResult(user.getUserId(), goodsId);
-        return R.ok(result+"");
+//        long result = miaoshaOrderService.getMiaoshaResult(user.getUserId(), goodsId);
+        return R.ok("");
     }
 
     /**

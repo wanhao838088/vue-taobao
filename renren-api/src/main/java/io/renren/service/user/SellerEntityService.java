@@ -1,7 +1,7 @@
 package io.renren.service.user;
 
 import com.baomidou.mybatisplus.service.IService;
-import io.renren.entity.user.SellerEntity;
+import io.renren.common.entity.user.SellerEntity;
 
 /**
  * 卖家

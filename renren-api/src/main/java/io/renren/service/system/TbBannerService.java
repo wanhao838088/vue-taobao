@@ -1,7 +1,7 @@
 package io.renren.service.system;
 
 import com.baomidou.mybatisplus.service.IService;
-import io.renren.entity.system.TbBanner;
+import io.renren.common.entity.tbsys.TbBanner;
 
 /**
  * banner

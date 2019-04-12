@@ -1,7 +1,7 @@
 package io.renren.service.user;
 
 import com.baomidou.mybatisplus.service.IService;
-import io.renren.entity.user.ReceiveAddr;
+import io.renren.common.entity.user.ReceiveAddr;
 
 /**
  * 买家等级

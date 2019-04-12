@@ -1,8 +1,8 @@
 package io.renren.service.goods.impl;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import io.renren.common.entity.goods.GoodsComment;
 import io.renren.dao.goods.GoodsCommentDao;
-import io.renren.entity.goods.GoodsComment;
 import io.renren.service.goods.GoodsCommentService;
 import org.springframework.stereotype.Service;
 

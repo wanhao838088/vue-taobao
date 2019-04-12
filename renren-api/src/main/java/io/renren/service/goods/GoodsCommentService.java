@@ -1,7 +1,7 @@
 package io.renren.service.goods;
 
 import com.baomidou.mybatisplus.service.IService;
-import io.renren.entity.goods.GoodsComment;
+import io.renren.common.entity.goods.GoodsComment;
 
 /**
  * GoodsComment

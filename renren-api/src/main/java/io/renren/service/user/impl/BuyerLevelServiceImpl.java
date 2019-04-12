@@ -2,8 +2,8 @@ package io.renren.service.user.impl;
 
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import io.renren.common.entity.user.BuyerLevel;
 import io.renren.dao.user.BuyerLevelDao;
-import io.renren.entity.user.BuyerLevel;
 import io.renren.service.user.BuyerLevelService;
 import org.springframework.stereotype.Service;
 

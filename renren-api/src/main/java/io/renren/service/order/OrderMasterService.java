@@ -1,8 +1,8 @@
 package io.renren.service.order;
 
 import com.baomidou.mybatisplus.service.IService;
-import io.renren.entity.order.OrderMaster;
-import io.renren.entity.user.UserEntity;
+import io.renren.common.entity.order.OrderMaster;
+import io.renren.common.entity.user.UserEntity;
 import io.renren.vo.GoodsVo;
 
 /**

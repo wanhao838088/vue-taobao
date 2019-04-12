@@ -2,8 +2,8 @@ package io.renren.service.user.impl;
 
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import io.renren.common.entity.user.ReceiveAddr;
 import io.renren.dao.user.ReceiveAddrDao;
-import io.renren.entity.user.ReceiveAddr;
 import io.renren.service.user.ReceiveAddrService;
 import org.springframework.stereotype.Service;
 

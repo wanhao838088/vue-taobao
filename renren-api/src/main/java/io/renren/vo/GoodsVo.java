@@ -1,7 +1,7 @@
 package io.renren.vo;
 
-import io.renren.entity.goods.Goods;
-import io.renren.entity.goods.GoodsSku;
+import io.renren.common.entity.goods.Goods;
+import io.renren.common.entity.goods.GoodsSku;
 import lombok.Data;
 
 import java.util.Date;

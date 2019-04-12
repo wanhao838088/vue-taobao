@@ -13,19 +13,18 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-
 package io.renren.service.user.impl;
 
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import io.renren.common.entity.tbsys.TokenEntity;
+import io.renren.common.entity.user.LoginLog;
+import io.renren.common.entity.user.UserEntity;
 import io.renren.common.exception.RRException;
 import io.renren.common.utils.IPUtils;
 import io.renren.common.validator.Assert;
 import io.renren.constants.SystemConstants;
 import io.renren.dao.user.UserDao;
-import io.renren.entity.system.TokenEntity;
-import io.renren.entity.user.LoginLog;
-import io.renren.entity.user.UserEntity;
 import io.renren.form.CodeForm;
 import io.renren.form.LoginForm;
 import io.renren.service.system.TokenService;

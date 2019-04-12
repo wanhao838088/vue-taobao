@@ -2,7 +2,7 @@ package io.renren.service.goods;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
-import io.renren.entity.goods.GoodsCategory;
+import io.renren.common.entity.goods.GoodsCategory;
 import io.renren.form.CategorySearchForm;
 
 /**

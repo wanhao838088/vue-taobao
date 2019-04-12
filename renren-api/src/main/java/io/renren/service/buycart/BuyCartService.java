@@ -1,7 +1,7 @@
 package io.renren.service.buycart;
 
 import com.baomidou.mybatisplus.service.IService;
-import io.renren.entity.buycart.BuyCart;
+import io.renren.common.entity.buycart.BuyCart;
 import io.renren.vo.BuyCartVo;
 
 import java.util.List;

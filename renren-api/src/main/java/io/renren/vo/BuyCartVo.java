@@ -1,6 +1,6 @@
 package io.renren.vo;
 
-import io.renren.entity.buycart.BuyCart;
+import io.renren.common.entity.buycart.BuyCart;
 import lombok.Data;
 
 /**

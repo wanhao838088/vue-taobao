@@ -2,9 +2,9 @@ package io.renren.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.google.common.collect.Maps;
+import io.renren.common.entity.goods.*;
 import io.renren.common.utils.R;
 import io.renren.common.validator.ValidatorUtils;
-import io.renren.entity.goods.*;
 import io.renren.form.GoodsListSearchForm;
 import io.renren.service.goods.*;
 import io.renren.vo.GoodsPropsVo;

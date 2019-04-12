@@ -1,7 +1,7 @@
 package io.renren.dao.goods;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import io.renren.entity.goods.GoodsDetailImg;
+import io.renren.common.entity.goods.GoodsDetailImg;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 

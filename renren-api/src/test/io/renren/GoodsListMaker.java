@@ -1,6 +1,6 @@
 package io.renren;
 
-import io.renren.entity.goods.Goods;
+import io.renren.common.entity.goods.Goods;
 import io.renren.service.goods.GoodsService;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

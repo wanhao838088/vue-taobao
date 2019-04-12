@@ -1,7 +1,7 @@
 package io.renren.dao.order;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import io.renren.entity.order.OrderMaster;
+import io.renren.common.entity.order.OrderMaster;
 
 /**
  * 订单

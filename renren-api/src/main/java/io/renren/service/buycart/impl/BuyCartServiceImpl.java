@@ -2,8 +2,8 @@ package io.renren.service.buycart.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import io.renren.common.entity.buycart.BuyCart;
 import io.renren.dao.buycart.BuyCartDao;
-import io.renren.entity.buycart.BuyCart;
 import io.renren.service.buycart.BuyCartService;
 import io.renren.vo.BuyCartVo;
 import org.springframework.stereotype.Service;

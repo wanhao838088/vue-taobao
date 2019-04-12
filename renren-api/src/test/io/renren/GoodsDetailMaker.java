@@ -1,7 +1,7 @@
 package io.renren;
 
 
-import io.renren.entity.goods.*;
+import io.renren.common.entity.goods.*;
 import io.renren.service.goods.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

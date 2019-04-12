@@ -1,7 +1,7 @@
 package io.renren.dao.system;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import io.renren.entity.system.TbNav;
+import io.renren.common.entity.tbsys.TbNav;
 
 /**
  * banner

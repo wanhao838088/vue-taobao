@@ -1,7 +1,7 @@
 package io.renren.dao.user;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import io.renren.entity.user.LoginLog;
+import io.renren.common.entity.user.LoginLog;
 
 /**
  * Created by LiuLiHao on 2019/3/30 0030 下午 07:45

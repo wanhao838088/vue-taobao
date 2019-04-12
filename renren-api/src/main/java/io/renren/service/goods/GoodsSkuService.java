@@ -1,7 +1,7 @@
 package io.renren.service.goods;
 
 import com.baomidou.mybatisplus.service.IService;
-import io.renren.entity.goods.GoodsSku;
+import io.renren.common.entity.goods.GoodsSku;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
 package io.renren.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
+import io.renren.common.entity.goods.GoodsCategory;
 import io.renren.common.utils.R;
 import io.renren.common.validator.ValidatorUtils;
-import io.renren.entity.goods.GoodsCategory;
 import io.renren.form.CategorySearchForm;
 import io.renren.service.goods.GoodsCategoryService;
 import io.swagger.annotations.Api;
