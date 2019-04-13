@@ -163,7 +163,7 @@
       </div>
 
       <!--底部固定bar-->
-      <GoodsBottomBar @addToCart="addSkuToCart"></GoodsBottomBar>
+      <GoodsBottomBar @buyNow="gotoOrderConfirm" @addToCart="addSkuToCart"></GoodsBottomBar>
 
     </div>
 
@@ -227,6 +227,12 @@
     },
 
     methods:{
+      /**
+       * 立即购买
+       */
+      gotoOrderConfirm(){
+        this.$router.push('/orderConfirm')
+      },
       /**
        * 真实操作购物车方法
        */

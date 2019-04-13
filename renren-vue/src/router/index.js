@@ -7,6 +7,7 @@ import Goods from '@/components/Goods/Goods'
 import SearchPage from '@/components/SearchPage/SearchPage'
 import GoodsList from '@/components/GoodsList/GoodsList'
 import SignIn from '@/components/SignIn/SignIn'
+import OrderConfirm from '@/components/OrderConfirm/OrderConfirm'
 
 import MobileLogin from '@/pages/MobileLogin/MobileLogin'
 import BuyCart from '@/pages/BuyCart/BuyCart'
@@ -143,6 +144,11 @@ const router = new Router({
       path: '/goods',
       name: 'Goods',
       component: Goods
+    },
+    {
+      path: '/orderConfirm',
+      name: 'OrderConfirm',
+      component: OrderConfirm
     },
     {
       path: '/',

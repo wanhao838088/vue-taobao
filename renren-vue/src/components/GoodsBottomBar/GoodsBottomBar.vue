@@ -18,7 +18,7 @@
     </div>
 
     <div class="bottom-bar-btn buy" style="margin-right: 0.11rem;">
-      <span class="btn-title">立即购买</span>
+      <span @click="$emit('buyNow')" class="btn-title">立即购买</span>
     </div>
   </div>
 </template>
