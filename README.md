@@ -1,9 +1,10 @@
 **已实现的效果图**
  <br>
  
-  ![主页页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/gifs/process.gif)
+  ![主页页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/gifs/main.gif)
 
-  ![我的淘宝页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/pngs/mytb.png)
+  ![主页页1](https://github.com/wanhao838088/vue-taobao/blob/master/renren-vue/gifs/calendar.gif)
+
  <br>
 
  
