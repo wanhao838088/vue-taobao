@@ -5,7 +5,7 @@
 import ajax from './ajax'
 
 //自有项目api
-const MY_URL = 'http://localhost:8081/renren-api/api';
+const MY_URL = 'http://62.234.128.233:9090/renren-api/api';
 
 // 1、手机号密码登陆
 export const reqPwdLogin = ({name, password,loginType}) =>

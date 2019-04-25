@@ -12,9 +12,9 @@ server:
 spring:
   # 环境 dev|test|prod
   profiles:
-    active: dev
+    active: prod
   rabbitmq:
-    host: localhost
+    host: 62.234.128.233
     port: 5672
     username: guest
     password: guest
@@ -38,8 +38,8 @@ spring:
       enabled: true
   redis:
     database: 0
-    host: localhost
-    port: 6379
+    host: 62.234.128.233
+    port: 6380
     password: wanhao      # 密码（默认为空）
     timeout: 6000ms  # 连接超时时长（毫秒）
     jedis:
